@@ -1,4 +1,4 @@
-WORKSHOP_TITLE
+Introduction to Data Science with R and Tidyverse
 ================
 
 ### posit::conf 2023
