@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
+
+
+/*-- scss:defaults --*/
+
+//## Brand colors for use across Bootstrap.
+
+$primary:               #2d70a5;
+
+$brand-primary:         #404040 !default;
+$brand-success:         #b8d3cc !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #ff9982 !default;
+
+
+//== nav
+
+$navbar-bg:     #faf7f5;
+$navbar-fg:     #404040;
+
+
+// Body
+
+$body-bg:                 #F5EFEB !default;
+$body-color:              $brand-primary;
+
+$headings-color:          #000000 !default;
+$headings-font-weight:    600 !default;
+$headings-small-color:    #7b736c !default;
+
+$table-border-color:      #ffffff90 !default;
+
+$code-bg: #ffffff90;
+$code-color: #e47259;
+
+// Buttons
+
+$btn-default-color:              #FFFFFF !default;
+$btn-default-bg:                 #000000 !default;
+$btn-default-border:             #000000 !default;
+
+// Global textual link color.
+
+$link-color: #ba4900;
+
+// Link hover color set via `darken()` function.
+
+$link-hover-color:      darken($link-color, 15%) !default;
+
+
+/*-- scss:rules --*/
+
+/* Code */
+
+div.sourceCode {
+  background-color: white;
+  border: none;
+}
+
+/* Nav */
+
+.navbar-brand>img {
+    max-height: 45px;
+}
+
+.navbar-brand:hover {
+  color: black !important;
+  font-weight: 600;
+  font-size: 1.21rem;
+}
+
+
+a.nav-link {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.7pt;
+  font-weight: 600;
+}
+
+a.nav-link:hover {
+  font-weight: 700;
+  color: #7b736c !important;
+}
+
+a.nav-link.active {
+  font-weight: 900;
+  color: #7b736c !important;
+}
+
+/* table */
+
+th {
+  color: #7b736c;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5pt;
+  font-size: 0.9em;
+  background-color: #ede7e3 !important;
+  border: none;
+}
+
+.table > thead {
+  border-bottom: none !important;
+}
+
+tbody {
+  background: #ffffff5c;
+  font-size: 0.9em;
+  letter-spacing: .1pt;
+}
+
+
+/* Body Links */
+
+#quarto-content a {
+  font-weight: bold;
+} 
