@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Group and summarize</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sara Altman" />
+    <meta name="date" content="2022-07-26" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard('pre > code.r, pre > code.md', {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/xaringanExtra-banner/banner.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-banner/banner.js"></script>
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="assets/academy-theme.css" type="text/css" />
+    <link rel="stylesheet" href="assets/session05.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: title-slide
+
+
+
+# Group and summarize
+
+### Day 2, Session 1
+
+&lt;div class="title-footer"&gt;
+  &lt;img src="images/academy-logo.png"&gt;
+  &lt;div&gt; Sara Altman • July 26, 2022&lt;/div&gt;
+&lt;/div&gt;
+
+
+<script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"exclude":["title-slide"],"position":"top"}'))})</script>
+<script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"left":"<a href=\\"http://rstd.io/group_by\\">rstd.io/group_by<\/a>","exclude":["title-slide"],"position":"bottom"}'))})</script>
+
+---
+class: speaker-slide
+
+# Sara Altman
+
+&lt;!-- You can copy the image link address from your github profile to use as the src link below --&gt; 
+
+&lt;img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/18153457?v=4" width="200px"/&gt;
+
+.speaker-links[
+[<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> skaltman](https://github.com/skaltman)]
+
+---
+# Thank you
+
+These slides are adapted from a presentation created by Garrett Grolemund. Thanks 
+Garrett!
+
+---
+class: middle chapter-slide red
+
+.big-white-number[1.]
+
+# Summarize
+
+---
+background-image: url(images/session05/names.jpg)
+background-size: cover
+class: bottom, left
+
+.big-text.white[Baby names]
+
+---
+
+# `babynames`
+
+
+```r
+library(babynames)
+head(babynames)
+```
+
+```
+## # A tibble: 6 × 5
+##    year sex   name          n   prop
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
+## 1  1880 F     Mary       7065 0.0724
+## 2  1880 F     Anna       2604 0.0267
+## 3  1880 F     Emma       2003 0.0205
+## 4  1880 F     Elizabeth  1939 0.0199
+## 5  1880 F     Minnie     1746 0.0179
+## 6  1880 F     Margaret   1578 0.0162
+```
+
+???
+
+The `babynames()` dataset, from the babynames package, includes US baby name data from the SSA. Each row represents a name, sex, year combination, and provides the number of babies and proportion of babies with that name. Only names with at least five uses are included.
+
+---
+class: left, middle
+
+.medium-text[What's the total number of babies in `babynames`?]
+
+---
+class: center, middle
+
+&lt;img src="images/session05/babynames-n.png"/&gt;
+
+---
+class: center, middle
+
+&lt;img src="images/session05/babynames-n-2.png"/&gt;
+
+---
+class: center, middle
+
+&lt;img src="images/session05/babynames-n-3.png"/&gt;
+
+---
+
+# Total number of babies in `babynames`
+
+
+```r
+babynames %&gt;% 
+* summarize(______________)
+```
+
+---
+# Total number of babies in `babynames`
+
+
+```r
+babynames %&gt;% 
+* summarize(total = sum(n))
+```
+
+--
+
+
+```
+## # A tibble: 1 × 1
+##       total
+##       &lt;int&gt;
+## 1 348120517
+```
+
+???
+`summarize()` collapses a column of information into a single row. In this case, `summarize()` takes the `n` column, sums all the numbers in that column, and returns it as the column `total`
+
+---
+# Max number of babies with a name
+
+
+```r
+babynames %&gt;% 
+  summarize(max = max(n))
+```
+
+--
+
+
+```
+## # A tibble: 1 × 1
+##     max
+##   &lt;int&gt;
+## 1 99686
+```
+
+???
+We can use other functions like `max()` and `min()` to find the minimum and maximum numbers that occur in `n`. 
+
+---
+class: your-turn
+
+# Your Turn 1
+
+Complete the code to extract rows where `name == [your name]`. Then, use `summarize()`, `sum()`, and `min()` to find:
+
+1. The total number of children with your name.
+1. The first year your name appeared in the data.
+
+(If you don't find your name in the data, try one of these names, which have potentially surprising results: Khaleesi, Anakin)
+
+<div class="countdown" id="timer_62def291" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: your-turn
+
+# Your Turn 1 - Solution
+
+
+
+--
+
+
+
+---
+class: middle chapter-slide blue
+
+.big-white-number[2.]
+
+# Summary functions
+
+---
+
+# Summary functions
+
+
+
+
+&lt;code class ='r hljs remark-code'&gt;babynames %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;summarize(total = &lt;span style="background-color:#ffff7f"&gt;sum(n)&lt;/span&gt;)&lt;/code&gt;
+
+
+
+
+&lt;code class ='r hljs remark-code'&gt;babynames %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;filter(name == "Sara") %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;summarize(&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;total = &lt;span style="background-color:#ffff7f"&gt;sum(n)&lt;/span&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;first = &lt;span style="background-color:#ffff7f"&gt;min(year)&lt;/span&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;)&lt;/code&gt;
+
+???
+we've already seen a couple summary functions, including sum and min
+
+---
+
+# Summary functions
+
+.pull-left[
+### ✅ Take a vector as input
+### ✅ Return a single value as output
+]
+
+.pull-right[
+&lt;img src="images/session05/summary-functions-diagram.png"/&gt;
+]
+
+???
+a summary function is just a function that takes a vector as input and returns a 
+single value
+
+---
+
+.left-column1[
+.medium-text[Common summary functions]
+]
+
+.right-column1[
+.spaced[
+
+| Function            | Description        |
+|:--------------------|:-------------------|
+| `n()`               | # of rows          |
+| `n_distinct()`      | # of unique values |
+| `sum()`             | Sum                |
+| `mean()`            | Mean               |
+| `median()`          | Median             |
+| `min()` / `max()`   | Min/max value      |
+| `first()`           | First value        | 
+]
+]
+
+???
+there are many useful summary functions, including ones you've already seen like
+sum() and min(). this table is here for your reference, but we'll go over a couple of these functions in a second
+
+---
+background-image: url(images/session05/summary-functions.png)
+background-size: contain
+background-position: right
+
+???
+These are also all on your dplyr cheatsheet
+
+---
+# `n()`
+
+Find the number of rows 
+
+--
+
+
+```r
+babynames %&gt;% 
+* summarize(n_rows = n())
+```
+
+--
+
+
+```
+## # A tibble: 1 × 1
+##    n_rows
+##     &lt;int&gt;
+## 1 1924665
+```
+
+---
+# `n_distinct()`
+
+Find the number of distinct values in a column
+
+--
+
+
+```r
+babynames %&gt;% 
+  summarize(
+    n_rows = n(),
+*   n_names = n_distinct(name)
+  )
+```
+
+--
+
+
+```
+## # A tibble: 1 × 2
+##    n_rows n_names
+##     &lt;int&gt;   &lt;int&gt;
+## 1 1924665   97310
+```
+
+---
+# What are the most popular names?
+
+--
+
+A name is popular if a large number of children have the name when you sum across years
+
+--
+
+
+```r
+babynames %&gt;% 
+  filter(name == "Sara") %&gt;% 
+  summarize(total = sum(n))
+```
+
+```
+## # A tibble: 1 × 1
+##    total
+##    &lt;int&gt;
+## 1 424235
+```
+
+???
+now, let's go back to babynames
+
+---
+class: middle, left
+
+.medium-text[What if we want to do this for every name?]
+
+???
+We're going to need to group cases together by name. Before we tackle this task, 
+we'll look at groups with a simpler data set. 
+
+---
+class: middle chapter-slide green
+
+.big-white-number[2.]
+
+# Group by
+
+---
+background-image: url(images/session05/pollution-scene.jpg)
+background-size: cover
+class: bottom, left
+
+.big-text.white[Pollution dataset]
+---
+# `pollution`
+
+
+```r
+pollution
+```
+
+```
+## # A tibble: 6 × 4
+##   city       continent  year amount
+##   &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Dubai      Asia       2019  106. 
+## 2 Dubai      Asia       2020   91.9
+## 3 Seoul      Asia       2019   42  
+## 4 Seoul      Asia       2020   35  
+## 5 Casablanca Africa     2019   42.4
+## 6 Casablanca Africa     2020   51.3
+```
+
+???
+small dataset included in your rmarkdown file for this session
+represents air pollution data for three cities in 2019 and 2020.
+
+---
+# `pollution`
+
+
+```r
+pollution %&gt;% 
+  summarize(median = median(amount), n = n())
+```
+
+```
+## # A tibble: 1 × 2
+##   median     n
+##    &lt;dbl&gt; &lt;int&gt;
+## 1   46.8     6
+```
+???
+
+We already know how to summarize the entire data set to find, for example, the median amount of pollution across all cities and years. 
+
+---
+# `pollution`
+
+&lt;img src="images/session05/pollution-summarize-all.png"/&gt;
+
+
+???
+When we summarize, we're taking the entire data set and collapsing it into a single row. 
+But what if, instead of the median pollution for the entire data set, we wanted to find
+the average pollution for each city?
+
+---
+# Group and summarize
+
+&lt;img src="images/session05/pollution-group.png"/&gt;
+
+???
+We want to _group by_ the name of the city, and calculate the average `amount` 
+for each of these groups, generating three different numbers. 
+
+---
+# `group_by()` 
+
+.pull-left[
+
+```r
+pollution %&gt;% 
+* group_by(city)
+```
+]
+
+--
+
+.pull-right-wide[
+&lt;img src="images/session05/pollution-tibble.png"/&gt;
+]
+
+---
+# `group_by()` 
+
+.pull-left[
+
+```r
+pollution %&gt;% 
+* group_by(city)
+```
+]
+
+.pull-right-wide[
+&lt;img src="images/session05/pollution-tibble-2.png"/&gt;
+]
+
+
+???
+
+To do so, we'll first use a function called `group_by()`. When you provide `group_by()`
+with a column, it groups the data by that column. 
+
+You can see these groups in the header of the tibble. 
+
+---
+
+# `group_by()` + `summarize()`
+
+--
+
+
+```r
+pollution %&gt;% 
+  group_by(city) %&gt;% 
+  summarize(median = median(amount), n = n())
+```
+
+--
+
+&lt;img src="images/session05/pollution-group-summarize-1.png"/&gt;
+
+???
+Our next step is `summarize()`. When applied to a grouped tibble, `summarize()` will summarize each of the groups in turn. 
+
+Now, we have three rows, each summarizing the mean amount of pollution in a single city. We've collapsed the two rows
+for each city into a single row for each city. 
+
+---
+
+# `group_by()` + `summarize()`
+
+
+```r
+pollution %&gt;% 
+  group_by(city) %&gt;% 
+  summarize(median = median(amount), n = n())
+```
+
+&lt;img src="images/session05/pollution-group-summarize-2.png"/&gt;
+
+---
+class: your-turn
+
+# Your Turn 2
+
+Use `group_by()` and `summarize()` to find the maximum and mean reported amount of pollution for each continent. 
+
+<div class="countdown" id="timer_62deefff" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: your-turn
+
+# Your Turn 2 - Solution
+
+
+
+---
+
+# Group by multiple columns
+
+
+```r
+pollution %&gt;% 
+* group_by(continent, year) %&gt;%
+  summarize(median = mean(amount))
+```
+
+```
+## # A tibble: 4 × 3
+## # Groups:   continent [2]
+##   continent  year median
+##   &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Africa     2019   42.4
+## 2 Africa     2020   51.3
+## 3 Asia       2019   74.0
+## 4 Asia       2020   63.5
+```
+
+???
+We can also group by multiple columns by adding additional columns to `group_by()`. Here, we find the median amount of pollution for each continent and year combination. 
+
+---
+
+# `summarize()` removes a grouping variable
+
+
+```r
+pollution %&gt;% 
+  group_by(continent, year) %&gt;% 
+  summarize(median = mean(amount))
+```
+
+--
+
+&lt;img src="images/session05/summarize-remove-group.png" height=300px/&gt;
+
+???
+`summarize()` removes the last grouping variable. Our data is still grouped by `continent`.
+
+---
+
+# ...and it tells you what it's doing
+
+
+
+
+```r
+pollution %&gt;% 
+  group_by(continent, year) %&gt;% 
+  summarize(median = mean(amount))
+```
+
+```
+## `summarise()` has grouped output by 'continent'. You can override using the
+## `.groups` argument.
+```
+
+```
+## # A tibble: 4 × 3
+## # Groups:   continent [2]
+##   continent  year median
+##   &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Africa     2019   42.4
+## 2 Africa     2020   51.3
+## 3 Asia       2019   74.0
+## 4 Asia       2020   63.5
+```
+
+---
+
+# Some dplyr functions respect groups
+
+
+
+
+```r
+pollution %&gt;% 
+  group_by(continent, year) %&gt;% 
+  summarize(median = mean(amount)) %&gt;% 
+  filter(median == max(median))
+```
+
+--
+
+
+```
+## # A tibble: 2 × 3
+## # Groups:   continent [2]
+##   continent  year median
+##   &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Africa     2020   51.3
+## 2 Asia       2019   74.0
+```
+
+???
+After `summarize()`, the data is still grouped by `continent`, so we get __one row per continent__. 
+
+This is important to realize because some dplyr verbs work differently with grouped data. For example, what if we filtered at this point, when the data is still grouped by continent? 
+
+Instead of getting one row, which contains the maximum median value, we get one row per each continent. 
+
+But what if we just want to find the *one* city with the highest median?
+
+---
+
+# Undoing groups
+
+
+```r
+pollution %&gt;% 
+  group_by(continent, year) %&gt;% 
+  summarize(median = mean(amount)) %&gt;% 
+* ungroup() %&gt;%
+  filter(median == max(median))
+```
+
+--
+
+
+```
+## # A tibble: 1 × 3
+##   continent  year median
+##   &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Asia       2019   74.0
+```
+
+???
+Do to so, we'll need to `ungroup()` before filtering. 
+`ungroup()` removes all groups from the table. 
+
+---
+
+# Recap
+
+--
+
+✔️ `group_by()` groups data
+
+--
+
+✔️ `group_by()` + `summarize()` summarizes data by group
+
+--
+
+✔️ `summarize()` removes one layer of grouping
+
+--
+
+✔️ `ungroup()` removes all groups
+
+???
+we're going to return to the babynames data, but first lets recap what we covered
+
+---
+
+# Name popularity (again)
+
+
+```r
+babynames %&gt;% 
+  filter(name == "Sara", sex == "F") %&gt;% 
+  summarize(total = sum(n))
+```
+
+```
+## # A tibble: 1 × 1
+##    total
+##    &lt;int&gt;
+## 1 422998
+```
+
+--
+
+__"What if we want to do this for every name?"__
+
+---
+class: your-turn
+
+# Your Turn 3
+
+Complete the code with `group_by()`, `summarize()`,  and `arrange()` to find the most popular name and sex combinations. Compute popularity as the total number of children with a given name and sex. 
+
+<div class="countdown" id="timer_62def148" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: your-turn
+
+# Your Turn 3 - Solution
+
+.pull-left-wide[
+
+]
+
+--
+
+.pull-right[
+
+]
+
+---
+
+.pull-left[
+![](session05-group_by-slides_files/figure-html/names-plot-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+.medium-text[James and John are the most popular, historically]
+]
+
+---
+
+# Code for previous plot
+
+
+```r
+babynames %&gt;% 
+  group_by(name, sex) %&gt;% 
+  summarize(total = sum(n)) %&gt;% 
+  arrange(desc(total)) %&gt;% 
+  ungroup() %&gt;% 
+  slice(1:10) %&gt;% 
+  ggplot(
+    aes(
+      fct_reorder(name, total, .desc = TRUE), 
+      total, 
+      fill = sex
+    )
+  ) +
+  geom_col() +
+  labs(x = "Name", y = "Total")
+```
+
+---
+
+# Group by the variables from your test case
+
+
+```r
+babynames %&gt;% 
+* filter(name == "Sara", sex == "F") %&gt;%
+  summarize(total = sum(n))
+```
+
+--
+
+
+```r
+babynames %&gt;% 
+* group_by(name, sex) %&gt;%
+  summarize(total = sum(n))
+```
+
+---
+class: your-turn
+
+# Your Turn 4
+
+Use `group_by()` to calculate the total number of children born for every year. 
+
+Plot the results as a line graph: total vs. year. 
+
+<div class="countdown" id="timer_62def1cd" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: your-turn
+
+# Your Turn 4 - Solution
+
+.pull-left[
+
+]
+
+--
+
+.pull-right[
+
+]
+
+
+---
+class: your-turn
+
+# Your Turn 4 - Solution
+
+.pull-left[
+
+]
+
+--
+
+.pull-right[
+
+]
+
+
+---
+background-image: url(images/session05/books.jpg)
+background-size: cover
+
+# Mini Project - NYT bestsellers
+
+Open `books.Rmd` in Academy. 
+ 
+<div class="countdown" id="timer_62deefe3" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">25</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
