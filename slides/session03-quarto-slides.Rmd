@@ -399,11 +399,11 @@ Numbered list
 # Images
 
 ```markdown
-![](images/session03-quarto/rmd-hex.png)
+![](images/quarto.png)
 ```
 
 <figure>
-<img src="images/session03-quarto/rmd-hex.png" width="25%"/>
+<img src="https://raw.githubusercontent.com/rstudio/hex-stickers/main/PNG/quarto.png" width="25%"/>
 </figure>
 
 ---
@@ -411,7 +411,7 @@ Numbered list
 
 
 ```markdown
-![Hex logo](images/session03-quarto/rmd-hex.png)
+![Hex logo](images/quarto.png)
 ```
 
 ```{css, echo=FALSE}
@@ -421,7 +421,7 @@ figure {
 ```
 
 <figure>
-<img src="images/session03-quarto/rmd-hex.png" width="25%"/>
+<img src="https://raw.githubusercontent.com/rstudio/hex-stickers/main/PNG/quarto.png" width="25%"/>
 <figcaption>Hex logo</figcaption>
 </figure>
 
@@ -429,11 +429,11 @@ figure {
 # Images
 
 ```markdown
-![Hex logo](images/session03-quarto/rmd-hex.png){width=50%}
+![Hex logo](images/quarto.png){width=50%}
 ```
 
 <figure>
-<img src="images/session03-quarto/rmd-hex.png" width="15%"/>
+<img src="https://raw.githubusercontent.com/rstudio/hex-stickers/main/PNG/quarto.png" width="15%"/>
 <figcaption>Hex logo</figcaption>
 </figure>
 
