@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Quarto</title>
+    <meta charset="utf-8" />
+    <meta name="date" content="2023-09-17" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard('pre > code.r, pre > code.md', {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/xaringanExtra-banner/banner.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-banner/banner.js"></script>
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="assets/academy-theme.css" type="text/css" />
+    <link rel="stylesheet" href="assets/session03.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: title-slide
+
+
+
+# Quarto
+
+### Day 1, Session 3
+
+&lt;div class="title-footer"&gt;
+  &lt;img src="images/academy-logo.png"&gt;
+  &lt;div&gt; September 17, 2023&lt;/div&gt;
+&lt;/div&gt;
+
+
+<script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"exclude":["title-slide"],"position":"top"}'))})</script>
+<script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"left":"<a href=\\"http://rstd.io/rmd\\">rstd.io/rmd<\/a>","exclude":["title-slide"],"position":"bottom"}'))})</script>
+
+---
+class: middle
+
+# Agenda
+
+1. What is Quarto?
+1. Why use Quarto?
+1. The 3 essential ingredients
+  - Text
+  - Code
+  - Metadata
+
+---
+class: middle chapter-slide red
+
+.big-white-number[1.]
+
+# What is Quarto?
+
+---
+# What is Quarto?
+
+✍️ An authoring framework for data science
+
+--
+
+💾 A file format (`.qmd`)
+
+--
+
+📦 An [R package](https://quarto-dev.github.io/quarto-r/) (quarto)
+
+--
+
+🛠 A tool for integrating prose, code, and output
+
+--
+
+✨ Magic
+
+---
+# What's in a `.qmd`?
+
+.pull-left[
+
+📃 Text and headers
+
+💻 R code
+
+📊 Output (e.g. plots, tables, model results)
+
+🖼 Images
+
+... and more!
+]
+
+.pull-right[
+&lt;img src="images/session03-quarto/doc-make.jpg" width="100%" /&gt;
+]
+
+---
+
+# Does this look familiar?
+
+&lt;img src="images/session03-quarto/academy-rmd.png" width="80%" /&gt;
+
+---
+class: middle chapter-slide blue
+
+.big-white-number[2.]
+
+# Why use Quarto? 
+
+---
+background-image: url(images/session03-quarto/replication-crisis.png
+background-position: center;
+background-size: 80% 
+# Replication crisis
+
+???
+
+* These are just a few headlines from the past or so that highlight an ongoing problem across many fields of science -- that many published studies fail to replicate.
+
+* I won't go into details here, but suffice it to say, to solve the reproducibility crisis, 
+we need both cultural changes in how science is conducted AND technological solutions. 
+
+* Quarto gives us just that -- a technological solution for reproducibility.
+
+---
+background-image: url(images/session03-quarto/reproducibility.gif)
+background-position: center;
+background-size: 100% 
+
+???
+
+* To put this in perspective, I'm going to borrow one of my favorite historical analogies; 
+we can think of Quarto like the advent of the printing press in the 15th century.
+
+* The printing press made it possible to reproduce any book AND, more importantly, make that process AUTOMATABLE. This revolutionary technology allowed the dissemination of information to the masses,
+which had a wide-ranging impact on society at large
+
+* Quarto does something similar for data science today -- you can share your 
+Quarto document with someone else, and that person will have everything they 
+need to reproduce your analysis AUTOMATICALLY, with the click of a button.
+
+* Because this process can be entirely automated, this has huge potential in a 
+business setting to increase the efficiency of data science workflows, which in turn can lead
+to better business outcomes
+
+---
+# Beautiful data products
+
+&lt;iframe src="https://rmarkdown.rstudio.com/gallery.html" width="100%" height="400px" data-external="1"&gt;&lt;/iframe&gt;
+
+
+---
+class: middle chapter-slide green
+
+.big-white-number[3.]
+
+# The 3 essential ingredients
+
+---
+# The 3 essential ingredients
+
+.pull-left[
+## 1. Text
+
+## 2. Code
+
+## 3. Metadata
+]
+
+.pull-right[
+&lt;img src="images/session03-quarto/rmd-anatomy.jpeg" width="90%" /&gt;
+]
+
+---
+# The 3 essential &lt;span style="color:red"&gt;frameworks&lt;/span&gt;
+
+.pull-left[
+## 1. Text &amp;rarr; &lt;span style="color:red"&gt;Markdown&lt;/span&gt;
+
+## 2. Code &amp;rarr; &lt;span style="color:red"&gt;knitr&lt;/span&gt;
+
+## 3. Metadata &amp;rarr; &lt;span style="color:red"&gt;YAML&lt;/span&gt;
+]
+
+.pull-right[
+&lt;img src="images/session03-quarto/rmd-anatomy.jpeg" width="90%" /&gt;
+]
+
+???
+
+How does this all come together? Rendering!
+
+---
+# Render
+
+&lt;br&gt;
+
+.center[
+&lt;img src="images/session03-quarto/knit_explained.png" width="100%" /&gt;
+]
+
+
+???
+When you render the document... 
+
+1. Quarto sends the .qmd file to knitr, runs all the code and embeds results and text into an .md file.
+
+2. Pandoc then converts the .md file into your chosen output format, which you specify using YAML metadata.
+
+---
+# Render
+
+&lt;video width="1190" height="475" controls&gt;
+    &lt;source src="images/session03-quarto/knit_demo.mp4" type="video/mp4"&gt; &lt;/video&gt;
+
+---
+# Roadmap
+
+&lt;br&gt;
+
+.center[
+&lt;img src="images/session03-quarto/build-report.png" width="100%" /&gt;
+]
+
+---
+class: inverse middle center
+
+# Text
+## Markdown
+
+---
+
+# Text
+
+
+.pull-left[
+
+What you type in `.qmd` 👇 
+
+***
+
+````markdown
+Regular text
+
+
+*italics*
+
+
+**bold**  
+
+
+`code`  
+````
+]
+
+.pull-right[
+
+Rendered output 👇 
+
+***
+
+Regular text
+
+*italics*
+
+**bold**  
+
+`code`
+]
+
+???
+I will go through this information quickly. Don't worry about absorbing all of this detail now. Have your cheatsheet handy for the exercises.
+
+---
+
+# Headers
+
+.pull-left[
+````markdown
+# Header 1
+
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+##### Header 5
+
+###### Header 6
+````
+]
+
+.pull-right[
+# Header 1
+
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+##### Header 5
+
+###### Header 6
+]
+
+---
+# Lists
+
+.panelset[
+.panel[.panel-name[Bulleted]
+
+.pull-left[
+
+````markdown
+Bulleted list
+
+- bullet 1
+- bullet 2
+````
+
+]
+
+.pull-right[
+
+Bulleted list
+
+- bullet 1
+- bullet 2
+]
+]
+
+.panel[.panel-name[Numbered]
+
+.pull-left[
+
+```markdown
+Numbered list
+
+1. item 1
+1. item 2
+```
+
+]
+
+.pull-right[
+Numbered list
+
+1. item 1
+2. item 2
+
+]
+]
+]
+
+---
+# Images
+
+```markdown
+![](images/session03-quarto/rmd-hex.png)
+```
+
+&lt;figure&gt;
+&lt;img src="images/session03-quarto/rmd-hex.png" width="25%"/&gt;
+&lt;/figure&gt;
+
+---
+# Images
+
+
+```markdown
+![Hex logo](images/session03-quarto/rmd-hex.png)
+```
+
+&lt;style type="text/css"&gt;
+figure {
+  font-size: 30px;
+}
+&lt;/style&gt;
+
+&lt;figure&gt;
+&lt;img src="images/session03-quarto/rmd-hex.png" width="25%"/&gt;
+&lt;figcaption&gt;Hex logo&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+---
+# Images
+
+```markdown
+![Hex logo](images/session03-quarto/rmd-hex.png){width=50%}
+```
+
+&lt;figure&gt;
+&lt;img src="images/session03-quarto/rmd-hex.png" width="15%"/&gt;
+&lt;figcaption&gt;Hex logo&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+---
+
+# Links
+
+```markdown
+Read more about Quarto [here](https://quarto.org/).
+```
+
+Read more about Quarto [here](https://quarto.org/).
+
+---
+# Cheatsheet
+
+&lt;img src="images/session03-quarto/cheatsheet-markdown.png" width="55%" /&gt;
+
+---
+class: your-turn
+
+# Your Turn 1 (with a partner!)
+
+.panelset[
+.panel[.panel-name[Overview]
+
+1. 📁 Open `your_turn_01.qmd`.
+
+1. 🔍 Inspect the contents of &lt;a href="https://rsacdn.link/milestones/conf/r-intro/conf-sessions/session03-quarto/data/your_turn_01_solution.html" rel="noopener noreferrer" target="_blank"&gt;this HTML output&lt;/a&gt;.
+
+1. 💻 Add **markdown formatting** to `your_turn_01.qmd` to re-create the HTML output.
+
+1.  Render `your_turn_01.qmd` to check your work.
+
+]
+
+.panel[.panel-name[Steps]
+
+1. Add Level-1 and Level-2 headers
+
+1. Add a bulleted list
+
+1. Add a [hyperlink](https://www.americangemsociety.org/4cs-of-diamonds/)
+
+1. Add an image (saved in the `images/` directory)
+
+1. Add *italicized* and **bolded** text
+]
+]
+
+<div class="countdown" id="timer_94efc710" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: inverse middle center
+
+# Code
+## knitr
+
+---
+# Add a code chunk
+
+
+.panelset[
+.panel[.panel-name[Option 1]
+![](images/session03-quarto/rmarkdown-type-backticks.gif)&lt;!-- --&gt;
+]
+
+.panel[.panel-name[Option 2]
+&lt;img src="images/session03-quarto/rmarkdown-insert.gif" width="70%" /&gt;
+]
+
+.panel[.panel-name[Option 3]
+&lt;img src="images/session03-quarto/code-chunk-shortcuts.png" width="70%" /&gt;
+]
+]
+
+---
+# Chunk options
+
+By default, code and output are both displayed.
+
+.pull-left[
+
+````
+```{r}
+ggplot(mpg) + 
+  geom_point(aes(displ, hwy))
+```
+````
+]
+
+.pull-right[
+
+```r
+ggplot(mpg) + 
+  geom_point(aes(displ, hwy))
+```
+
+&lt;img src="session03-quarto-slides_files/figure-html/unnamed-chunk-14-1.png" width="50%" /&gt;
+]
+
+---
+# `echo`
+
+`echo = FALSE` hides the code. Especially useful for plots!
+
+.pull-left[
+
+````
+```{r echo=FALSE}
+ggplot(mpg) + 
+  geom_point(aes(displ, hwy))
+```
+````
+]
+
+.pull-right[
+&lt;img src="session03-quarto-slides_files/figure-html/unnamed-chunk-15-1.png" width="50%" /&gt;
+]
+
+---
+# `eval`
+
+`eval = FALSE` prevents the code from being run.
+
+.pull-left[
+
+````
+```{r eval=FALSE}
+ggplot(mpg) + 
+  geom_point(aes(displ, hwy))
+```
+````
+]
+
+.pull-right[
+
+```r
+ggplot(mpg) + 
+  geom_point(aes(displ, hwy))
+```
+]
+
+---
+# `include`
+
+`include = FALSE` runs the code, but prevents both the code and the output from appearing. 
+
+.pull-left[
+
+````
+```{r include=FALSE}
+ggplot(mpg) + 
+  geom_point(aes(displ, hwy))
+```
+````
+]
+
+.pull-right[
+[no code or output shown]
+]
+
+---
+# A global `setup` chunk 🌍
+
+.pull-left[
+
+````markdown
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE
+)
+```
+````
+
+]
+
+.pull-right[
+
++ A special chunk label: `setup`
+
++ Typically the first chunk
+
++ All following chunks will use these options
+
++ **Tip**: set `include=FALSE`
+
++ You can (and should) use individual chunk options too
+
+]
+
+---
+# Chunk labels
+
+.pull-left[
+
+````
+```{r peek}
+glimpse(mpg)
+```
+````
+
+* Place label between curly braces &lt;br&gt; `{r peek}`
+
+* Add chunk options after comma &lt;br&gt; `{r peek, echo=FALSE}`
+
+]
+
+--
+
+.pull-right[
+
+````
+```{r peek}
+head(mpg)
+```
+````
+
+````
+Error in parse_block(g[-1], g[1], params.src) : 
+  duplicate label 'peek'
+Calls: &lt;Anonymous&gt; ... process_file -&gt; split_file -&gt; lapply -&gt; FUN -&gt; parse_block
+Execution halted
+````
+
+⚠️ Careful! No duplicate chunk labels
+
+]
+
+???
+
+how can we make it easier on ourselves to explore the code in here?
+
+show how to add chunk labels and view in IDE interactively
+
+---
+# Chunk labels 
+
+💡 Think "kebabs, not snakes"
+
+.pull-left[
+
+.center[
+
+**Good**
+
+`my-plot`
+
+`myplot`
+
+`myplot1`
+
+`MY-PLOT`
+
+]
+
+]
+
+.pull-right[
+
+.center[
+
+**Bad**
+
+`my_plot`
+
+`my plot`
+
+...everything else!
+
+]
+]
+
+---
+# Chunk labels
+
+Easier to organize and navigate your document
+
+&lt;img src="images/session03-quarto/chunk-labels-nav.png" width="55%" /&gt;
+
+---
+# Cheatsheet
+
+&lt;img src="images/session03-quarto/cheatsheet-knitr.png" width="100%" /&gt;
+
+---
+class: your-turn
+
+# Your Turn 2
+
+.panelset[
+.panel[.panel-name[Overview]
+
+1. 📁 Open `your_turn_02.qmd`.
+
+1. 🔍 Inspect the contents of &lt;a href="https://rsacdn.link/milestones/conf/r-intro/conf-sessions/session03-quarto/data/your_turn_02_solution.html" rel="noopener noreferrer" target="_blank"&gt;this HTML output&lt;/a&gt;.
+
+1. 💻 Add **chunk options** to `your_turn_02.qmd` to re-create the HTML output.
+
+1.  Render `your_turn_02.qmd` to check your work.
+
+]
+
+.panel[.panel-name[Steps]
+
+1. Hide the code and output of the setup chunk
+
+1. Hide the code for all plots
+
+1. Bonus: Add descriptive labels to your code chunks
+
+]
+]
+
+<div class="countdown" id="timer_95100629" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: inverse middle center
+
+# Metadata
+## YAML
+
+---
+# YAML
+
+[_"YAML Ain't Markup Language"_](https://en.wikipedia.org/wiki/YAML#History_and_name)
+
+A section of `key: value` pairs separated by dashes &lt;code&gt;---&lt;/code&gt;
+
+```yaml
+---
+key: value
+---
+```
+
+---
+# YAML
+
+.pull-left[
+
+```yaml
+---
+author: Brendan Cullen
+title: Diamonds Exploration
+output: html_document
+---
+```
+]
+
+--
+
+.pull-right[
+
+```yaml
+---
+author: Brendan Cullen
+title: Diamonds Exploration
+output:
+  html_document:
+    toc: true
+---
+```
+
+.center[
+Add a table of contents
+]
+]
+
+---
+# YAML
+
+.pull-left[
+
+```yaml
+---
+author: Brendan Cullen
+title: Diamonds Exploration
+output: html_document
+---
+```
+]
+
+.pull-right[
+
+```yaml
+---
+author: Brendan Cullen
+title: Diamonds Exploration
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+```
+
+.center[
+Add a table of contents
+
+Make it a **floating** table of contents
+]
+]
+
+---
+# YAML - indentation matters!
+
+--
+
+.pull-left[
+
+````
+---
+author: Brendan Cullen
+title: Diamonds Exploration
+output:
+html_document:
+toc: true
+toc_float: true
+---
+````
+.center[
+❌
+]
+
+]
+
+--
+
+.pull-right[
+
+```yaml
+---
+author: Brendan Cullen
+title: Diamonds Exploration
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+```
+
+.center[
+✅
+
+Indent **format** 2 characters&lt;br&gt; Indent **options** 4 characters
+]
+]
+
+---
+# Built-in output formats
+
+.pull-left[
+&lt;img src="images/session03-quarto/output-format-cheatsheet.png" width="2936" /&gt;
+]
+
+.pull-right[
+&lt;img src="images/session03-quarto/output-formats.png" width="70%" /&gt;
+]
+
+---
+# Extension output formats
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/flexdashboard.png" width="32%" /&gt;&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/bookdown.png" width="32%" /&gt;&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/xaringan.png" width="32%" /&gt;
+
+---
+# Cheatsheet
+
+&lt;img src="images/session03-quarto/cheatsheet-yaml.png" width="100%" /&gt;
+
+---
+class: your-turn
+
+# Your Turn 3
+
+.panelset[
+.panel[.panel-name[Overview]
+
+1. 📁 Open `your_turn_03.qmd`.
+
+1. 🔍 Inspect the contents of &lt;a href="https://rsacdn.link/milestones/conf/r-intro/conf-sessions/session03-quarto/data/your_turn_03_solution.html" rel="noopener noreferrer" target="_blank"&gt;this HTML output&lt;/a&gt;.
+
+1. 💻 Add **YAML metadata** to `your_turn_03.qmd` to re-create the HTML output.
+
+1.  Render `your_turn_03.qmd` to check your work.
+
+]
+
+.panel[.panel-name[Steps]
+
+1. Add a floating table of contents
+
+1. Apply the `flatly` theme to your document
+
+1. Add a "Code Download" button
+
+1. Print the `diamonds` dataset as a paged table
+
+]
+]
+
+<div class="countdown" id="timer_f2c35db5" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+
+---
+class: inverse
+# Take-aways
+
+--
+
+✅ **Document your document:** use YAML to set up meaningful metadata
+
+--
+
+✅ **Style your document:** use YAML to add options to your chosen output format
+
+--
+
+✅ **Style your text:** use markdown for **bold**, *italics*, `code`, <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z"/></svg> bullets and <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M24 56c0-13.3 10.7-24 24-24H80c13.3 0 24 10.7 24 24V176h16c13.3 0 24 10.7 24 24s-10.7 24-24 24H40c-13.3 0-24-10.7-24-24s10.7-24 24-24H56V80H48C34.7 80 24 69.3 24 56zM86.7 341.2c-6.5-7.4-18.3-6.9-24 1.2L51.5 357.9c-7.7 10.8-22.7 13.3-33.5 5.6s-13.3-22.7-5.6-33.5l11.1-15.6c23.7-33.2 72.3-35.6 99.2-4.9c21.3 24.4 20.8 60.9-1.1 84.7L86.8 432H120c13.3 0 24 10.7 24 24s-10.7 24-24 24H32c-9.5 0-18.2-5.6-22-14.4s-2.1-18.9 4.3-25.9l72-78c5.3-5.8 5.4-14.6 .3-20.5zM224 64H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H224c-17.7 0-32-14.3-32-32s14.3-32 32-32zm0 160H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H224c-17.7 0-32-14.3-32-32s14.3-32 32-32zm0 160H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H224c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg> lists
+
+--
+
+✅ **Style your output:** use chunk options (`echo`, `eval`, etc.)
+
+--
+
+✅ **Organize your text:** use markdown headers with `#`
+
+--
+
+✅ **Organize your code:** use chunk labels
+
+--
+
+✅ **Preview your work:** render early, render often
+
+---
+class: inverse middle center
+
+# Questions?
+
+---
+class: your-turn
+
+# Mini Project
+
+.panelset[
+.panel[.panel-name[Overview]
+
+**Create a Quarto report that summarizes your analysis of the `wine_ratings` dataset.** 
+
+1. Create a new Quarto file. Give it a title and save it as `wines_report.qmd`.
+
+2. Use markdown formatting, knitr chunk options and YAML metadata to polish your report.
+]
+
+.panel[.panel-name[New file]
+
+_File &gt; New File &gt; Quarto_
+
+&lt;img src="images/session03-quarto/open.gif" width="50%" /&gt;
+
+]
+]
+ 
+<div class="countdown" id="timer_3490c981" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+???
+
+* If you have already started a separate Quarto file for exploring the 
+`wine_ratings` dataset, feel free to use that file to build your report.
+
+* We'll leave some time at the end for you to share your report with your group.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLanguage": ["r", "yaml", "markdown"],
+"highlightLines": false,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
