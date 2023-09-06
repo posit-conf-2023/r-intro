@@ -2,9 +2,6 @@
 title: "Quarto"
 subtitle: "Day 1, Session 3"
 date: "September 17, 2023"
-shortlink:
-  url: http://rstd.io/rmd
-  text: rstd.io/rmd
 output:
   xaringan::moon_reader:
     css: ["default", "assets/academy-theme.css", "assets/session03.css"]
@@ -91,6 +88,10 @@ class: middle chapter-slide red
 
 --
 
+`r fontawesome::fa("terminal")` A [command line interface](https://github.com/quarto-dev/quarto-cli)
+
+--
+
 `r emo::ji("package")` An [R package](https://quarto-dev.github.io/quarto-r/) (quarto)
 
 --
@@ -108,7 +109,7 @@ class: middle chapter-slide red
 
 `r emo::ji("page_with_curl")` Text and headers
 
-`r emo::ji("computer")` R code
+`r emo::ji("computer")` Code (R, Python, and more)
 
 `r emo::ji("bar_chart")` Output (e.g. plots, tables, model results)
 
@@ -122,14 +123,6 @@ class: middle chapter-slide red
 knitr::include_graphics("images/session03-quarto/doc-make.jpg")
 ```
 ]
-
----
-
-# Does this look familiar?
-
-```{r echo=FALSE, out.width="80%"}
-knitr::include_graphics("images/session03-quarto/academy-rmd.png")
-```
 
 ---
 class: middle chapter-slide blue
@@ -178,8 +171,13 @@ to better business outcomes
 # Beautiful data products
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_url("https://rmarkdown.rstudio.com/gallery.html")
+knitr::include_url("https://quarto.org/docs/gallery/")
 ```
+
+https://quarto.org/docs/gallery/
+
+---
+# Multilingual data science 
 
 
 ---
@@ -201,8 +199,8 @@ class: middle chapter-slide green
 ]
 
 .pull-right[
-```{r echo=FALSE, out.width="90%"}
-knitr::include_graphics("images/session03-quarto/rmd-anatomy.jpeg")
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/session03-quarto/qmd-anatomy.png")
 ```
 ]
 
@@ -218,8 +216,8 @@ knitr::include_graphics("images/session03-quarto/rmd-anatomy.jpeg")
 ]
 
 .pull-right[
-```{r echo=FALSE, out.width="90%"}
-knitr::include_graphics("images/session03-quarto/rmd-anatomy.jpeg")
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/session03-quarto/qmd-anatomy.png")
 ```
 ]
 
@@ -234,7 +232,7 @@ How does this all come together? Rendering!
 
 .center[
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("images/session03-quarto/knit_explained.png")
+knitr::include_graphics("images/session03-quarto/rstudio-qmd-how-it-works.png")
 ```
 ]
 
@@ -250,7 +248,7 @@ When you render the document...
 # Render
 
 <video width="1190" height="475" controls>
-    <source src="images/session03-quarto/knit_demo.mp4" type="video/mp4"> </video>
+    <source src="images/session03-quarto/render_demo.mp4" type="video/mp4"> </video>
 
 ---
 # Roadmap
@@ -290,7 +288,10 @@ Regular text
 **bold**  
 
 
-`code`  
+`verbatim code` 
+
+
+> Blockquote
 ````
 ]
 
@@ -306,7 +307,9 @@ Regular text
 
 **bold**  
 
-`code`
+`verbatim code`
+
+> Blockquote
 ]
 
 ???
@@ -350,46 +353,41 @@ I will go through this information quickly. Don't worry about absorbing all of t
 # Lists
 
 .panelset[
-.panel[.panel-name[Bulleted]
+.panel[.panel-name[Unordered]
 
 .pull-left[
 
 ````markdown
-Bulleted list
-
-- bullet 1
-- bullet 2
+* item 1
+    + sub-item 1
+    + sub-item 2
 ````
 
 ]
 
 .pull-right[
-
-Bulleted list
-
-- bullet 1
-- bullet 2
+* item 1
+    + sub-item 1
+    + sub-item 2
 ]
 ]
 
-.panel[.panel-name[Numbered]
+.panel[.panel-name[Ordered]
 
 .pull-left[
 
 ```markdown
-Numbered list
-
 1. item 1
-1. item 2
+2. item 2
+    i) sub-item 1
 ```
 
 ]
 
 .pull-right[
-Numbered list
-
-1. item 1
-2. item 2
+1.  item 1
+2.  item 2  
+    i)  sub-item 1
 
 ]
 ]
@@ -448,11 +446,21 @@ Read more about Quarto [here](https://quarto.org/).
 Read more about Quarto [here](https://quarto.org/).
 
 ---
-# Cheatsheet
+# Callouts
 
-```{r echo=FALSE, out.width="55%"}
-knitr::include_graphics("images/session03-quarto/cheatsheet-markdown.png")
+```markdown
+::: {.callout-note}
+A special note about the data.
+:::
 ```
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/session03-quarto/callout.png")
+```
+
+
+`r emo::ji("information")` Five types of callouts, including:
+`note`, `warning`, `important`, `tip`, and `caution`.
 
 ---
 class: your-turn
@@ -487,7 +495,7 @@ class: your-turn
 ]
 
 ```{r echo = FALSE}
-countdown::countdown(minutes = 4)
+countdown::countdown(minutes = 5)
 ```
 
 ---
@@ -508,8 +516,8 @@ knitr::include_graphics("images/session03-quarto/rmarkdown-type-backticks.gif")
 ]
 
 .panel[.panel-name[Option 2]
-```{r echo=FALSE, out.width="70%"}
-knitr::include_graphics("images/session03-quarto/rmarkdown-insert.gif")
+```{r echo=FALSE, out.width="60%"}
+knitr::include_graphics("images/session03-quarto/insert-chunk.gif")
 ```
 ]
 
@@ -527,128 +535,195 @@ By default, code and output are both displayed.
 
 .pull-left[
 
+**Input**
+
 ````
 ```{r}`r ''`
-ggplot(mpg) + 
-  geom_point(aes(displ, hwy))
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point()
 ```
 ````
 ]
 
 .pull-right[
-```{r out.width = "50%"}
-ggplot(mpg) + 
-  geom_point(aes(displ, hwy))
+
+**Output**
+
+```{r out.width = "35%"}
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point()
 ```
+]
+
+---
+# Chunk options
+
+Chunk output can be customized with **options**, which are specified using the "hashpipe":
+
+.center[
+
+.big-text[`#|`] 
+
 ]
 
 ---
 # `echo`
 
-`echo = FALSE` hides the code. Especially useful for plots!
+`echo: FALSE` hides the code. Especially useful for plots!
 
 .pull-left[
 
+**Input**
+
 ````
-```{r echo=FALSE}`r ''`
-ggplot(mpg) + 
-  geom_point(aes(displ, hwy))
+```{r}`r ''`
+#| echo: false
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point()
 ```
 ````
 ]
 
 .pull-right[
-```{r echo=FALSE, out.width = "50%"}
-ggplot(mpg) + 
-  geom_point(aes(displ, hwy))
+
+**Output**
+
+```{r out.width = "50%"}
+#| echo: false
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point()
 ```
 ]
 
 ---
 # `eval`
 
-`eval = FALSE` prevents the code from being run.
+`eval: FALSE` prevents the code from being run.
 
 .pull-left[
 
+**Input**
+
 ````
-```{r eval=FALSE}`r ''`
-ggplot(mpg) + 
-  geom_point(aes(displ, hwy))
+```{r}`r ''`
+#| eval: false
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point()
 ```
 ````
 ]
 
 .pull-right[
-```{r eval=FALSE, out.width = "50%"}
-ggplot(mpg) + 
-  geom_point(aes(displ, hwy))
+
+**Output**
+
+```{r out.width = "50%"}
+#| eval: false
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point()
 ```
 ]
 
 ---
 # `include`
 
-`include = FALSE` runs the code, but prevents both the code and the output from appearing. 
+`include: FALSE` runs the code, but prevents both the code and the output from appearing. Especially useful for setup chunks.
 
 .pull-left[
 
+**Input**
+
 ````
-```{r include=FALSE}`r ''`
-ggplot(mpg) + 
-  geom_point(aes(displ, hwy))
+```{r}`r ''`
+#| include: false
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point()
 ```
 ````
 ]
 
 .pull-right[
+
+**Output**
+
 [no code or output shown]
 ]
 
 ---
-# A global `setup` chunk `r emo::ji("earth_africa")`
+# `warning`
+
+Some code will return a warning message along with the output.
 
 .pull-left[
 
-````markdown
-```{r setup, include = FALSE}`r ''`
-knitr::opts_chunk$set(
-  echo = FALSE,
-  warning = FALSE
-)
-```
+**Input**
+
 ````
 
+```{r}`r ''`
+#| echo: false
+ggplot(airquality, aes(Temp, Ozone)) + 
+    geom_point()
+```
+````
 ]
 
 .pull-right[
 
-+ A special chunk label: `setup`
+**Output**
 
-+ Typically the first chunk
+```{r out.width = "40%"}
+#| echo: false
+ggplot(airquality, aes(Temp, Ozone)) + 
+    geom_point()
+```
+]
 
-+ All following chunks will use these options
+---
+# `warning`
 
-+ **Tip**: set `include=FALSE`
+`warning: false` will suppress warning messages in the output.
 
-+ You can (and should) use individual chunk options too
+.pull-left[
 
+**Input**
+
+````
+
+```{r}`r ''`
+#| echo: false
+#| warning: false
+ggplot(airquality, aes(Temp, Ozone)) + 
+    geom_point()
+```
+````
+]
+
+.pull-right[
+
+**Output**
+
+```{r out.width = "40%"}
+#| echo: false
+#| warning: false
+ggplot(airquality, aes(Temp, Ozone)) + 
+    geom_point()
+```
 ]
 
 ---
 # Chunk labels
 
+Use `label` to give chunks a descriptive summary.
+
 .pull-left[
 
 ````
-```{r peek}`r ''`
+```{r}`r ''`
+#| label: peek
 glimpse(mpg)
 ```
 ````
-
-* Place label between curly braces <br> `{r peek}`
-
-* Add chunk options after comma <br> `{r peek, echo=FALSE}`
 
 ]
 
@@ -657,7 +732,8 @@ glimpse(mpg)
 .pull-right[
 
 ````
-```{r peek}`r ''`
+```{r}`r ''`
+#| label: peek
 head(mpg)
 ```
 ````
@@ -727,13 +803,6 @@ knitr::include_graphics("images/session03-quarto/chunk-labels-nav.png")
 ```
 
 ---
-# Cheatsheet
-
-```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("images/session03-quarto/cheatsheet-knitr.png")
-```
-
----
 class: your-turn
 
 # Your Turn 2
@@ -763,7 +832,7 @@ class: your-turn
 ]
 
 ```{r echo = FALSE}
-countdown::countdown(minutes = 4)
+countdown::countdown(minutes = 5)
 ```
 
 ---
@@ -790,31 +859,30 @@ key: value
 
 .pull-left[
 
-```{r echo = FALSE}
-yml_empty() %>% 
- yml_author("Brendan Cullen") %>% 
- yml_title("Diamonds Exploration") %>% 
- yml_output(html_document()) %>% 
- asis_yaml_output()
-```
+````
+---
+title: Diamonds Exploration
+author: Brendan Cullen
+format: html
+---
+````
 ]
 
 --
 
 .pull-right[
-
-```{r echo = FALSE}
-yml_empty() %>%
- yml_author("Brendan Cullen") %>% 
- yml_title("Diamonds Exploration") %>% 
-  yml_output(html_document(
-    toc = TRUE
-  )) %>%
-  asis_yaml_output()
-```
+````
+---
+title: Diamonds Exploration
+author: Brendan Cullen
+format:
+  html:
+    toc: true
+---
+````
 
 .center[
-Add a table of contents
+Add a **table of contents**
 ]
 ]
 
@@ -823,32 +891,35 @@ Add a table of contents
 
 .pull-left[
 
-```{r echo = FALSE}
-yml_empty() %>% 
- yml_author("Brendan Cullen") %>% 
- yml_title("Diamonds Exploration") %>% 
- yml_output(html_document()) %>% 
- asis_yaml_output()
-```
+````
+---
+title: Diamonds Exploration
+author: Brendan Cullen
+format: html
+---
+````
 ]
+
 
 .pull-right[
 
-```{r echo = FALSE}
-yml_empty() %>%
- yml_author("Brendan Cullen") %>% 
- yml_title("Diamonds Exploration") %>% 
-  yml_output(html_document(
-    toc = TRUE,
-    toc_float = TRUE
-  )) %>%
-  asis_yaml_output()
-```
+````
+---
+title: Diamonds Exploration
+author: Brendan Cullen
+format:
+  html:
+    toc: true
+    toc-depth: 3
+---
+````
 
 .center[
+
 Add a table of contents
 
-Make it a **floating** table of contents
+...with **3 levels**
+
 ]
 ]
 
@@ -858,15 +929,14 @@ Make it a **floating** table of contents
 --
 
 .pull-left[
-
 ````
 ---
-author: Brendan Cullen
 title: Diamonds Exploration
-output:
-html_document:
+author: Brendan Cullen
+format:
+html:
 toc: true
-toc_float: true
+toc-depth: 3
 ---
 ````
 .center[
@@ -879,16 +949,16 @@ toc_float: true
 
 .pull-right[
 
-```{r echo = FALSE}
-yml_empty() %>%
- yml_author("Brendan Cullen") %>% 
- yml_title("Diamonds Exploration") %>% 
-  yml_output(html_document(
-    toc = TRUE,
-    toc_float = TRUE
-  )) %>%
-  asis_yaml_output()
-```
+````
+---
+title: Diamonds Exploration
+author: Brendan Cullen
+format:
+  html:
+    toc: true
+    toc-depth: 3
+---
+````
 
 .center[
 `r emo::ji("white_check_mark")`
@@ -898,37 +968,13 @@ Indent **format** 2 characters<br> Indent **options** 4 characters
 ]
 
 ---
-# Built-in output formats
-
-.pull-left[
-```{r echo=FALSE}
-knitr::include_graphics("images/session03-quarto/output-format-cheatsheet.png")
-```
-]
-
-.pull-right[
-```{r echo=FALSE, out.width = "70%"}
-knitr::include_graphics("images/session03-quarto/output-formats.png")
-```
-]
-
----
-# Extension output formats
-
-```{r echo=FALSE, out.width="32%"}
-knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/flexdashboard.png")
-
-knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/bookdown.png")
-
-knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/xaringan.png")
-```
-
----
-# Cheatsheet
+# Output formats
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("images/session03-quarto/cheatsheet-yaml.png")
+knitr::include_url("https://quarto.org/docs/gallery/")
 ```
+
+https://quarto.org/docs/gallery/
 
 ---
 class: your-turn
@@ -950,11 +996,13 @@ class: your-turn
 
 .panel[.panel-name[Steps]
 
-1. Add a floating table of contents
+1. Add your name as the author
 
-1. Apply the `flatly` theme to your document
+1. Add today's date
 
-1. Add a "Code Download" button
+1. Add a table of contents
+
+1. Apply the `lux` theme to your document
 
 1. Print the `diamonds` dataset as a paged table
 
@@ -962,7 +1010,7 @@ class: your-turn
 ]
 
 ```{r echo = FALSE}
-countdown::countdown(minutes = 4)
+countdown::countdown(minutes = 5)
 ```
 
 
@@ -1008,26 +1056,12 @@ class: your-turn
 
 # Mini Project
 
-.panelset[
-.panel[.panel-name[Overview]
-
 **Create a Quarto report that summarizes your analysis of the `wine_ratings` dataset.** 
 
-1. Create a new Quarto file. Give it a title and save it as `wines_report.qmd`.
+1. Create a new Quarto file: **File > New File > Quarto**. Give it a title and save it as `wines_report.qmd`.
 
 2. Use markdown formatting, knitr chunk options and YAML metadata to polish your report.
-]
 
-.panel[.panel-name[New file]
-
-_File > New File > Quarto_
-
-```{r echo=FALSE, out.width="50%"}
-knitr::include_graphics("images/session03-quarto/open.gif")
-```
-
-]
-]
  
 ```{r echo = FALSE}
 countdown::countdown(minutes = 20)
