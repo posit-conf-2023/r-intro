@@ -123,7 +123,6 @@ class: middle chapter-slide red
 knitr::include_graphics("images/session03-quarto/doc-make.jpg")
 ```
 ]
-
 ---
 class: middle chapter-slide blue
 
@@ -179,7 +178,13 @@ https://quarto.org/docs/gallery/
 ---
 # Multilingual data science 
 
+.center[
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("images/session03-quarto/quarto-languages.png")
+```
+]
 
+Image source: ["Hello Quarto", rstudio::conf(2022)](https://posit.co/keynotes/hello-quarto-share-collaborate-teach-reimagine/)
 ---
 class: middle chapter-slide green
 
