@@ -1,11 +1,7 @@
 ---
 title: "Session 1 Review"
 subtitle: "Day 1, Session 1"
-author: "Desirée De Leon"
-date: "July 25, 2022"
-shortlink:
-  url: "https://conf22-intro-tidyverse.netlify.app/_slides/session01-review-slides.html#1"
-  text: "rstd.io/review"
+date: "September 17, 2023"
 output:
   xaringan::moon_reader:
     css: ["default", "assets/academy-theme.css", "assets/session01.css"]
@@ -83,9 +79,7 @@ if (!is.null(rmarkdown::metadata$shortlink)) {
 
 # .big-text[Welcome] 
 
-## Introduction to the tidyverse 
-
-Find your group's table and make yourself comfortable. 
+## Introduction to Data Science with R
 
 We'll get started shortly after 9am.
 
@@ -121,6 +115,8 @@ class: inverse, middle
 
 # Conference workshop policies
 
+<!-- # TODO: update -->
+
 .left-column[
 
   .center[
@@ -131,10 +127,6 @@ class: inverse, middle
 
   `r emo::ji("no_entry_sign")` `r emo::ji("camera")` 
   
-  <br>
-
-  
-  `r emo::ji("face_with_medical_mask")` `r emo::ji("microbe")`
   ]
 ]
 
@@ -145,10 +137,6 @@ class: inverse, middle
   <br>
 
   Please do not photograph people wearing .light-red[red lanyards] 
-  
-  <br>
-   
-  Fully cover your mouth and nose at all times. A limited supply of masks are available upon request. Ask at registration desk.
    
 ] 
 
@@ -156,7 +144,9 @@ class: inverse, middle
 
 # Code of conduct
 
-- Please review the [rstudio::conf code of conduct](https://rstd.io/code-of-conduct) that applies to all workshops <https://rstd.io/code-of-conduct>
+<!-- TODO: update -->
+
+- Please review the posit::conf Code of Conduct that applies to all workshops <https://posit.co/code-of-conduct/>
 
 --
 
@@ -170,6 +160,8 @@ class: inverse, middle
 
 ---
 class: inverse, middle
+
+<!-- TODO: Update -->
 
 # Locations to note
 
@@ -233,13 +225,11 @@ background-size: cover
 
 ???
 
-So now, with those procedural things out of the way, let me officially welcome you to the conf component of the Introduction to the [NEXT] Tidyverse! 
-
-This is the first time that we're including an in-person piece within an RStudio Academy course, and we're so excited that we get to pilot this with each one of you. 
+So now, with those procedural things out of the way, let me officially welcome you to the conf component of the Introduction to Data Science with R and the [NEXT] Tidyverse! 
 
 --
 
-# The `tidyverse`
+# The tidyverse
 
 ---
 background-image: url("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80")
@@ -247,7 +237,7 @@ background-size: cover
 
 ???
 
-At Academy, we believe that learning any new skill (whether its musical, computational, athletic -- *any new skill*) is not simply about memorizing new facts...
+At Posit Academy, we believe that learning any new skill (whether its musical, computational, athletic -- *any new skill*) is not simply about memorizing new facts...
 
 ---
 background-image: url("https://images.unsplash.com/photo-1614935151651-0bea6508db6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1850&q=80")
@@ -293,16 +283,7 @@ background-size: cover
 By being here the next two days, you are checking off all of these boxes in some form. And you happen to be doing this for a skillset that is both highly valuable and versatile. 
 
 You can take your coding and data science skills with you to any job 
--- apply them to goals both professional and personal.
-
----
-background-image: url("https://images.unsplash.com/photo-1500106067612-d3b2531fc762?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80")
-background-size: cover
-
-???
-
-So, by immersing yourself in the content and collaboration the next two days, you're really making a *long-term investment* in yourself. 
-
+-- and apply them to goals both professional and personal.
 
 ---
 class: center, top
@@ -314,11 +295,11 @@ background-size: cover
 
 ???
 
-For the next two days, our goals are to support you in this by allowing for more group work, exposure to new projects and datasets, and increased access to mentors and instructors. Specifically...[CLICK]
+For the next two days, our goals are to support you in this by allowing for more group work, exposure to new projects and datasets, and more engagement with us. Specifically...[CLICK]
 
-1. Drill old wrangling skills and explore new ones [CLICK]
+1. Practice with some familiar wrangling skills and explore new ones [CLICK]
 
-1. Learn best practices for exploring your data and reporting it reproducibly -- both in the Academy platform, but also in your local RStudio IDE.
+1. Learn best practices for exploring your data and reporting it reproducibly
 
 In short, we hope the next two days allow you to do a deep-dive into the skills you've been learning the past few weeks, to apply new skills you'll learn, and take advantage of a lot of protected time for practice. 
 
@@ -343,146 +324,24 @@ And the academy team will be guiding you as you do this...
 ---
 class: speaker-slide
 
-# `r rmarkdown::metadata$author`
-
+# Hello (again)!
 <!-- You can copy the image link address from your github profile to use as the src link below --> 
 
-<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/29008894?v=4" width="200px"/>
+.pull-left[
+<img style="border-radius: 50%;" src="https://github.com/brendanhcullen.png" width="200px"/>
 
 .speaker-links[
-[`r fontawesome::fa("github")` dcossyleon](https://github.com/dcossyleon)    
-[`r fontawesome::fa("twitter")` dcossyle](https://twitter.com/dcossyle)   
-[`r fontawesome::fa("link")` desiree.rbind.io](https://desiree.rbind.io)
+`r fontawesome::fa("envelope")` brendan.cullen@posit.co
+]
 ]
 
-???
+.pull-right[
+<img style="border-radius: 50%;" src="https://github.com/RhoBott.png" width="200px"/>
 
-So you already know me, my name is Desiree, I'm a data science educator at RStudio.
-
-and you can find me online here.
-
----
-class: center
-
-# Meet the team
-
-<div class="cf-ns nl2 nr2">
-  <div class="fl-ns w-20-ns pv4">
-    <div class="tc">
-      <img src="https://avatars.githubusercontent.com/u/8742033?v=4" class="br-100 pa1 ba b--black-10 h4 w4" alt="avatar">
-    </div>
-    <div class="f6 fw6 gray ttu tracked mt2">
-      Kristin Bott
-    </div>
-  </div>
-
-
-  <div class="fl-ns w-20-ns pv4">
-    <div class="tc">
-      <img src="https://avatars.githubusercontent.com/u/32279312?v=4" class="br-100 pa1 ba b--black-10 h4 w4" alt="avatar">
-    </div>
-    <div class="f6 fw6 gray ttu tracked mt2">
-      Brendan Cullen
-    </div>
-  </div>
-  
-  
-  <div class="fl-ns w-20-ns pv4">
-    <div class="tc">
-      <img src="https://avatars.githubusercontent.com/u/5782147?v=4" class="br-100 pa1 ba b--black-10 h4 w4" alt="avatar">
-    </div>
-    <div class="f6 fw6 gray ttu tracked mt2">
-      Daniel Chen
-    </div>
-  </div>
-  
-  
-  <div class="fl-ns w-20-ns pv4">
-    <div class="tc">
-      <img src="https://avatars.githubusercontent.com/u/18153457?v=4" class="br-100 pa1 ba b--black-10 h4 w4" alt="avatar">
-    </div>
-    <div class="f6 fw6 gray ttu tracked mt2">
-      Sara Altman
-    </div>
-  </div>
-  
-  <div class="fl-ns w-20-ns pv4">
-    <div class="tc">
-      <img src="https://avatars.githubusercontent.com/u/49049415?v=4" class="br-100 pa1 ba b--black-10 h4 w4" alt="avatar">
-    </div>
-    <div class="f6 fw6 gray ttu tracked mt2">
-      Deirdre Francks
-    </div>
-  </div>
-  
-  <div class="fl-ns w-20-ns pv4">
-    <div class="tc">
-      <img src="https://avatars.githubusercontent.com/u/34824840?v=4" class="br-100 pa1 ba b--black-10 h4 w4" alt="avatar">
-    </div>
-    <div class="f6 fw6 gray ttu tracked mt2">
-Steven Smallberg    </div>
-  </div>
-  
-  
-  <div class="fl-ns w-20-ns pv4">
-    <div class="tc">
-      <img src="https://avatars.githubusercontent.com/u/36464703?v=4" class="br-100 pa1 ba b--black-10 h4 w4" alt="avatar">
-    </div>
-    <div class="f6 fw6 gray ttu tracked mt2">
-Laura Puckett    </div>
-  </div>
-  
-  
-  <div class="fl-ns w-20-ns pv4">
-    <div class="tc">
-      <img src="https://avatars.githubusercontent.com/u/85014?v=4" class="br-100 pa1 ba b--black-10 h4 w4" alt="avatar">
-    </div>
-    <div class="f6 fw6 gray ttu tracked mt2">
-      Garrett Grolemund    
-    </div>
-  </div>
-  
-  
-  <div class="fl-ns w-20-ns pv4">
-    <div class="tc">
-      <img src="https://avatars.githubusercontent.com/u/45143?v=4" class="br-100 pa1 ba b--black-10 h4 w4" alt="avatar">
-    </div>
-    <div class="f6 fw6 gray ttu tracked mt2">
-      Dan Buch
-    </div>
-  </div>
-  
-  <div class="fl-ns w-20-ns pv4">
-    <div class="tc">
-      <img src="https://avatars.githubusercontent.com/u/5420529?v=4" class="br-100 pa1 ba b--black-10 h4 w4" alt="avatar">
-    </div>
-    <div class="f6 fw6 gray ttu tracked mt2">
-      Garrick Aden-Buie
-    </div>
-  </div>
-  
-  
-  
-</div>
-
-
-???
-
-But you may not have yet met the rest of the team of people behind the work and content that you'll be seeing today & tomorrow. 
-
-You'll be hearing from some as speakers; some of them are your mentors; and of course..
-
-there are some who are not at the the workshop, but whose fingerprints are all over the lessons and tech that are making your Academy experience possible.
-
----
-class: middle, center
-background-image: url("images/session01/scooters.jpg")
-background-size: cover
-
-
-???
- 
-Alright, so with that, here is what we have...
+.speaker-links[
+`r fontawesome::fa("envelope")` kristin.bott@posit.co
+]
+]
 
 ---
 class: middle, center
@@ -496,6 +355,8 @@ lined up for you for the next couple days...
 
 ---
 class: middle, center 
+
+<!-- TODO: Update -->
 
 .pull-left[
 
@@ -571,10 +432,7 @@ Milestone presentation
 ---
 class: center
 
-
-.left-column1[
-
-# Schedule
+# Daily Schedule
 
 .spaced[
 
@@ -589,24 +447,8 @@ class: center
 | 03:30 - 05:00 | Session 4                                                     |
 
 ]
-]
 
 
-???
-this is what our schedule will be like each day [CLICK]
-
-And this is where we'll work...
-
-You'll notice that each session for the next two days has its own workspace in conf2022.rstudioacademy.com
-
-
-Which leads me to the next agenda item ... [CLICK]
---
-
-.right-column63[
-# Workspace
-<img src="images/session01/campsite_screenshot.png">
-]
 
 
 ---
@@ -616,9 +458,14 @@ class: chapter-slide, tan, middle
 
 # Tech and tooling
 
-???
+---
+class: inverse, middle, center
 
-...on the tech and tooling we'll be using at this workshop
+# Workspace
+
+```{r echo=FALSE, out.width="60%"}
+knitr::include_graphics("images/session01/campsite_screenshot.png")
+```
 
 ---
 class: inverse, middle, center
@@ -635,6 +482,8 @@ Even though we're in person, the best way to present to your group live will be.
 
 ---
 class: inverse, middle, center
+
+<!-- TODO: Update -->
 
 .pull-left[
   
@@ -693,7 +542,9 @@ For other forms of code sharing as well as announcements, we can continue to use
   
   Your group's slack channel  
   
-  `#intro-to-tidyverse`
+  `#academy-intro-r-a`
+  
+  `#academy-intro-r-b`
   
 ]
 
@@ -744,7 +595,7 @@ Alright, our Review group challenge is up next
 But before I explain that...
 
 ---
-class: inverse
+class: inverse, middle, center
 
 .big-text.white[
 # Questions?
@@ -765,7 +616,7 @@ class: title-slide
 
 <div class="title-footer">
   <img src="images/academy-logo.png">
-  <div> `r rmarkdown::metadata$author` • `r rmarkdown::metadata$date`</div>
+  <div> `r rmarkdown::metadata$date`</div>
 </div>
 
 ???
@@ -778,7 +629,7 @@ class: inverse
 ### Go to **Conf Session 1 - Review**
 
 .center[
-```{r session1-workspace, echo = FALSE, out.width = "80%", fig.align = "center"}
+```{r session1-workspace, echo = FALSE, out.width = "60%", fig.align = "center"}
 knitr::include_graphics("images/session01/campsite_screenshot.png")
 ```
 ]
@@ -808,6 +659,8 @@ You'll do your work in the R Markdown document you have open so you have a recor
 
 
 ---
+
+<!-- TODO: update -->
 
 # Review challenge rules
 
@@ -961,7 +814,7 @@ class: your-turn
 
 # Your Turn 2
 
-What is the* **earliest year** on record in this dataset? __The latest__? 
+What is the **earliest year** on record in this dataset? __The latest__? 
 
 Answer the questions by creating two tables that are sorted.
 
