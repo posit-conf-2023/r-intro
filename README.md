@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f7043e4e-00ed-4e61-9886-8dc81909efbd/deploy-status)](https://app.netlify.com/sites/intro-tidyverse-2023/deploys)
-
 Introduction to Data Science with R and Tidyverse
 ================
 
