@@ -21,6 +21,35 @@ options(htmltools.dir.version = FALSE)
 options(knitr.duplicate.label = "allow")
 ```
 
+```{r reactable-function, include=FALSE}
+reactable_preview <- function(data) {
+
+  page_info <- "{rowStart}-{rowEnd} of {rows} rows"
+
+  if (nrow(data) > 100) {
+    page_info <- glue::glue(
+      "{page_info} (Total: {actual})",
+      actual = format(nrow(data), big.mark = ",")
+    )
+  }
+
+  data %>%
+    slice_head(n = 100) %>%
+    reactable::reactable(
+      defaultColDef = reactable::colDef(align = "left", maxWidth = 400),
+      defaultPageSize = 8,
+      compact = TRUE,
+      wrap = FALSE,
+      striped = TRUE,
+      sortable = FALSE,
+      showPageInfo = TRUE,
+      language = reactable::reactableLang(
+        pageInfo = page_info
+      )
+    )
+}
+```
+
 # `r rmarkdown::metadata$title`
 
 ### `r rmarkdown::metadata$subtitle`
@@ -86,7 +115,10 @@ class: middle
 # Meet stringr
 ]
 
-.center[<img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/stringr.png?raw=true" alt="stringr hex sticker" width="300"/>]
+.center[<img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/stringr.png?raw=true" alt="stringr hex sticker" width="300"/>
+
+https://stringr.tidyverse.org/
+]
 
 ???
 
@@ -140,8 +172,10 @@ breed_traits <-
   )
 ```
 
+
 ```{r echo = FALSE}
-breed_traits
+breed_traits %>% 
+  reactable_preview()
 ```
 
 ???
@@ -408,7 +442,6 @@ And we can visualize how patterns match to our data with `str_view()` (and `str_
 You may have noticed an elegant detail: *all* stringr functions start with the prefix "str_". This is especially nice when you're working in RStudio because typing that prefix out will trigger autocomplete and allow you to see all of the functions.
 
 ---
-
 class: your-turn
 
 # Your Turn
@@ -424,7 +457,6 @@ Hint: Use the `str_subset()` function.
 Hint: What character indicates that a string contains more than one word?
 
 ---
-
 class: your-turn
 
 # Solution
@@ -443,8 +475,174 @@ class: middle chapter-slide blue
 # Factors
 
 ---
-class: middle chapter-slide green
+# Meet forcats
+
+.center[
+<img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/forcats.png?raw=true" alt="stringr hex sticker" width="300"/>
+
+https://forcats.tidyverse.org/
+]
+
+???
+Categorial data in R are called "factors"
+
+Each category is called a "level"
+
+
+---
+# General Social survey
+
+```{r eval=FALSE}
+library(forcats)
+gss_cat
+```
+
+```{r echo=FALSE}
+gss_cat %>% reactable_preview()
+```
+
+---
+# EDA - continuous
+
+.pull-left[
+
+```{r, warning=FALSE, message=FALSE, fig.show='hide'}
+gss_cat %>% 
+  ggplot(aes(x=tvhours)) +
+  geom_histogram() +
+  labs(x = "TV Hours")
+```
+]
+.pull-right[
+```{r, warning=FALSE, message=FALSE, echo=FALSE, out.width="90%"}
+gss_cat %>% 
+  ggplot(aes(x=tvhours)) +
+  geom_histogram() +
+  labs(x = "TV Hours")
+```
+]
+
+---
+# EDA - categorical
+
+.pull-left[
+
+```{r, warning=FALSE, message=FALSE, fig.show='hide'}
+gss_cat %>% 
+  ggplot(aes(x=marital)) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+]
+
+.pull-right[
+```{r, warning=FALSE, message=FALSE, echo=FALSE, out.width="90%"}
+gss_cat %>% 
+  ggplot(aes(x=marital)) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+]
+
+---
+# What are we trying to show?
+
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+gss_cat %>%
+  ggplot(aes(x = fct_infreq(marital))) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+
+---
+# Factors have an ordering
+
+Factors are stored with an order even if there is no inherent ordering to the meaning
+
+```{r}
+levels(gss_cat$marital)
+```
+
+
+---
+# Reorder factor levels
+
+> * `fct_inorder()`: by the order in which they first appear.
+
+> * `fct_infreq()`: by number of observations with each level (largest first)
+
+> * `fct_inseq()`: by numeric value of level.
+
+https://forcats.tidyverse.org/reference/fct_inorder.html
+
+---
+
+## Example
+
+```{r}
+f <- factor(c("b", "b", "a", "c", "c", "c"))
+f
+```
+
+```{r}
+fct_inorder(f)
+```
+
+---
+class: your-turn
+
+# Your Turn
+
+.pull-left[
+Use ggplot and one of these forcats functions to recreate the plot of `gss_cat`:
+
+* `fct_inorder()`
+
+* `fct_infreq()`
+
+* `fct_inseq()`
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width="90%"}
+gss_cat %>%
+  ggplot(aes(x = fct_infreq(marital))) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+]
+
+---
+class: your-turn
+# Solution
+
+.pull-left[
+```{r eval=FALSE}
+gss %>%
+  ggplot(
+    aes(
+      x = fct_infreq(marital)
+    )
+  ) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+]
+
+.pull-right[
+```{r echo=FALSE, out.width="90%"}
+gss_cat %>%
+  ggplot(aes(fct_infreq(marital))) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+]
+
+---
+class: middle chapter-slide tan
 
 .big-white-number[3.]
 
 # Dates
+
+---

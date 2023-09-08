@@ -18,6 +18,13 @@
     <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
     <script>window.xaringanExtraClipboard('pre > code.r, pre > code.md', {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <script src="libs/core-js/shim.min.js"></script>
+    <script src="libs/react/react.min.js"></script>
+    <script src="libs/react/react-dom.min.js"></script>
+    <script src="libs/reactwidget/react-tools.js"></script>
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <link href="libs/reactable/reactable.css" rel="stylesheet" />
+    <script src="libs/reactable-binding/reactable.js"></script>
     <link rel="stylesheet" href="assets/academy-theme.css" type="text/css" />
   </head>
   <body>
@@ -25,6 +32,8 @@
 
 
 class: title-slide
+
+
 
 
 
@@ -67,7 +76,10 @@ class: middle
 # Meet stringr
 ]
 
-.center[&lt;img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/stringr.png?raw=true" alt="stringr hex sticker" width="300"/&gt;]
+.center[&lt;img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/stringr.png?raw=true" alt="stringr hex sticker" width="300"/&gt;
+
+https://stringr.tidyverse.org/
+]
 
 ???
 
@@ -88,23 +100,8 @@ class: middle
 
 
 
-```
-## # A tibble: 195 × 15
-##    breed                affection shedding drooling openness playfulness protectiveness adaptability trainability energy barking
-##    &lt;chr&gt;                    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
-##  1 Retrievers (Labrado…         5        4        2        5           5              3            5            5      5       3
-##  2 French Bulldogs              5        3        3        5           5              3            5            4      3       1
-##  3 German Shepherd Dogs         5        4        2        3           4              5            5            5      5       3
-##  4 Retrievers (Golden)          5        4        2        5           4              3            5            5      3       1
-##  5 Bulldogs                     4        3        3        4           4              3            3            4      3       2
-##  6 Poodles                      5        1        1        5           5              5            4            5      4       4
-##  7 Beagles                      3        3        1        3           4              2            4            3      4       4
-##  8 Rottweilers                  5        3        3        3           4              5            4            5      3       1
-##  9 Pointers (German Sh…         5        3        2        4           4              4            4            5      5       3
-## 10 Dachshunds                   5        2        2        4           4              4            4            4      3       5
-## # ℹ 185 more rows
-## # ℹ 4 more variables: stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;, good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
-```
+<div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-868d4743a89311d744fd" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-868d4743a89311d744fd">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"breed":["Retrievers (Labrador)","French Bulldogs","German Shepherd Dogs","Retrievers (Golden)","Bulldogs","Poodles","Beagles","Rottweilers","Pointers (German Shorthaired)","Dachshunds","Pembroke Welsh Corgis","Australian Shepherds","Yorkshire Terriers","Boxers","Great Danes","Siberian Huskies","Cavalier King Charles Spaniels","Doberman Pinschers","Miniature Schnauzers","Shih Tzu","Boston Terriers","Bernese Mountain Dogs","Pomeranians","Havanese","Cane Corso","Spaniels (English Springer)","Shetland Sheepdogs","Brittanys","Pugs","Spaniels (Cocker)","Miniature American Shepherds","Border Collies","Mastiffs","Chihuahuas","Vizslas","Basset Hounds","Belgian Malinois","Maltese","Weimaraners","Collies","Newfoundlands","Rhodesian Ridgebacks","Shiba Inu","West Highland White Terriers","Bichons Frises","Bloodhounds","Spaniels (English Cocker)","Akitas","Portuguese Water Dogs","Retrievers (Chesapeake Bay)","Dalmatians","St. Bernards","Papillons","Australian Cattle Dogs","Bullmastiffs","Samoyeds","Scottish Terriers","Soft Coated Wheaten Terriers","Whippets","Pointers (German Wirehaired)","Chinese Shar-Pei","Airedale Terriers","Wirehaired Pointing Griffons","Bull Terriers","Alaskan Malamutes","Cardigan Welsh Corgis","Giant Schnauzers","Old English Sheepdogs","Italian Greyhounds","Great Pyrenees","Dogues de Bordeaux","Russell Terriers","Cairn Terriers","Irish Wolfhounds","Setters (Irish)","Greater Swiss Mountain Dogs","Miniature Pinschers","Lhasa Apsos","Chinese Crested","Coton de Tulear","Staffordshire Bull Terriers","American Staffordshire Terriers","Rat Terriers","Chow Chows","Anatolian Shepherd Dogs","Basenjis","Spaniels (Boykin)","Lagotti Romagnoli","Brussels Griffons","Retrievers (Nova Scotia Duck Tolling)","Norwegian Elkhounds","Standard Schnauzers","Dogo Argentinos","Bouviers des Flandres","Pekingese","Keeshonden","Border Terriers","Leonbergers","Tibetan Terriers","Neapolitan Mastiffs"],"affection":[5,5,5,5,4,5,3,5,5,5,5,3,5,4,5,5,5,5,5,5,5,5,5,5,4,5,5,3,5,4,5,5,5,4,5,3,3,5,5,4,5,5,5,5,5,4,5,3,5,4,5,5,5,3,4,5,5,5,5,5,4,3,5,4,3,4,5,5,5,5,5,5,4,5,5,5,5,5,4,5,5,5,5,4,1,3,3,5,4,5,5,5,5,3,5,5,4,5,5,3],"shedding":[4,3,4,4,3,1,3,3,3,2,4,3,1,2,3,4,2,4,3,1,2,5,2,2,2,3,3,3,4,3,3,3,3,2,3,2,3,1,3,3,3,3,3,3,1,3,3,3,2,3,4,3,3,3,3,3,2,1,2,2,3,1,3,3,3,3,3,3,3,3,4,3,2,3,3,3,3,1,1,2,2,2,3,3,3,2,3,1,3,3,3,1,4,3,3,3,2,4,3,3],"drooling":[2,3,2,2,3,1,1,3,2,2,1,1,1,3,4,1,2,2,2,1,1,3,1,1,3,3,1,1,1,2,2,1,4,1,2,4,1,1,2,2,5,2,1,1,1,5,2,1,2,2,2,5,1,1,3,1,2,2,1,2,3,1,3,1,1,1,2,3,1,3,5,1,1,2,2,3,1,1,1,1,3,1,1,3,1,1,1,2,1,2,2,3,3,2,1,2,1,3,2,5],"openness":[5,5,3,5,4,5,3,3,4,4,4,3,5,4,3,5,4,4,3,3,5,4,3,5,3,4,2,3,5,4,3,4,3,2,4,3,3,3,3,3,5,3,3,4,5,3,4,2,4,3,4,3,5,3,3,5,3,3,3,4,3,3,5,4,3,4,3,3,5,3,3,5,3,3,5,5,3,3,4,5,4,4,5,2,1,3,3,4,4,3,4,3,4,3,3,5,4,5,3,3],"playfulness":[5,5,4,4,4,5,4,4,4,4,4,4,4,4,4,5,3,4,4,3,5,4,3,5,3,4,5,4,5,3,4,5,3,4,5,3,3,3,5,4,3,3,3,5,4,3,3,3,5,3,4,3,5,3,3,5,4,3,4,4,3,3,4,4,3,4,4,4,4,3,3,5,4,3,5,4,4,3,3,4,4,3,5,3,3,3,4,4,4,5,4,4,4,3,4,5,4,3,3,2],"protectiveness":[3,3,5,3,3,5,2,5,4,4,5,3,5,4,5,1,3,5,4,3,3,3,4,3,5,3,5,3,3,3,3,3,5,4,3,3,4,4,5,3,5,5,5,5,2,2,3,5,4,4,4,5,4,4,5,4,5,3,3,3,4,5,3,3,4,3,5,4,3,5,5,4,4,5,3,4,5,5,3,3,5,5,4,5,5,3,3,3,3,3,5,5,5,4,4,5,3,4,4,5],"adaptability":[5,5,5,5,3,4,4,4,4,4,4,3,5,3,4,4,3,4,5,5,3,4,4,5,3,4,5,3,5,4,4,5,4,4,5,3,3,4,4,4,4,4,3,4,4,3,4,3,5,4,4,4,5,3,3,4,4,3,3,4,4,3,4,3,3,3,4,4,4,3,4,4,3,3,4,3,4,5,4,4,5,3,4,3,3,3,4,4,4,4,4,4,4,3,4,5,4,4,4,3],"trainability":[5,4,5,5,4,5,3,5,5,4,4,5,4,4,3,3,4,5,5,4,4,4,3,4,4,5,5,5,4,4,5,5,3,3,5,3,5,3,5,4,3,4,2,3,4,4,4,3,5,5,4,3,5,4,4,4,3,3,3,5,3,3,5,3,5,4,5,4,4,3,4,3,3,3,4,4,3,3,4,4,5,3,5,3,2,2,4,4,4,5,4,5,5,4,3,5,4,5,3,3],"energy":[5,3,5,3,3,4,4,3,5,3,4,5,4,4,4,5,3,5,3,3,4,4,3,3,4,4,4,5,3,4,5,5,3,4,5,2,4,3,5,3,3,3,3,4,4,3,3,4,5,4,4,3,4,5,4,4,3,4,4,5,3,3,5,4,4,4,5,3,3,3,3,5,3,3,5,4,5,3,3,3,4,3,4,3,3,4,4,4,3,5,4,3,5,4,3,4,3,3,4,2],"barking":[3,1,3,1,2,4,4,1,3,5,4,3,4,3,3,5,3,3,5,3,2,3,4,4,3,3,5,3,1,3,3,4,1,5,3,4,3,3,3,5,1,2,3,5,3,5,3,2,3,3,3,1,5,1,1,5,4,3,1,3,3,3,3,3,3,5,3,3,3,3,3,4,4,1,3,3,5,3,3,1,3,3,3,1,3,1,3,2,4,2,4,3,3,3,1,4,3,3,3,1],"stimulation_needs":[4,3,5,4,3,5,4,5,5,3,4,5,4,4,4,4,3,4,4,3,3,3,3,3,3,4,4,4,3,3,5,5,3,3,5,3,4,3,5,3,3,4,4,4,3,3,4,3,5,4,4,3,5,4,4,4,4,3,4,4,3,3,5,4,3,4,4,4,3,3,4,5,3,3,4,4,5,3,3,3,4,3,5,3,3,4,3,4,3,4,4,5,4,3,3,4,3,4,4,3],"good_w_children":[5,5,5,5,3,5,5,3,5,3,3,5,5,5,3,5,5,5,5,5,5,5,3,5,3,3,5,4,5,5,5,3,5,1,5,5,3,3,5,5,5,5,3,5,5,3,5,3,5,3,3,5,5,3,3,5,3,5,5,3,3,3,5,3,3,4,3,5,3,3,3,3,3,3,5,5,3,3,3,5,5,3,5,3,3,3,5,3,3,5,3,5,3,3,3,5,5,5,3,3],"good_w_other_dogs":[5,4,3,5,3,3,5,3,4,4,4,3,3,3,3,5,5,3,3,5,4,5,3,5,3,4,5,4,4,5,5,3,3,3,4,5,3,3,3,3,5,3,3,3,5,3,5,1,4,3,3,3,3,3,3,3,2,3,5,3,3,3,3,1,3,3,3,3,5,3,3,5,3,4,5,3,4,3,3,5,3,3,3,2,3,3,5,5,3,4,3,3,3,3,3,5,3,3,3,3],"grooming_freq":[2,1,2,2,3,4,2,1,2,2,2,2,5,2,1,2,2,1,4,4,2,3,3,3,1,2,3,3,2,4,3,3,1,1,2,3,2,4,2,3,2,2,2,3,5,2,3,3,4,3,2,2,2,1,1,3,3,4,1,2,1,3,2,2,3,2,4,4,1,2,1,2,2,2,3,2,1,3,2,4,2,1,2,3,2,1,3,2,3,2,2,3,1,4,3,3,2,4,3,2]},"columns":[{"id":"breed","name":"breed","type":"character","maxWidth":400,"align":"left"},{"id":"affection","name":"affection","type":"numeric","maxWidth":400,"align":"left"},{"id":"shedding","name":"shedding","type":"numeric","maxWidth":400,"align":"left"},{"id":"drooling","name":"drooling","type":"numeric","maxWidth":400,"align":"left"},{"id":"openness","name":"openness","type":"numeric","maxWidth":400,"align":"left"},{"id":"playfulness","name":"playfulness","type":"numeric","maxWidth":400,"align":"left"},{"id":"protectiveness","name":"protectiveness","type":"numeric","maxWidth":400,"align":"left"},{"id":"adaptability","name":"adaptability","type":"numeric","maxWidth":400,"align":"left"},{"id":"trainability","name":"trainability","type":"numeric","maxWidth":400,"align":"left"},{"id":"energy","name":"energy","type":"numeric","maxWidth":400,"align":"left"},{"id":"barking","name":"barking","type":"numeric","maxWidth":400,"align":"left"},{"id":"stimulation_needs","name":"stimulation_needs","type":"numeric","maxWidth":400,"align":"left"},{"id":"good_w_children","name":"good_w_children","type":"numeric","maxWidth":400,"align":"left"},{"id":"good_w_other_dogs","name":"good_w_other_dogs","type":"numeric","maxWidth":400,"align":"left"},{"id":"grooming_freq","name":"grooming_freq","type":"numeric","maxWidth":400,"align":"left"}],"sortable":false,"defaultPageSize":8,"showPageInfo":true,"striped":true,"compact":true,"nowrap":true,"language":{"pageInfo":"{rowStart}-{rowEnd} of {rows} rows (Total: 195)"},"dataKey":"93473b5e174c4846ab52590c8625a63b"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 
 ???
 
@@ -150,10 +147,11 @@ breed_traits %&gt;%
 
 ```
 ## # A tibble: 1 × 15
-##   breed              affection shedding drooling openness playfulness protectiveness adaptability trainability energy barking
-##   &lt;chr&gt;                  &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
-## 1 Yorkshire Terriers         5        1        1        5           4              5            5            4      4       4
-## # ℹ 4 more variables: stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;, good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
+##   breed             affection shedding drooling openness playfulness protectiveness adaptability
+##   &lt;chr&gt;                 &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;
+## 1 Yorkshire Terrie…         5        1        1        5           4              5            5
+## # ℹ 7 more variables: trainability &lt;dbl&gt;, energy &lt;dbl&gt;, barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;,
+## #   good_w_children &lt;dbl&gt;, good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
 ```
 
 ???
@@ -180,11 +178,12 @@ breed_traits %&gt;%
 
 ```
 ## # A tibble: 2 × 15
-##   breed              affection shedding drooling openness playfulness protectiveness adaptability trainability energy barking
-##   &lt;chr&gt;                  &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
-## 1 Yorkshire Terriers         5        1        1        5           4              5            5            4      4       4
-## 2 Boston Terriers            5        2        1        5           5              3            3            4      4       2
-## # ℹ 4 more variables: stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;, good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
+##   breed             affection shedding drooling openness playfulness protectiveness adaptability
+##   &lt;chr&gt;                 &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;
+## 1 Yorkshire Terrie…         5        1        1        5           4              5            5
+## 2 Boston Terriers           5        2        1        5           5              3            3
+## # ℹ 7 more variables: trainability &lt;dbl&gt;, energy &lt;dbl&gt;, barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;,
+## #   good_w_children &lt;dbl&gt;, good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
 ```
 
 ???
@@ -239,20 +238,21 @@ breed_traits %&gt;%
 
 ```
 ## # A tibble: 36 × 15
-##    breed                affection shedding drooling openness playfulness protectiveness adaptability trainability energy barking
-##    &lt;chr&gt;                    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
-##  1 Yorkshire Terriers           5        1        1        5           4              5            5            4      4       4
-##  2 Boston Terriers              5        2        1        5           5              3            3            4      4       2
-##  3 West Highland White…         5        3        1        4           5              5            4            3      4       5
-##  4 Scottish Terriers            5        2        2        3           4              5            4            3      3       4
-##  5 Soft Coated Wheaten…         5        1        2        3           3              3            3            3      4       3
-##  6 Airedale Terriers            3        1        1        3           3              5            3            3      3       3
-##  7 Bull Terriers                4        3        1        4           4              3            3            3      4       3
-##  8 Russell Terriers             5        3        1        5           5              4            4            3      5       4
-##  9 Cairn Terriers               4        2        1        3           4              4            3            3      3       4
-## 10 Staffordshire Bull …         5        2        3        4           4              5            5            5      4       3
+##    breed            affection shedding drooling openness playfulness protectiveness adaptability
+##    &lt;chr&gt;                &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;
+##  1 Yorkshire Terri…         5        1        1        5           4              5            5
+##  2 Boston Terriers          5        2        1        5           5              3            3
+##  3 West Highland W…         5        3        1        4           5              5            4
+##  4 Scottish Terrie…         5        2        2        3           4              5            4
+##  5 Soft Coated Whe…         5        1        2        3           3              3            3
+##  6 Airedale Terrie…         3        1        1        3           3              5            3
+##  7 Bull Terriers            4        3        1        4           4              3            3
+##  8 Russell Terriers         5        3        1        5           5              4            4
+##  9 Cairn Terriers           4        2        1        3           4              4            3
+## 10 Staffordshire B…         5        2        3        4           4              5            5
 ## # ℹ 26 more rows
-## # ℹ 4 more variables: stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;, good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
+## # ℹ 7 more variables: trainability &lt;dbl&gt;, energy &lt;dbl&gt;, barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;,
+## #   good_w_children &lt;dbl&gt;, good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
 ```
 
 ???
@@ -361,7 +361,6 @@ And we can visualize how patterns match to our data with `str_view()` (and `str_
 You may have noticed an elegant detail: *all* stringr functions start with the prefix "str_". This is especially nice when you're working in RStudio because typing that prefix out will trigger autocomplete and allow you to see all of the functions.
 
 ---
-
 class: your-turn
 
 # Your Turn
@@ -377,7 +376,6 @@ Hint: Use the `str_subset()` function.
 Hint: What character indicates that a string contains more than one word?
 
 ---
-
 class: your-turn
 
 # Solution
@@ -390,8 +388,9 @@ str_subset(fruit, " ")
 ```
 
 ```
-##  [1] "bell pepper"       "blood orange"      "canary melon"      "chili pepper"      "goji berry"        "kiwi fruit"       
-##  [7] "purple mangosteen" "rock melon"        "salal berry"       "star fruit"        "ugli fruit"
+##  [1] "bell pepper"       "blood orange"      "canary melon"      "chili pepper"     
+##  [5] "goji berry"        "kiwi fruit"        "purple mangosteen" "rock melon"       
+##  [9] "salal berry"       "star fruit"        "ugli fruit"
 ```
 
 ---
@@ -402,11 +401,173 @@ class: middle chapter-slide blue
 # Factors
 
 ---
-class: middle chapter-slide green
+# Meet forcats
+
+.center[
+&lt;img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/forcats.png?raw=true" alt="stringr hex sticker" width="300"/&gt;
+
+https://forcats.tidyverse.org/
+]
+
+???
+Categorial data in R are called "factors"
+
+Each category is called a "level"
+
+
+---
+# General Social survey
+
+
+```r
+library(forcats)
+gss_cat
+```
+
+<div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3d5f3a68b5dbdf5eee23" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3d5f3a68b5dbdf5eee23">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"year":[2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000],"marital":["Never married","Divorced","Widowed","Never married","Divorced","Married","Never married","Divorced","Married","Married","Married","Married","Married","Married","Divorced","Married","Widowed","Never married","Married","Married","Married","Married","Never married","Widowed","Widowed","Widowed","Widowed","Widowed","Divorced","Widowed","Widowed","Married","Married","Never married","Married","Never married","Never married","Never married","Never married","Never married","Married","Married","Divorced","Never married","Never married","Never married","Married","Married","Married","Married","Never married","Married","Married","Married","Married","Divorced","Divorced","Divorced","Never married","Never married","Married","Married","Never married","Divorced","Never married","Widowed","Divorced","Married","Never married","Never married","Widowed","Widowed","Widowed","Widowed","Widowed","Never married","Widowed","Never married","Married","Never married","Married","Married","Widowed","Married","Married","Divorced","Never married","Separated","Never married","Widowed","Widowed","Married","Divorced","Never married","Never married","Never married","Married","Married","Widowed","Divorced"],"age":[26,48,67,39,25,25,36,44,44,47,53,52,52,51,52,40,77,44,40,45,48,49,19,54,82,83,89,88,72,82,89,34,55,37,22,33,37,43,29,57,31,45,36,52,26,46,65,52,56,66,20,64,59,46,26,39,51,45,23,21,26,31,27,78,29,43,61,33,34,89,83,78,89,84,69,32,76,41,32,29,40,44,70,40,51,75,22,53,20,80,70,45,46,24,51,32,53,52,83,39],"race":["White","White","White","White","White","White","White","White","White","White","White","White","White","White","White","Black","White","White","White","Black","White","White","White","White","White","White","White","White","White","White","White","White","Black","White","White","Other","White","White","White","White","White","White","Black","White","White","White","White","White","White","White","White","White","White","White","Other","Black","White","White","White","White","White","Other","Black","White","White","Black","White","White","Black","White","Black","Black","Black","Black","Black","Black","Black","Black","Black","Black","Black","White","Black","Black","Black","White","Black","Black","White","White","White","White","White","White","White","White","White","White","White","White"],"rincome":["$8000 to 9999","$8000 to 9999","Not applicable","Not applicable","Not applicable","$20000 - 24999","$25000 or more","$7000 to 7999","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","Not applicable","$25000 or more","$10000 - 14999","Not applicable","$25000 or more","Refused","Not applicable","$25000 or more","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Refused","Not applicable","$25000 or more","$10000 - 14999","$20000 - 24999","$25000 or more","$20000 - 24999","$25000 or more","Refused","$20000 - 24999","$25000 or more","$15000 - 19999","Not applicable","$25000 or more","$10000 - 14999","$25000 or more","$3000 to 3999","$25000 or more","$25000 or more","$15000 - 19999","$5000 to 5999","$25000 or more","Not applicable","$10000 - 14999","Don't know","$20000 - 24999","$25000 or more","$1000 to 2999","Don't know","$10000 - 14999","$25000 or more","$25000 or more","Not applicable","$10000 - 14999","Not applicable","$25000 or more","Not applicable","$15000 - 19999","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","$10000 - 14999","Not applicable","Not applicable","$25000 or more","$25000 or more","$25000 or more","$3000 to 3999","Not applicable","Refused","$3000 to 3999","Not applicable","$20000 - 24999","$25000 or more","$10000 - 14999","Not applicable","Refused","$25000 or more","$25000 or more","$15000 - 19999","$20000 - 24999","$25000 or more","Refused","Lt $1000","Not applicable","Refused"],"partyid":["Ind,near rep","Not str republican","Independent","Ind,near rep","Not str democrat","Strong democrat","Not str republican","Ind,near dem","Not str democrat","Strong republican","Not str democrat","Ind,near rep","Strong democrat","Strong republican","Ind,near dem","Strong democrat","Strong republican","Independent","Not str democrat","Independent","Ind,near dem","Strong republican","Independent","Ind,near rep","Not str democrat","Strong democrat","Not str democrat","Strong republican","Strong democrat","Independent","Ind,near rep","Not str democrat","Not str democrat","Independent","Ind,near dem","Not str democrat","Ind,near dem","Independent","Ind,near rep","Strong republican","Ind,near dem","Independent","Strong democrat","Ind,near dem","Ind,near rep","Strong democrat","Strong republican","Ind,near rep","Not str republican","Strong republican","Strong republican","Strong republican","Strong democrat","Not str republican","Not str democrat","Independent","Independent","Ind,near rep","Strong democrat","Not str republican","Not str republican","Not str republican","Strong democrat","Ind,near dem","Independent","Independent","Strong republican","Strong democrat","Strong democrat","Independent","Strong democrat","Strong democrat","Independent","Strong democrat","Not str democrat","Ind,near dem","Strong democrat","Strong democrat","Strong democrat","Not str republican","Strong democrat","Not str republican","Strong democrat","Ind,near dem","Strong democrat","Strong democrat","Independent","Strong democrat","Ind,near dem","Not str democrat","Not str republican","Independent","Not str democrat","Ind,near dem","Not str republican","Not str republican","Independent","Ind,near dem","Not str republican","Independent"],"relig":["Protestant","Protestant","Protestant","Orthodox-christian","None","Protestant","Christian","Protestant","Protestant","Protestant","Protestant","None","Protestant","Protestant","None","Protestant","Jewish","None","Catholic","Protestant","Catholic","Protestant","None","Christian","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Catholic","Protestant","None","Protestant","Christian","None","Catholic","Catholic","Protestant","None","Catholic","None","Other","None","Catholic","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","None","None","Protestant","Protestant","Protestant","Protestant","Protestant","Christian","Protestant","Protestant","None","None","Catholic","Protestant","Protestant","Protestant","Protestant","Other","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Catholic","Protestant","Protestant","Protestant","Catholic","Protestant","Protestant","Protestant","Protestant","Protestant","Catholic","Catholic","Catholic","Catholic","Inter-nondenominational","Catholic","Catholic","Catholic","Catholic","None","None","None"],"denom":["Southern baptist","Baptist-dk which","No denomination","Not applicable","Not applicable","Southern baptist","Not applicable","Lutheran-mo synod","Other","Southern baptist","Other","Not applicable","Southern baptist","United methodist","Not applicable","Baptist-dk which","Not applicable","Not applicable","Not applicable","United methodist","Not applicable","United methodist","Not applicable","Not applicable","Other","Episcopal","Other lutheran","Afr meth ep zion","Southern baptist","Am bapt ch in usa","Other methodist","Not applicable","Other","Not applicable","Other","Not applicable","Not applicable","Not applicable","Not applicable","Southern baptist","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Southern baptist","Presbyterian c in us","Episcopal","Southern baptist","Methodist-dk which","Other","Other","No denomination","Not applicable","Not applicable","Baptist-dk which","Southern baptist","Other","Presbyterian c in us","United methodist","Not applicable","Am bapt ch in usa","Southern baptist","Not applicable","Not applicable","Not applicable","No denomination","Nat bapt conv usa","Am lutheran","United methodist","Not applicable","Baptist-dk which","Nat bapt conv of am","Nat bapt conv of am","Nat bapt conv usa","Southern baptist","Nat bapt conv of am","Not applicable","Baptist-dk which","Southern baptist","Lutheran-mo synod","Not applicable","Other","Baptist-dk which","Am baptist asso","Southern baptist","Baptist-dk which","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable"],"tvhours":[12,"NA",2,4,1,"NA",3,"NA",0,3,2,"NA",1,"NA",1,7,"NA",3,3,"NA",1,2,2,1,3,"NA",4,"NA",7,"NA",3,"NA",1,"NA","NA","NA",1,4,2,1,2,"NA","NA",1,1,"NA",1,4,5,3,2,"NA","NA",3,2,"NA",2,2,0,"NA",2,"NA",4,4,"NA",3,"NA",2,"NA",2,12,4,8,"NA",4,5,"NA",5,2,4,1,"NA",2,3,"NA",7,3,1,2,8,"NA",1,2,3,"NA",0,4,"NA","NA",0]},"columns":[{"id":"year","name":"year","type":"numeric","maxWidth":400,"align":"left"},{"id":"marital","name":"marital","type":"factor","maxWidth":400,"align":"left"},{"id":"age","name":"age","type":"numeric","maxWidth":400,"align":"left"},{"id":"race","name":"race","type":"factor","maxWidth":400,"align":"left"},{"id":"rincome","name":"rincome","type":"factor","maxWidth":400,"align":"left"},{"id":"partyid","name":"partyid","type":"factor","maxWidth":400,"align":"left"},{"id":"relig","name":"relig","type":"factor","maxWidth":400,"align":"left"},{"id":"denom","name":"denom","type":"factor","maxWidth":400,"align":"left"},{"id":"tvhours","name":"tvhours","type":"numeric","maxWidth":400,"align":"left"}],"sortable":false,"defaultPageSize":8,"showPageInfo":true,"striped":true,"compact":true,"nowrap":true,"language":{"pageInfo":"{rowStart}-{rowEnd} of {rows} rows (Total: 21,483)"},"dataKey":"bcb496690defb9d0b7dbae563cffd6ae"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+
+---
+# EDA - continuous
+
+.pull-left[
+
+
+```r
+gss_cat %&gt;% 
+  ggplot(aes(x=tvhours)) +
+  geom_histogram() +
+  labs(x = "TV Hours")
+```
+]
+.pull-right[
+&lt;img src="session07-types_files/figure-html/unnamed-chunk-18-1.png" width="90%" /&gt;
+]
+
+---
+# EDA - categorical
+
+.pull-left[
+
+
+```r
+gss_cat %&gt;% 
+  ggplot(aes(x=marital)) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+]
+
+.pull-right[
+&lt;img src="session07-types_files/figure-html/unnamed-chunk-20-1.png" width="90%" /&gt;
+]
+
+---
+# What are we trying to show?
+
+![](session07-types_files/figure-html/unnamed-chunk-21-1.png)&lt;!-- --&gt;
+
+---
+# Factors have an ordering
+
+Factors are stored with an order even if there is no inherent ordering to the meaning
+
+
+```r
+levels(gss_cat$marital)
+```
+
+```
+## [1] "No answer"     "Never married" "Separated"     "Divorced"      "Widowed"      
+## [6] "Married"
+```
+
+
+---
+# Reorder factor levels
+
+&gt; * `fct_inorder()`: by the order in which they first appear.
+
+&gt; * `fct_infreq()`: by number of observations with each level (largest first)
+
+&gt; * `fct_inseq()`: by numeric value of level.
+
+https://forcats.tidyverse.org/reference/fct_inorder.html
+
+---
+
+## Example
+
+
+```r
+f &lt;- factor(c("b", "b", "a", "c", "c", "c"))
+f
+```
+
+```
+## [1] b b a c c c
+## Levels: a b c
+```
+
+
+```r
+fct_inorder(f)
+```
+
+```
+## [1] b b a c c c
+## Levels: b a c
+```
+
+---
+class: your-turn
+
+# Your Turn
+
+.pull-left[
+Use ggplot and one of these forcats functions to recreate the plot of `gss_cat`:
+
+* `fct_inorder()`
+
+* `fct_infreq()`
+
+* `fct_inseq()`
+]
+
+.pull-right[
+&lt;img src="session07-types_files/figure-html/unnamed-chunk-25-1.png" width="90%" /&gt;
+]
+
+---
+class: your-turn
+# Solution
+
+.pull-left[
+
+```r
+gss %&gt;%
+  ggplot(
+    aes(
+      x = fct_infreq(marital)
+    )
+  ) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+]
+
+.pull-right[
+&lt;img src="session07-types_files/figure-html/unnamed-chunk-27-1.png" width="90%" /&gt;
+]
+
+---
+class: middle chapter-slide tan
 
 .big-white-number[3.]
 
 # Dates
+
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
