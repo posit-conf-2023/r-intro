@@ -1523,12 +1523,3 @@ class: blue, middle, center
 
 # .big-text.white[The end `r emo::ji("rocket")`]
 
----
-background-image: url("https://images.unsplash.com/photo-1518541355664-6ca16f8aacf5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80")
-background-position: left
-background-size: cover
-
-### Next up: Coffee Break
-
-Meet back here at 11:00am for Session 2
-
