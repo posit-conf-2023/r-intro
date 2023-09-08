@@ -808,6 +808,31 @@ knitr::include_graphics("images/session03-quarto/chunk-labels-nav.png")
 ```
 
 ---
+# Inline code
+
+To include executable code within markdown text, enclose your code in `r` surrounded by single backticks. 
+
+.pull-left[
+
+**Input**
+
+````markdown
+Our data includes measurements 
+from `r knitr::inline_expr("n_distinct(mpg$model)")` 
+different car models.
+````
+
+]
+
+.pull-right[
+
+**Output**
+
+Our data includes measurements from `r n_distinct(mpg$model)` different car models.
+
+]
+
+---
 class: your-turn
 
 # Your Turn 2
