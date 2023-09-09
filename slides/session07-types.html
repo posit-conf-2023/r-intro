@@ -81,6 +81,7 @@ class: middle
 https://stringr.tidyverse.org/
 ]
 
+
 ???
 
 The stringr package is your tidyverse companion to all things strings.
@@ -95,13 +96,32 @@ Let's look at a concrete example.
 
 class: middle
 
-# `breed_traits` dataset
+# Breed Traits data set
 
 
 
 
-<div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-868d4743a89311d744fd" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-868d4743a89311d744fd">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"breed":["Retrievers (Labrador)","French Bulldogs","German Shepherd Dogs","Retrievers (Golden)","Bulldogs","Poodles","Beagles","Rottweilers","Pointers (German Shorthaired)","Dachshunds","Pembroke Welsh Corgis","Australian Shepherds","Yorkshire Terriers","Boxers","Great Danes","Siberian Huskies","Cavalier King Charles Spaniels","Doberman Pinschers","Miniature Schnauzers","Shih Tzu","Boston Terriers","Bernese Mountain Dogs","Pomeranians","Havanese","Cane Corso","Spaniels (English Springer)","Shetland Sheepdogs","Brittanys","Pugs","Spaniels (Cocker)","Miniature American Shepherds","Border Collies","Mastiffs","Chihuahuas","Vizslas","Basset Hounds","Belgian Malinois","Maltese","Weimaraners","Collies","Newfoundlands","Rhodesian Ridgebacks","Shiba Inu","West Highland White Terriers","Bichons Frises","Bloodhounds","Spaniels (English Cocker)","Akitas","Portuguese Water Dogs","Retrievers (Chesapeake Bay)","Dalmatians","St. Bernards","Papillons","Australian Cattle Dogs","Bullmastiffs","Samoyeds","Scottish Terriers","Soft Coated Wheaten Terriers","Whippets","Pointers (German Wirehaired)","Chinese Shar-Pei","Airedale Terriers","Wirehaired Pointing Griffons","Bull Terriers","Alaskan Malamutes","Cardigan Welsh Corgis","Giant Schnauzers","Old English Sheepdogs","Italian Greyhounds","Great Pyrenees","Dogues de Bordeaux","Russell Terriers","Cairn Terriers","Irish Wolfhounds","Setters (Irish)","Greater Swiss Mountain Dogs","Miniature Pinschers","Lhasa Apsos","Chinese Crested","Coton de Tulear","Staffordshire Bull Terriers","American Staffordshire Terriers","Rat Terriers","Chow Chows","Anatolian Shepherd Dogs","Basenjis","Spaniels (Boykin)","Lagotti Romagnoli","Brussels Griffons","Retrievers (Nova Scotia Duck Tolling)","Norwegian Elkhounds","Standard Schnauzers","Dogo Argentinos","Bouviers des Flandres","Pekingese","Keeshonden","Border Terriers","Leonbergers","Tibetan Terriers","Neapolitan Mastiffs"],"affection":[5,5,5,5,4,5,3,5,5,5,5,3,5,4,5,5,5,5,5,5,5,5,5,5,4,5,5,3,5,4,5,5,5,4,5,3,3,5,5,4,5,5,5,5,5,4,5,3,5,4,5,5,5,3,4,5,5,5,5,5,4,3,5,4,3,4,5,5,5,5,5,5,4,5,5,5,5,5,4,5,5,5,5,4,1,3,3,5,4,5,5,5,5,3,5,5,4,5,5,3],"shedding":[4,3,4,4,3,1,3,3,3,2,4,3,1,2,3,4,2,4,3,1,2,5,2,2,2,3,3,3,4,3,3,3,3,2,3,2,3,1,3,3,3,3,3,3,1,3,3,3,2,3,4,3,3,3,3,3,2,1,2,2,3,1,3,3,3,3,3,3,3,3,4,3,2,3,3,3,3,1,1,2,2,2,3,3,3,2,3,1,3,3,3,1,4,3,3,3,2,4,3,3],"drooling":[2,3,2,2,3,1,1,3,2,2,1,1,1,3,4,1,2,2,2,1,1,3,1,1,3,3,1,1,1,2,2,1,4,1,2,4,1,1,2,2,5,2,1,1,1,5,2,1,2,2,2,5,1,1,3,1,2,2,1,2,3,1,3,1,1,1,2,3,1,3,5,1,1,2,2,3,1,1,1,1,3,1,1,3,1,1,1,2,1,2,2,3,3,2,1,2,1,3,2,5],"openness":[5,5,3,5,4,5,3,3,4,4,4,3,5,4,3,5,4,4,3,3,5,4,3,5,3,4,2,3,5,4,3,4,3,2,4,3,3,3,3,3,5,3,3,4,5,3,4,2,4,3,4,3,5,3,3,5,3,3,3,4,3,3,5,4,3,4,3,3,5,3,3,5,3,3,5,5,3,3,4,5,4,4,5,2,1,3,3,4,4,3,4,3,4,3,3,5,4,5,3,3],"playfulness":[5,5,4,4,4,5,4,4,4,4,4,4,4,4,4,5,3,4,4,3,5,4,3,5,3,4,5,4,5,3,4,5,3,4,5,3,3,3,5,4,3,3,3,5,4,3,3,3,5,3,4,3,5,3,3,5,4,3,4,4,3,3,4,4,3,4,4,4,4,3,3,5,4,3,5,4,4,3,3,4,4,3,5,3,3,3,4,4,4,5,4,4,4,3,4,5,4,3,3,2],"protectiveness":[3,3,5,3,3,5,2,5,4,4,5,3,5,4,5,1,3,5,4,3,3,3,4,3,5,3,5,3,3,3,3,3,5,4,3,3,4,4,5,3,5,5,5,5,2,2,3,5,4,4,4,5,4,4,5,4,5,3,3,3,4,5,3,3,4,3,5,4,3,5,5,4,4,5,3,4,5,5,3,3,5,5,4,5,5,3,3,3,3,3,5,5,5,4,4,5,3,4,4,5],"adaptability":[5,5,5,5,3,4,4,4,4,4,4,3,5,3,4,4,3,4,5,5,3,4,4,5,3,4,5,3,5,4,4,5,4,4,5,3,3,4,4,4,4,4,3,4,4,3,4,3,5,4,4,4,5,3,3,4,4,3,3,4,4,3,4,3,3,3,4,4,4,3,4,4,3,3,4,3,4,5,4,4,5,3,4,3,3,3,4,4,4,4,4,4,4,3,4,5,4,4,4,3],"trainability":[5,4,5,5,4,5,3,5,5,4,4,5,4,4,3,3,4,5,5,4,4,4,3,4,4,5,5,5,4,4,5,5,3,3,5,3,5,3,5,4,3,4,2,3,4,4,4,3,5,5,4,3,5,4,4,4,3,3,3,5,3,3,5,3,5,4,5,4,4,3,4,3,3,3,4,4,3,3,4,4,5,3,5,3,2,2,4,4,4,5,4,5,5,4,3,5,4,5,3,3],"energy":[5,3,5,3,3,4,4,3,5,3,4,5,4,4,4,5,3,5,3,3,4,4,3,3,4,4,4,5,3,4,5,5,3,4,5,2,4,3,5,3,3,3,3,4,4,3,3,4,5,4,4,3,4,5,4,4,3,4,4,5,3,3,5,4,4,4,5,3,3,3,3,5,3,3,5,4,5,3,3,3,4,3,4,3,3,4,4,4,3,5,4,3,5,4,3,4,3,3,4,2],"barking":[3,1,3,1,2,4,4,1,3,5,4,3,4,3,3,5,3,3,5,3,2,3,4,4,3,3,5,3,1,3,3,4,1,5,3,4,3,3,3,5,1,2,3,5,3,5,3,2,3,3,3,1,5,1,1,5,4,3,1,3,3,3,3,3,3,5,3,3,3,3,3,4,4,1,3,3,5,3,3,1,3,3,3,1,3,1,3,2,4,2,4,3,3,3,1,4,3,3,3,1],"stimulation_needs":[4,3,5,4,3,5,4,5,5,3,4,5,4,4,4,4,3,4,4,3,3,3,3,3,3,4,4,4,3,3,5,5,3,3,5,3,4,3,5,3,3,4,4,4,3,3,4,3,5,4,4,3,5,4,4,4,4,3,4,4,3,3,5,4,3,4,4,4,3,3,4,5,3,3,4,4,5,3,3,3,4,3,5,3,3,4,3,4,3,4,4,5,4,3,3,4,3,4,4,3],"good_w_children":[5,5,5,5,3,5,5,3,5,3,3,5,5,5,3,5,5,5,5,5,5,5,3,5,3,3,5,4,5,5,5,3,5,1,5,5,3,3,5,5,5,5,3,5,5,3,5,3,5,3,3,5,5,3,3,5,3,5,5,3,3,3,5,3,3,4,3,5,3,3,3,3,3,3,5,5,3,3,3,5,5,3,5,3,3,3,5,3,3,5,3,5,3,3,3,5,5,5,3,3],"good_w_other_dogs":[5,4,3,5,3,3,5,3,4,4,4,3,3,3,3,5,5,3,3,5,4,5,3,5,3,4,5,4,4,5,5,3,3,3,4,5,3,3,3,3,5,3,3,3,5,3,5,1,4,3,3,3,3,3,3,3,2,3,5,3,3,3,3,1,3,3,3,3,5,3,3,5,3,4,5,3,4,3,3,5,3,3,3,2,3,3,5,5,3,4,3,3,3,3,3,5,3,3,3,3],"grooming_freq":[2,1,2,2,3,4,2,1,2,2,2,2,5,2,1,2,2,1,4,4,2,3,3,3,1,2,3,3,2,4,3,3,1,1,2,3,2,4,2,3,2,2,2,3,5,2,3,3,4,3,2,2,2,1,1,3,3,4,1,2,1,3,2,2,3,2,4,4,1,2,1,2,2,2,3,2,1,3,2,4,2,1,2,3,2,1,3,2,3,2,2,3,1,4,3,3,2,4,3,2]},"columns":[{"id":"breed","name":"breed","type":"character","maxWidth":400,"align":"left"},{"id":"affection","name":"affection","type":"numeric","maxWidth":400,"align":"left"},{"id":"shedding","name":"shedding","type":"numeric","maxWidth":400,"align":"left"},{"id":"drooling","name":"drooling","type":"numeric","maxWidth":400,"align":"left"},{"id":"openness","name":"openness","type":"numeric","maxWidth":400,"align":"left"},{"id":"playfulness","name":"playfulness","type":"numeric","maxWidth":400,"align":"left"},{"id":"protectiveness","name":"protectiveness","type":"numeric","maxWidth":400,"align":"left"},{"id":"adaptability","name":"adaptability","type":"numeric","maxWidth":400,"align":"left"},{"id":"trainability","name":"trainability","type":"numeric","maxWidth":400,"align":"left"},{"id":"energy","name":"energy","type":"numeric","maxWidth":400,"align":"left"},{"id":"barking","name":"barking","type":"numeric","maxWidth":400,"align":"left"},{"id":"stimulation_needs","name":"stimulation_needs","type":"numeric","maxWidth":400,"align":"left"},{"id":"good_w_children","name":"good_w_children","type":"numeric","maxWidth":400,"align":"left"},{"id":"good_w_other_dogs","name":"good_w_other_dogs","type":"numeric","maxWidth":400,"align":"left"},{"id":"grooming_freq","name":"grooming_freq","type":"numeric","maxWidth":400,"align":"left"}],"sortable":false,"defaultPageSize":8,"showPageInfo":true,"striped":true,"compact":true,"nowrap":true,"language":{"pageInfo":"{rowStart}-{rowEnd} of {rows} rows (Total: 195)"},"dataKey":"93473b5e174c4846ab52590c8625a63b"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+
+```r
+breed_traits
+```
+
+
+```
+## # A tibble: 195 × 15
+##   breed affection shedding drooling openness playfulness protectiveness adaptability trainability energy
+##   &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Retr…         5        4        2        5           5              3            5            5      5
+## 2 Fren…         5        3        3        5           5              3            5            4      3
+## 3 Germ…         5        4        2        3           4              5            5            5      5
+## 4 Retr…         5        4        2        5           4              3            5            5      3
+## 5 Bull…         4        3        3        4           4              3            3            4      3
+## 6 Pood…         5        1        1        5           5              5            4            5      4
+## # ℹ 189 more rows
+## # ℹ 5 more variables: barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;,
+## #   good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
+```
+
 
 ???
 
@@ -147,11 +167,11 @@ breed_traits %&gt;%
 
 ```
 ## # A tibble: 1 × 15
-##   breed             affection shedding drooling openness playfulness protectiveness adaptability
-##   &lt;chr&gt;                 &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;
-## 1 Yorkshire Terrie…         5        1        1        5           4              5            5
-## # ℹ 7 more variables: trainability &lt;dbl&gt;, energy &lt;dbl&gt;, barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;,
-## #   good_w_children &lt;dbl&gt;, good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
+##   breed affection shedding drooling openness playfulness protectiveness adaptability trainability energy
+##   &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+## 1 York…         5        1        1        5           4              5            5            4      4
+## # ℹ 5 more variables: barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;,
+## #   good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
 ```
 
 ???
@@ -178,12 +198,12 @@ breed_traits %&gt;%
 
 ```
 ## # A tibble: 2 × 15
-##   breed             affection shedding drooling openness playfulness protectiveness adaptability
-##   &lt;chr&gt;                 &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;
-## 1 Yorkshire Terrie…         5        1        1        5           4              5            5
-## 2 Boston Terriers           5        2        1        5           5              3            3
-## # ℹ 7 more variables: trainability &lt;dbl&gt;, energy &lt;dbl&gt;, barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;,
-## #   good_w_children &lt;dbl&gt;, good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
+##   breed affection shedding drooling openness playfulness protectiveness adaptability trainability energy
+##   &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+## 1 York…         5        1        1        5           4              5            5            4      4
+## 2 Bost…         5        2        1        5           5              3            3            4      4
+## # ℹ 5 more variables: barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;,
+## #   good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
 ```
 
 ???
@@ -236,23 +256,25 @@ breed_traits %&gt;%
   filter(str_detect(breed, "Terrier"))
 ```
 
+
+
 ```
 ## # A tibble: 36 × 15
-##    breed            affection shedding drooling openness playfulness protectiveness adaptability
-##    &lt;chr&gt;                &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;
-##  1 Yorkshire Terri…         5        1        1        5           4              5            5
-##  2 Boston Terriers          5        2        1        5           5              3            3
-##  3 West Highland W…         5        3        1        4           5              5            4
-##  4 Scottish Terrie…         5        2        2        3           4              5            4
-##  5 Soft Coated Whe…         5        1        2        3           3              3            3
-##  6 Airedale Terrie…         3        1        1        3           3              5            3
-##  7 Bull Terriers            4        3        1        4           4              3            3
-##  8 Russell Terriers         5        3        1        5           5              4            4
-##  9 Cairn Terriers           4        2        1        3           4              4            3
-## 10 Staffordshire B…         5        2        3        4           4              5            5
+##    breed       affection shedding drooling openness playfulness protectiveness adaptability trainability
+##    &lt;chr&gt;           &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+##  1 Yorkshire …         5        1        1        5           4              5            5            4
+##  2 Boston Ter…         5        2        1        5           5              3            3            4
+##  3 West Highl…         5        3        1        4           5              5            4            3
+##  4 Scottish T…         5        2        2        3           4              5            4            3
+##  5 Soft Coate…         5        1        2        3           3              3            3            3
+##  6 Airedale T…         3        1        1        3           3              5            3            3
+##  7 Bull Terri…         4        3        1        4           4              3            3            3
+##  8 Russell Te…         5        3        1        5           5              4            4            3
+##  9 Cairn Terr…         4        2        1        3           4              4            3            3
+## 10 Staffordsh…         5        2        3        4           4              5            5            5
 ## # ℹ 26 more rows
-## # ℹ 7 more variables: trainability &lt;dbl&gt;, energy &lt;dbl&gt;, barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;,
-## #   good_w_children &lt;dbl&gt;, good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
+## # ℹ 6 more variables: energy &lt;dbl&gt;, barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;,
+## #   good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
 ```
 
 ???
@@ -388,9 +410,9 @@ str_subset(fruit, " ")
 ```
 
 ```
-##  [1] "bell pepper"       "blood orange"      "canary melon"      "chili pepper"     
-##  [5] "goji berry"        "kiwi fruit"        "purple mangosteen" "rock melon"       
-##  [9] "salal berry"       "star fruit"        "ugli fruit"
+##  [1] "bell pepper"       "blood orange"      "canary melon"      "chili pepper"      "goji berry"       
+##  [6] "kiwi fruit"        "purple mangosteen" "rock melon"        "salal berry"       "star fruit"       
+## [11] "ugli fruit"
 ```
 
 ---
@@ -424,8 +446,8 @@ library(forcats)
 gss_cat
 ```
 
-<div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3d5f3a68b5dbdf5eee23" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-3d5f3a68b5dbdf5eee23">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"year":[2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000],"marital":["Never married","Divorced","Widowed","Never married","Divorced","Married","Never married","Divorced","Married","Married","Married","Married","Married","Married","Divorced","Married","Widowed","Never married","Married","Married","Married","Married","Never married","Widowed","Widowed","Widowed","Widowed","Widowed","Divorced","Widowed","Widowed","Married","Married","Never married","Married","Never married","Never married","Never married","Never married","Never married","Married","Married","Divorced","Never married","Never married","Never married","Married","Married","Married","Married","Never married","Married","Married","Married","Married","Divorced","Divorced","Divorced","Never married","Never married","Married","Married","Never married","Divorced","Never married","Widowed","Divorced","Married","Never married","Never married","Widowed","Widowed","Widowed","Widowed","Widowed","Never married","Widowed","Never married","Married","Never married","Married","Married","Widowed","Married","Married","Divorced","Never married","Separated","Never married","Widowed","Widowed","Married","Divorced","Never married","Never married","Never married","Married","Married","Widowed","Divorced"],"age":[26,48,67,39,25,25,36,44,44,47,53,52,52,51,52,40,77,44,40,45,48,49,19,54,82,83,89,88,72,82,89,34,55,37,22,33,37,43,29,57,31,45,36,52,26,46,65,52,56,66,20,64,59,46,26,39,51,45,23,21,26,31,27,78,29,43,61,33,34,89,83,78,89,84,69,32,76,41,32,29,40,44,70,40,51,75,22,53,20,80,70,45,46,24,51,32,53,52,83,39],"race":["White","White","White","White","White","White","White","White","White","White","White","White","White","White","White","Black","White","White","White","Black","White","White","White","White","White","White","White","White","White","White","White","White","Black","White","White","Other","White","White","White","White","White","White","Black","White","White","White","White","White","White","White","White","White","White","White","Other","Black","White","White","White","White","White","Other","Black","White","White","Black","White","White","Black","White","Black","Black","Black","Black","Black","Black","Black","Black","Black","Black","Black","White","Black","Black","Black","White","Black","Black","White","White","White","White","White","White","White","White","White","White","White","White"],"rincome":["$8000 to 9999","$8000 to 9999","Not applicable","Not applicable","Not applicable","$20000 - 24999","$25000 or more","$7000 to 7999","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","Not applicable","$25000 or more","$10000 - 14999","Not applicable","$25000 or more","Refused","Not applicable","$25000 or more","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Refused","Not applicable","$25000 or more","$10000 - 14999","$20000 - 24999","$25000 or more","$20000 - 24999","$25000 or more","Refused","$20000 - 24999","$25000 or more","$15000 - 19999","Not applicable","$25000 or more","$10000 - 14999","$25000 or more","$3000 to 3999","$25000 or more","$25000 or more","$15000 - 19999","$5000 to 5999","$25000 or more","Not applicable","$10000 - 14999","Don't know","$20000 - 24999","$25000 or more","$1000 to 2999","Don't know","$10000 - 14999","$25000 or more","$25000 or more","Not applicable","$10000 - 14999","Not applicable","$25000 or more","Not applicable","$15000 - 19999","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","$10000 - 14999","Not applicable","Not applicable","$25000 or more","$25000 or more","$25000 or more","$3000 to 3999","Not applicable","Refused","$3000 to 3999","Not applicable","$20000 - 24999","$25000 or more","$10000 - 14999","Not applicable","Refused","$25000 or more","$25000 or more","$15000 - 19999","$20000 - 24999","$25000 or more","Refused","Lt $1000","Not applicable","Refused"],"partyid":["Ind,near rep","Not str republican","Independent","Ind,near rep","Not str democrat","Strong democrat","Not str republican","Ind,near dem","Not str democrat","Strong republican","Not str democrat","Ind,near rep","Strong democrat","Strong republican","Ind,near dem","Strong democrat","Strong republican","Independent","Not str democrat","Independent","Ind,near dem","Strong republican","Independent","Ind,near rep","Not str democrat","Strong democrat","Not str democrat","Strong republican","Strong democrat","Independent","Ind,near rep","Not str democrat","Not str democrat","Independent","Ind,near dem","Not str democrat","Ind,near dem","Independent","Ind,near rep","Strong republican","Ind,near dem","Independent","Strong democrat","Ind,near dem","Ind,near rep","Strong democrat","Strong republican","Ind,near rep","Not str republican","Strong republican","Strong republican","Strong republican","Strong democrat","Not str republican","Not str democrat","Independent","Independent","Ind,near rep","Strong democrat","Not str republican","Not str republican","Not str republican","Strong democrat","Ind,near dem","Independent","Independent","Strong republican","Strong democrat","Strong democrat","Independent","Strong democrat","Strong democrat","Independent","Strong democrat","Not str democrat","Ind,near dem","Strong democrat","Strong democrat","Strong democrat","Not str republican","Strong democrat","Not str republican","Strong democrat","Ind,near dem","Strong democrat","Strong democrat","Independent","Strong democrat","Ind,near dem","Not str democrat","Not str republican","Independent","Not str democrat","Ind,near dem","Not str republican","Not str republican","Independent","Ind,near dem","Not str republican","Independent"],"relig":["Protestant","Protestant","Protestant","Orthodox-christian","None","Protestant","Christian","Protestant","Protestant","Protestant","Protestant","None","Protestant","Protestant","None","Protestant","Jewish","None","Catholic","Protestant","Catholic","Protestant","None","Christian","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Catholic","Protestant","None","Protestant","Christian","None","Catholic","Catholic","Protestant","None","Catholic","None","Other","None","Catholic","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","None","None","Protestant","Protestant","Protestant","Protestant","Protestant","Christian","Protestant","Protestant","None","None","Catholic","Protestant","Protestant","Protestant","Protestant","Other","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Catholic","Protestant","Protestant","Protestant","Catholic","Protestant","Protestant","Protestant","Protestant","Protestant","Catholic","Catholic","Catholic","Catholic","Inter-nondenominational","Catholic","Catholic","Catholic","Catholic","None","None","None"],"denom":["Southern baptist","Baptist-dk which","No denomination","Not applicable","Not applicable","Southern baptist","Not applicable","Lutheran-mo synod","Other","Southern baptist","Other","Not applicable","Southern baptist","United methodist","Not applicable","Baptist-dk which","Not applicable","Not applicable","Not applicable","United methodist","Not applicable","United methodist","Not applicable","Not applicable","Other","Episcopal","Other lutheran","Afr meth ep zion","Southern baptist","Am bapt ch in usa","Other methodist","Not applicable","Other","Not applicable","Other","Not applicable","Not applicable","Not applicable","Not applicable","Southern baptist","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Southern baptist","Presbyterian c in us","Episcopal","Southern baptist","Methodist-dk which","Other","Other","No denomination","Not applicable","Not applicable","Baptist-dk which","Southern baptist","Other","Presbyterian c in us","United methodist","Not applicable","Am bapt ch in usa","Southern baptist","Not applicable","Not applicable","Not applicable","No denomination","Nat bapt conv usa","Am lutheran","United methodist","Not applicable","Baptist-dk which","Nat bapt conv of am","Nat bapt conv of am","Nat bapt conv usa","Southern baptist","Nat bapt conv of am","Not applicable","Baptist-dk which","Southern baptist","Lutheran-mo synod","Not applicable","Other","Baptist-dk which","Am baptist asso","Southern baptist","Baptist-dk which","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable"],"tvhours":[12,"NA",2,4,1,"NA",3,"NA",0,3,2,"NA",1,"NA",1,7,"NA",3,3,"NA",1,2,2,1,3,"NA",4,"NA",7,"NA",3,"NA",1,"NA","NA","NA",1,4,2,1,2,"NA","NA",1,1,"NA",1,4,5,3,2,"NA","NA",3,2,"NA",2,2,0,"NA",2,"NA",4,4,"NA",3,"NA",2,"NA",2,12,4,8,"NA",4,5,"NA",5,2,4,1,"NA",2,3,"NA",7,3,1,2,8,"NA",1,2,3,"NA",0,4,"NA","NA",0]},"columns":[{"id":"year","name":"year","type":"numeric","maxWidth":400,"align":"left"},{"id":"marital","name":"marital","type":"factor","maxWidth":400,"align":"left"},{"id":"age","name":"age","type":"numeric","maxWidth":400,"align":"left"},{"id":"race","name":"race","type":"factor","maxWidth":400,"align":"left"},{"id":"rincome","name":"rincome","type":"factor","maxWidth":400,"align":"left"},{"id":"partyid","name":"partyid","type":"factor","maxWidth":400,"align":"left"},{"id":"relig","name":"relig","type":"factor","maxWidth":400,"align":"left"},{"id":"denom","name":"denom","type":"factor","maxWidth":400,"align":"left"},{"id":"tvhours","name":"tvhours","type":"numeric","maxWidth":400,"align":"left"}],"sortable":false,"defaultPageSize":8,"showPageInfo":true,"striped":true,"compact":true,"nowrap":true,"language":{"pageInfo":"{rowStart}-{rowEnd} of {rows} rows (Total: 21,483)"},"dataKey":"bcb496690defb9d0b7dbae563cffd6ae"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6abad1d2811ea0e898be" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6abad1d2811ea0e898be">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"year":[2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000],"marital":["Never married","Divorced","Widowed","Never married","Divorced","Married","Never married","Divorced","Married","Married","Married","Married","Married","Married","Divorced","Married","Widowed","Never married","Married","Married","Married","Married","Never married","Widowed","Widowed","Widowed","Widowed","Widowed","Divorced","Widowed","Widowed","Married","Married","Never married","Married","Never married","Never married","Never married","Never married","Never married","Married","Married","Divorced","Never married","Never married","Never married","Married","Married","Married","Married","Never married","Married","Married","Married","Married","Divorced","Divorced","Divorced","Never married","Never married","Married","Married","Never married","Divorced","Never married","Widowed","Divorced","Married","Never married","Never married","Widowed","Widowed","Widowed","Widowed","Widowed","Never married","Widowed","Never married","Married","Never married","Married","Married","Widowed","Married","Married","Divorced","Never married","Separated","Never married","Widowed","Widowed","Married","Divorced","Never married","Never married","Never married","Married","Married","Widowed","Divorced"],"age":[26,48,67,39,25,25,36,44,44,47,53,52,52,51,52,40,77,44,40,45,48,49,19,54,82,83,89,88,72,82,89,34,55,37,22,33,37,43,29,57,31,45,36,52,26,46,65,52,56,66,20,64,59,46,26,39,51,45,23,21,26,31,27,78,29,43,61,33,34,89,83,78,89,84,69,32,76,41,32,29,40,44,70,40,51,75,22,53,20,80,70,45,46,24,51,32,53,52,83,39],"race":["White","White","White","White","White","White","White","White","White","White","White","White","White","White","White","Black","White","White","White","Black","White","White","White","White","White","White","White","White","White","White","White","White","Black","White","White","Other","White","White","White","White","White","White","Black","White","White","White","White","White","White","White","White","White","White","White","Other","Black","White","White","White","White","White","Other","Black","White","White","Black","White","White","Black","White","Black","Black","Black","Black","Black","Black","Black","Black","Black","Black","Black","White","Black","Black","Black","White","Black","Black","White","White","White","White","White","White","White","White","White","White","White","White"],"rincome":["$8000 to 9999","$8000 to 9999","Not applicable","Not applicable","Not applicable","$20000 - 24999","$25000 or more","$7000 to 7999","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","Not applicable","$25000 or more","$10000 - 14999","Not applicable","$25000 or more","Refused","Not applicable","$25000 or more","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Refused","Not applicable","$25000 or more","$10000 - 14999","$20000 - 24999","$25000 or more","$20000 - 24999","$25000 or more","Refused","$20000 - 24999","$25000 or more","$15000 - 19999","Not applicable","$25000 or more","$10000 - 14999","$25000 or more","$3000 to 3999","$25000 or more","$25000 or more","$15000 - 19999","$5000 to 5999","$25000 or more","Not applicable","$10000 - 14999","Don't know","$20000 - 24999","$25000 or more","$1000 to 2999","Don't know","$10000 - 14999","$25000 or more","$25000 or more","Not applicable","$10000 - 14999","Not applicable","$25000 or more","Not applicable","$15000 - 19999","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","$10000 - 14999","Not applicable","Not applicable","$25000 or more","$25000 or more","$25000 or more","$3000 to 3999","Not applicable","Refused","$3000 to 3999","Not applicable","$20000 - 24999","$25000 or more","$10000 - 14999","Not applicable","Refused","$25000 or more","$25000 or more","$15000 - 19999","$20000 - 24999","$25000 or more","Refused","Lt $1000","Not applicable","Refused"],"partyid":["Ind,near rep","Not str republican","Independent","Ind,near rep","Not str democrat","Strong democrat","Not str republican","Ind,near dem","Not str democrat","Strong republican","Not str democrat","Ind,near rep","Strong democrat","Strong republican","Ind,near dem","Strong democrat","Strong republican","Independent","Not str democrat","Independent","Ind,near dem","Strong republican","Independent","Ind,near rep","Not str democrat","Strong democrat","Not str democrat","Strong republican","Strong democrat","Independent","Ind,near rep","Not str democrat","Not str democrat","Independent","Ind,near dem","Not str democrat","Ind,near dem","Independent","Ind,near rep","Strong republican","Ind,near dem","Independent","Strong democrat","Ind,near dem","Ind,near rep","Strong democrat","Strong republican","Ind,near rep","Not str republican","Strong republican","Strong republican","Strong republican","Strong democrat","Not str republican","Not str democrat","Independent","Independent","Ind,near rep","Strong democrat","Not str republican","Not str republican","Not str republican","Strong democrat","Ind,near dem","Independent","Independent","Strong republican","Strong democrat","Strong democrat","Independent","Strong democrat","Strong democrat","Independent","Strong democrat","Not str democrat","Ind,near dem","Strong democrat","Strong democrat","Strong democrat","Not str republican","Strong democrat","Not str republican","Strong democrat","Ind,near dem","Strong democrat","Strong democrat","Independent","Strong democrat","Ind,near dem","Not str democrat","Not str republican","Independent","Not str democrat","Ind,near dem","Not str republican","Not str republican","Independent","Ind,near dem","Not str republican","Independent"],"relig":["Protestant","Protestant","Protestant","Orthodox-christian","None","Protestant","Christian","Protestant","Protestant","Protestant","Protestant","None","Protestant","Protestant","None","Protestant","Jewish","None","Catholic","Protestant","Catholic","Protestant","None","Christian","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Catholic","Protestant","None","Protestant","Christian","None","Catholic","Catholic","Protestant","None","Catholic","None","Other","None","Catholic","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","None","None","Protestant","Protestant","Protestant","Protestant","Protestant","Christian","Protestant","Protestant","None","None","Catholic","Protestant","Protestant","Protestant","Protestant","Other","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Catholic","Protestant","Protestant","Protestant","Catholic","Protestant","Protestant","Protestant","Protestant","Protestant","Catholic","Catholic","Catholic","Catholic","Inter-nondenominational","Catholic","Catholic","Catholic","Catholic","None","None","None"],"denom":["Southern baptist","Baptist-dk which","No denomination","Not applicable","Not applicable","Southern baptist","Not applicable","Lutheran-mo synod","Other","Southern baptist","Other","Not applicable","Southern baptist","United methodist","Not applicable","Baptist-dk which","Not applicable","Not applicable","Not applicable","United methodist","Not applicable","United methodist","Not applicable","Not applicable","Other","Episcopal","Other lutheran","Afr meth ep zion","Southern baptist","Am bapt ch in usa","Other methodist","Not applicable","Other","Not applicable","Other","Not applicable","Not applicable","Not applicable","Not applicable","Southern baptist","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Southern baptist","Presbyterian c in us","Episcopal","Southern baptist","Methodist-dk which","Other","Other","No denomination","Not applicable","Not applicable","Baptist-dk which","Southern baptist","Other","Presbyterian c in us","United methodist","Not applicable","Am bapt ch in usa","Southern baptist","Not applicable","Not applicable","Not applicable","No denomination","Nat bapt conv usa","Am lutheran","United methodist","Not applicable","Baptist-dk which","Nat bapt conv of am","Nat bapt conv of am","Nat bapt conv usa","Southern baptist","Nat bapt conv of am","Not applicable","Baptist-dk which","Southern baptist","Lutheran-mo synod","Not applicable","Other","Baptist-dk which","Am baptist asso","Southern baptist","Baptist-dk which","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable"],"tvhours":[12,"NA",2,4,1,"NA",3,"NA",0,3,2,"NA",1,"NA",1,7,"NA",3,3,"NA",1,2,2,1,3,"NA",4,"NA",7,"NA",3,"NA",1,"NA","NA","NA",1,4,2,1,2,"NA","NA",1,1,"NA",1,4,5,3,2,"NA","NA",3,2,"NA",2,2,0,"NA",2,"NA",4,4,"NA",3,"NA",2,"NA",2,12,4,8,"NA",4,5,"NA",5,2,4,1,"NA",2,3,"NA",7,3,1,2,8,"NA",1,2,3,"NA",0,4,"NA","NA",0]},"columns":[{"id":"year","name":"year","type":"numeric","maxWidth":400,"align":"left"},{"id":"marital","name":"marital","type":"factor","maxWidth":400,"align":"left"},{"id":"age","name":"age","type":"numeric","maxWidth":400,"align":"left"},{"id":"race","name":"race","type":"factor","maxWidth":400,"align":"left"},{"id":"rincome","name":"rincome","type":"factor","maxWidth":400,"align":"left"},{"id":"partyid","name":"partyid","type":"factor","maxWidth":400,"align":"left"},{"id":"relig","name":"relig","type":"factor","maxWidth":400,"align":"left"},{"id":"denom","name":"denom","type":"factor","maxWidth":400,"align":"left"},{"id":"tvhours","name":"tvhours","type":"numeric","maxWidth":400,"align":"left"}],"sortable":false,"defaultPageSize":8,"showPageInfo":true,"striped":true,"compact":true,"nowrap":true,"language":{"pageInfo":"{rowStart}-{rowEnd} of {rows} rows (Total: 21,483)"},"dataKey":"bcb496690defb9d0b7dbae563cffd6ae"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 
 ---
 # EDA - continuous
@@ -441,7 +463,7 @@ gss_cat %&gt;%
 ```
 ]
 .pull-right[
-&lt;img src="session07-types_files/figure-html/unnamed-chunk-18-1.png" width="90%" /&gt;
+&lt;img src="session07-types_files/figure-html/unnamed-chunk-20-1.png" width="90%" /&gt;
 ]
 
 ---
@@ -459,13 +481,13 @@ gss_cat %&gt;%
 ]
 
 .pull-right[
-&lt;img src="session07-types_files/figure-html/unnamed-chunk-20-1.png" width="90%" /&gt;
+&lt;img src="session07-types_files/figure-html/unnamed-chunk-22-1.png" width="90%" /&gt;
 ]
 
 ---
 # What are we trying to show?
 
-![](session07-types_files/figure-html/unnamed-chunk-21-1.png)&lt;!-- --&gt;
+![](session07-types_files/figure-html/unnamed-chunk-23-1.png)&lt;!-- --&gt;
 
 ---
 # Factors have an ordering
@@ -478,8 +500,7 @@ levels(gss_cat$marital)
 ```
 
 ```
-## [1] "No answer"     "Never married" "Separated"     "Divorced"      "Widowed"      
-## [6] "Married"
+## [1] "No answer"     "Never married" "Separated"     "Divorced"      "Widowed"       "Married"
 ```
 
 
@@ -535,7 +556,7 @@ Use ggplot and one of these forcats functions to recreate the plot of `gss_cat`:
 ]
 
 .pull-right[
-&lt;img src="session07-types_files/figure-html/unnamed-chunk-25-1.png" width="90%" /&gt;
+&lt;img src="session07-types_files/figure-html/unnamed-chunk-27-1.png" width="90%" /&gt;
 ]
 
 ---
@@ -557,7 +578,7 @@ gss %&gt;%
 ]
 
 .pull-right[
-&lt;img src="session07-types_files/figure-html/unnamed-chunk-27-1.png" width="90%" /&gt;
+&lt;img src="session07-types_files/figure-html/unnamed-chunk-29-1.png" width="90%" /&gt;
 ]
 
 ---
@@ -567,7 +588,318 @@ class: middle chapter-slide tan
 
 # Dates
 
+
+
 ---
+
+class: middle
+
+.top-fixed[
+# Meet lubridate
+]
+
+.center[&lt;img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/lubridate.png?raw=true" alt="stringr hex sticker" width="300"/&gt;
+
+https://lubridate.tidyverse.org/
+]
+
+---
+class: top
+background-image: url(images/lubridate/date_and_datetime.png)
+background-size: cover
+
+???
+
+Lubridate is a package that makes it easier to work dates and datetimes. These are two standard formats for storing time-related information. A date is what is sounds like - the information for a date, so the year, month, and day. 
+
+A datetime stores all of that as well as hours, minutes, seconds, and time zone.
+
+Lubridate contains a lot of neat features to make it easier to work with dates and datetimes. 
+---
+
+class: top
+background-image: url(images/lubridate/make_dates_1.png)
+background-size: cover
+
+# Creating Dates and Datetimes
+
+???
+When working with time-related information, often the first step is to get your data into a date or datetime format. 
+
+When reading you data into R, it may be expressed in a variety of ways. The lubridate functions are built to make this transformation as intuitive and flexible as possible. 
+
+You may be trying to read in time-related information that uses dashes to separate values. Or maybe spaces, periods, or no spacing at all. 
+
+
+Lubridate functions will handle all of these formats automatically. A function called `ymd` for year/month/day can read all of these different formats and will output the Date object shown on the right. 
+---
+
+class: top
+background-image: url(images/lubridate/make_dates_2.png)
+background-size: cover
+
+# Creating Dates and Datetimes
+
+???
+There are a number of functions that lubridate includes for creating a date or datetime from almost any format. Many of them are listed in this table. There are many permutations on y, m, and d, that are designed to read in time-related information that is stored in different orders. 
+---
+
+class: top
+background-image: url(images/lubridate/diagram_1.png)
+background-size: cover
+# Extract Information
+
+???
+Once we have our data in a date or datetime format, we are able to easily access all of the components used to build the object, such as the year, month, day, etc. 
+
+---
+
+class: top
+background-image: url(images/lubridate/diagram_2.png)
+background-size: cover
+# Extract Information
+
+???
+And, we can even extract additional information such as the quarter, week of the year, day of the year, or day of the week. 
+---
+class: top
+# Other tasks with lubridate
+
+- do math with dates and datetimes
+
+- convert between time zones
+
+- account for leap years
+
+- rounding times (e.g. nearest week or month)
+
+- work with time intervals
+
+???
+Some additional tasks that can be completed using lubridate functions are to:
+
+do math with dates and datetimes, meaning we can add and subtact time-related information
+
+convert between different time zones
+
+account for leap time
+
+round times, for example rounding dates to the nearest week or month
+
+work with intervals of time
+
+---
+# Bike Traffic Dataset
+
+
+```r
+bike_traffic
+```
+
+
+```
+## # A tibble: 85,810 × 5
+##   date                   crossing           direction bike_count ped_count
+##   &lt;fct&gt;                  &lt;fct&gt;              &lt;fct&gt;          &lt;int&gt;     &lt;int&gt;
+## 1 02/28/2019 11:00:00 PM Burke Gilman Trail North              0         0
+## 2 02/28/2019 10:00:00 PM Burke Gilman Trail North              0         0
+## 3 02/28/2019 09:00:00 PM Burke Gilman Trail North              2         0
+## 4 02/28/2019 08:00:00 PM Burke Gilman Trail North              2         1
+## 5 02/28/2019 07:00:00 PM Burke Gilman Trail North              6         0
+## 6 02/28/2019 06:00:00 PM Burke Gilman Trail North             13         5
+## 7 02/28/2019 05:00:00 PM Burke Gilman Trail North             19        15
+## 8 02/28/2019 04:00:00 PM Burke Gilman Trail North             26        23
+## # ℹ 85,802 more rows
+```
+
+
+???
+Here is a dataset containing bicycle traffic counts that we just loaded into R. The date column is stored as a factor with hours listed in AM and PM and is not currently in the standardized datetime format. 
+
+In the current form, we cannot take advantage of the many time-related tools that exist for dates and datetimes. 
+---
+
+# Get into a `datetime` format
+
+
+```r
+bike_traffic %&gt;%
+  mutate(
+    timestamp = mdy_hms(date, tz = "US/Pacific"), 
+    .before = date
+  ) 
+```
+
+
+
+```
+## # A tibble: 85,810 × 6
+##   timestamp           date                   crossing           direction bike_count ped_count
+##   &lt;dttm&gt;              &lt;fct&gt;                  &lt;fct&gt;              &lt;fct&gt;          &lt;int&gt;     &lt;int&gt;
+## 1 2019-02-28 23:00:00 02/28/2019 11:00:00 PM Burke Gilman Trail North              0         0
+## 2 2019-02-28 22:00:00 02/28/2019 10:00:00 PM Burke Gilman Trail North              0         0
+## 3 2019-02-28 21:00:00 02/28/2019 09:00:00 PM Burke Gilman Trail North              2         0
+## 4 2019-02-28 20:00:00 02/28/2019 08:00:00 PM Burke Gilman Trail North              2         1
+## 5 2019-02-28 19:00:00 02/28/2019 07:00:00 PM Burke Gilman Trail North              6         0
+## # ℹ 85,805 more rows
+```
+
+???
+
+So, we will use a lubridate function to turn this column into a datetime.
+
+Because our data was in the order Year-Month-Day-Hour-Minute-Second, we used the YMD_HMS function to turn the column of values into datetimes. 
+---
+
+# Get into a `date` format
+
+
+```r
+labor_day &lt;- ymd("2015-09-07")
+```
+
+
+
+```
+## [1] "2015-09-07"
+```
+
+???
+Suppose we are interested in the bike traffic around labor day. We can start by creating a date object for our date of interest. 
+
+---
+class:top
+
+# Find the day of the week
+
+```r
+wday(labor_day, label = TRUE)
+```
+
+
+```
+## [1] Mon
+## Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat
+```
+
+???
+And we can confirm that the day of the week is Monday as we expected.
+---
+
+class: top
+# Manipulate Times
+
+
+```r
+labor_day - weeks(1)
+```
+
+```
+## [1] "2015-08-31"
+```
+
+???
+Now we can do math with the date. If we are interested in the bike traffic within a week of labor day, we can easily add or subtract a week from the date.
+
+Here, I've shown an example where we subtract one week from our date object, labor_day, by simply using the subtract sign and the weeks function to express a unit of time equal to one week. 
+
+---
+# Time Intervals
+
+```r
+date_interval &lt;- 
+  interval(labor_day - weeks(1), labor_day + weeks(1))
+
+date_interval
+```
+
+
+
+```
+## [1] 2015-08-31 UTC--2015-09-14 UTC
+```
+
+???
+Next, we can create an interval that will span from one week before labor day to one week after using lubridate's interval function.
+
+And now we have a date interval, denoted by the double-dashes in the middle of the two dates. 
+--
+
+
+```r
+bike_traffic %&gt;%
+  filter(timestamp %within% date_interval)
+```
+
+???
+And finally we can filter our dataset to that time interval using an operator called within. 
+---
+# Filtered Result
+
+
+```r
+bike_traffic %&gt;%
+  filter(timestamp %within% date_interval)
+```
+
+
+
+```
+## # A tibble: 674 × 6
+##   timestamp           date                   crossing           direction bike_count ped_count
+##   &lt;dttm&gt;              &lt;fct&gt;                  &lt;fct&gt;              &lt;fct&gt;          &lt;int&gt;     &lt;int&gt;
+## 1 2015-09-13 17:00:00 09/13/2015 05:00:00 PM Burke Gilman Trail North             33        18
+## 2 2015-09-13 16:00:00 09/13/2015 04:00:00 PM Burke Gilman Trail North             44        23
+## 3 2015-09-13 15:00:00 09/13/2015 03:00:00 PM Burke Gilman Trail North             50        20
+## 4 2015-09-13 14:00:00 09/13/2015 02:00:00 PM Burke Gilman Trail North             30        17
+## 5 2015-09-13 13:00:00 09/13/2015 01:00:00 PM Burke Gilman Trail North             30        15
+## 6 2015-09-13 12:00:00 09/13/2015 12:00:00 PM Burke Gilman Trail North             33        18
+## 7 2015-09-13 11:00:00 09/13/2015 11:00:00 AM Burke Gilman Trail North             90        12
+## 8 2015-09-13 10:00:00 09/13/2015 10:00:00 AM Burke Gilman Trail North            149        35
+## # ℹ 666 more rows
+```
+???
+And here is the filtered result, which is now subset of the original data ccontaining only the records with had a timestamp within one week of labor day. 
+
+---
+class: your-turn
+
+# Your Turn
+
+A. What day of the week was the moon landing (July 20, 1969)?
+
+
+```r
+ymd(____) %&gt;%
+  ____(label = ____)
+```
+
+B. How many days ago was the moon landing?
+
+
+```r
+date(now()) ____ ymd(____) 
+```
+
+---
+class: your-turn
+
+# Solution
+
+A. What day of the week was the moon landing (July 20, 1969)?
+
+
+```r
+ymd("1969-07-20") %&gt;%
+  wday(label = TRUE)
+```
+
+B. How many days ago was the moon landing?
+
+
+```r
+date(now()) - ymd("1969-07-20")
+```
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
