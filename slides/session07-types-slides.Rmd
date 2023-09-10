@@ -1,0 +1,932 @@
+---
+title: "Data types"
+subtitle: "Day 2, Session 7"
+date: "September 18, 2023"
+output:
+  xaringan::moon_reader:
+    css: ["default", "assets/academy-theme.css"]
+    seal: false
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+class: title-slide
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+options(knitr.duplicate.label = "allow")
+
+library(tidyverse)
+library(flair)
+```
+
+```{r reactable-function, include=FALSE}
+reactable_preview <- function(data) {
+
+  page_info <- "{rowStart}-{rowEnd} of {rows} rows"
+
+  if (nrow(data) > 100) {
+    page_info <- glue::glue(
+      "{page_info} (Total: {actual})",
+      actual = format(nrow(data), big.mark = ",")
+    )
+  }
+
+  data %>%
+    slice_head(n = 100) %>%
+    reactable::reactable(
+      defaultColDef = reactable::colDef(align = "left", maxWidth = 400),
+      defaultPageSize = 8,
+      compact = TRUE,
+      wrap = FALSE,
+      striped = TRUE,
+      sortable = FALSE,
+      showPageInfo = TRUE,
+      language = reactable::reactableLang(
+        pageInfo = page_info
+      )
+    )
+}
+```
+
+# `r rmarkdown::metadata$title`
+
+### `r rmarkdown::metadata$subtitle`
+
+<div class="title-footer">
+  <img src="images/academy-logo.png">
+  <div> `r rmarkdown::metadata$date`</div>
+</div>
+
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c("tile_view", "panelset", "share_again"))
+xaringanExtra::use_clipboard(selector = "pre > code.r, pre > code.md")
+
+if (!is.null(rmarkdown::metadata$shortlink)) {
+  shortlink <- rmarkdown::metadata$shortlink
+  if (is.character(shortlink)) {
+    shortlink <- list(url = shortlink)
+  }
+  stopifnot(!is.null(shortlink$url))
+  
+  if (is.null(shortlink$text) || !nzchar(shortlink$text)) {
+    shortlink$text <- basename(shortlink$url)
+  }
+  
+  xaringanExtra::use_banner(
+    bottom_left = htmltools::tags$a(href = shortlink$url, shortlink$text),
+    exclude = "title-slide"
+  )
+}
+```
+
+---
+class: inverse
+
+# Data types
+
+Strings, factors and dates
+
+.center[
+
+```{r echo=FALSE, out.width="25%"}
+knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/main/PNG/stringr.png?raw=true")
+
+knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/main/PNG/forcats.png?raw=true")
+
+knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/main/PNG/lubridate.png?raw=true")
+```
+
+]
+
+---
+class: middle chapter-slide red
+
+.big-white-number[1.]
+
+# Strings
+
+---
+
+class: middle
+
+.top-fixed[
+# Meet stringr
+]
+
+.center[<img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/stringr.png?raw=true" alt="stringr hex sticker" width="300"/>
+
+https://stringr.tidyverse.org/
+]
+
+
+???
+
+The stringr package is your tidyverse companion to all things strings.
+
+stringr provides a cohesive set of functions that make working with character data in R as easy as possible. *Most* any task you can think of that involves character data can be accomplished with stringr.
+
+It's part of the core tidyverse, along with packages like dplyr and ggplot2, so stringr functions play really nicely with dplyr functions like `filter()` and `mutate()`.
+
+Let's look at a concrete example.
+
+---
+
+class: middle
+
+# Breed Traits data set
+
+```{r include = FALSE}
+# Source
+# https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-02-01/readme.md
+
+# Paths
+PATH_BREED_TRAITS <-
+  "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-02-01/breed_traits.csv"
+
+# Load data
+breed_traits <-
+  read_csv(PATH_BREED_TRAITS) %>% 
+  janitor::clean_names() %>% 
+  mutate(breed = str_squish(breed)) %>% 
+  select(breed, where(is.numeric)) %>% 
+  rename_with(~ str_replace_all(., "with", "w")) %>% 
+  rename_with(~ str_remove_all(., "_level")) %>% 
+  rename(
+    affection = affectionate_w_family,
+    good_w_children = good_w_young_children,
+    grooming_freq = coat_grooming_frequency,
+    openness = openness_to_strangers,
+    protectiveness = watchdog_protective_nature,
+    stimulation_needs = mental_stimulation_needs
+  ) %>% 
+  relocate(
+    good_w_children,
+    good_w_other_dogs,
+    grooming_freq,
+    .after = last_col()
+  )
+```
+
+
+```{r eval=FALSE}
+breed_traits
+```
+
+```{r echo=FALSE}
+print(breed_traits, n = 6)
+```
+
+
+???
+
+The `breed_traits` dataset is a fun dataset that contains information on `r n_distinct(breed_traits$breed)` dog breeds, with scores (on a 1-5 scale) for `r ncol(breed_traits)` traits (e.g. how affectionate the breed is, how much it sheds, how playful it is, etc). This data comes courtesy of the American Kennel Club.
+
+In our analysis, want to compare traits across terrier breeds only, of which there are many types.
+
+---
+
+class: middle
+
+.center[<img src="images/session07/dog_breeds.png" alt="Cartoon of 18 dog breeds" width="800"/>]
+
+???
+
+To make this very clear, we have `r n_distinct(breed_traits$breed)` dog breeds (with 18 very good boys and girls are pictured here as an example)...
+
+---
+
+class: middle
+
+.center[<img src="images/session07/terrier_breeds.png" alt="Cartoon of 18 dog breeds with only four terrier breeds highlighted" width="800"/>]
+
+???
+
+...and we want to subset the data so that we can continue our analysis on terrier breeds. Note that I don't know how many of the `r n_distinct(breed_traits$breed)` breeds in the dataset have "terrier" as part of their name, but I want to keep them all.
+
+(The four highlighted breeds, from top to bottom, left to right, are Scottish, Bull, Boston, and Russell terriers.)
+
+---
+
+class: middle
+
+.top-fixed[
+# Sniffing out terrier breeds
+]
+
+```{r}
+breed_traits %>% 
+  filter(breed == "Yorkshire Terriers")
+```
+
+???
+
+When I say "subset", alarm bells are probably going off in your head that we we'll be using the `filter()` function.
+
+Using what we've already know how to do, we can print the `breed_traits` table and scan through the paginated results in RMarkdown to find our first match — Yorkshire terriers.
+
+We'll use the `==` operator to match the string, and get one row in the output.
+
+---
+
+class: middle
+
+.top-fixed[
+# Sniffing out terrier breeds
+]
+
+```{r filter}
+breed_traits %>% 
+  filter(breed %in% c("Yorkshire Terriers", "Boston Terriers"))
+```
+
+???
+
+And then our second match — Boston terriers.
+
+This time, we'll use the `%in%` operator to match a vector of strings, and get two rows in the output.
+
+You can where this is going...
+
+---
+
+class: middle
+
+# Sniffing out terrier breeds
+
+```{r include = FALSE}
+breed_traits %>% 
+  filter(breed %in% c(
+    "Yorkshire Terriers",
+    "Boston Terriers",
+    "West Highland White Terriers",
+    "Scottish Terriers",
+    "Fox Terriers (Wire)",
+    "Soft Coated Wheaten Terriers",
+    "Airedale Terriers",
+    "Bull Terriers",
+    "Russell Terriers",
+    "Cairn Terriers",
+    "Staffordshire Bull Terriers",
+    "American Staffordshire Terriers",
+    "Rat Terriers",
+    "Border Terriers",
+    "Tibetan Terriers",
+    "Miniature Bull Terriers",
+    "Silky Terriers",
+    "Norwich Terriers",
+    "Welsh Terriers",
+    "Toy Fox Terriers",
+    "Parson Russell Terriers",
+    "Irish Terriers",
+    "Fox Terriers (Smooth)",
+    "Black Russian Terriers",
+    "American Hairless Terriers",
+    "Norfolk Terriers",
+    "Manchester Terriers",
+    "Kerry Blue Terriers",
+    "Australian Terriers",
+    "Lakeland Terriers",
+    "Bedlington Terriers",
+    "Sealyham Terriers",
+    "Glen of Imaal Terriers",
+    "Dandie Dinmont Terriers",
+    "Skye Terriers",
+    "Cesky Terriers"
+  )
+)
+```
+
+```{r big-filter-display, include = FALSE, eval = FALSE}
+breed_traits %>% 
+  filter(breed %in% c(
+    "Yorkshire Terriers",
+    "Boston Terriers",
+    "West Highland White Terriers",
+    "Scottish Terriers",
+    "Fox Terriers (Wire)",
+    ...
+  )
+)
+```
+
+```{r echo = FALSE}
+decorate_chunk("big-filter-display", eval = FALSE) %>% 
+  flair_rx("(?<=%)in(?=%)", bold = TRUE) %>% 
+  flair_rx('"([:alpha:]|[:space:]|\\(|\\))*"', color = "#dd1144")
+```
+
+???
+
+If you think about extending this process to all `r round(nrow(breed_traits), digits = -2)` or so rows, you'll realize that filtering with explicit strings isn't really a scalable solution. Even in this relatively small and tidy dataset, we can see that it becomes tedious and error-prone very quickly.
+
+---
+
+class: middle
+
+# Sniffing out terrier breeds
+
+```{r echo = FALSE}
+decorate_chunk("big-filter-display", eval = FALSE) %>%
+  flair_rx("(?<=%)in(?=%)", bold = TRUE) %>% 
+  flair_rx('"([:alpha:]|[:space:]|\\(|\\))*"', color = "#dd1144") %>% 
+  flair("Terrier", background = "#e2d8d2")
+```
+
+???
+
+And you'd be right to intuit that there's a simpler way. All we, the humans, are doing is looking for the sequence "Terrier" in the `breed` column. This is exactly the kind of simple but highly repetitive task that's well-suited to outsource to our computers.
+
+That's where stringr comes in.
+
+---
+
+class: middle
+
+# Filtering with `str_detect()`
+
+```{r eval=FALSE}
+breed_traits %>% 
+  filter(str_detect(breed, "Terrier"))
+```
+
+
+```{r echo=FALSE}
+breed_traits %>% 
+  filter(str_detect(breed, "Terrier"))
+```
+
+???
+
+The `str_detect()` function searches for the presence of a pattern in a string and returns a logical vector that's `TRUE` if the pattern is detected, or `FALSE` if it's not. That makes it a very powerful function in combination with `filter()`.
+
+In the example code, we keep only the rows where the sequence "Terrier" is found in the `breed` column, and drop the rest.
+
+We can also use `str_detect()` to recode character variables using `mutate()` in combination with the new functions — `if_else()` and `case_when()` — that we learned about today. You could imagine that we might want to create a `breed_family` variable that includes all breeds with "Terrier" in the name, or "Retriever", or "Shepherd", etc.
+
+Let's take a look at a few quicker examples of what stringr can do.
+
+---
+
+class: middle
+
+.top-fixed[
+# stringr functions
+]
+
+Character manipulation
+
+```{r}
+str_sub("Introduction to the tidyverse", 21, 24)
+```
+
+???
+
+We can extract (and replace) substrings from a vector using `str_sub()`, in this case by extracting the 21st through 24th characters which form the word "tidy".
+
+---
+
+class: middle
+
+.top-fixed[
+# stringr functions
+]
+
+Whitespace tools
+
+```{r}
+str_trim("   Introduction to the tidyverse          ")
+```
+
+???
+
+We can trim whitespace from a string using `str_trim()`, which can be a quick and easy data cleaning step.
+
+---
+
+class: middle
+
+.top-fixed[
+# stringr functions
+]
+
+Locale-sensitive operations
+
+```{r}
+str_to_upper("Introduction to the tidyverse")
+```
+
+???
+
+We can turn convert cases with `str_to_upper()` and turn strings into yells.
+
+These functions are called "locale-sensitive operations" because they can follow capitalization and alphabetization rules in different languages.
+
+---
+
+class: middle
+
+.top-fixed[
+# stringr functions
+]
+
+Pattern matching
+
+```{r eval = FALSE}
+str_view_all("Introduction to the tidyverse", "[aeiou]")
+```
+
+```{r echo = FALSE}
+decorate_code("Introduction to the tidyverse", eval = FALSE) %>%
+  flair_rx("[aeiou]", background = "#e2d8d2")
+```
+
+???
+
+And we can visualize how patterns match to our data with `str_view()` (and `str_view_all()`). In this case, I'm looking to highlight the vowels in my input string, but the patterns you search for can be very flexible and powerful.
+
+You may have noticed an elegant detail: *all* stringr functions start with the prefix "str_". This is especially nice when you're working in RStudio because typing that prefix out will trigger autocomplete and allow you to see all of the functions.
+
+---
+class: your-turn
+
+# Your Turn
+
+Use a stringr function to subset the elements of the `fruit` vector that are made up of two or more words.
+
+???
+
+Solution: `str_subset(fruit, " ")`
+
+Hint: Use the `str_subset()` function.
+
+Hint: What character indicates that a string contains more than one word?
+
+---
+class: your-turn
+
+# Solution
+
+Use a stringr function to subset the elements of the `fruit` vector that are made up of two or more words.
+
+```{r}
+str_subset(fruit, " ")
+```
+
+---
+class: middle chapter-slide blue
+
+.big-white-number[2.]
+
+# Factors
+
+---
+# Meet forcats
+
+.center[
+<img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/forcats.png?raw=true" alt="stringr hex sticker" width="300"/>
+
+https://forcats.tidyverse.org/
+]
+
+???
+Categorial data in R are called "factors"
+
+Each category is called a "level"
+
+
+---
+# General Social survey
+
+```{r eval=FALSE}
+library(forcats)
+gss_cat
+```
+
+```{r echo=FALSE}
+gss_cat %>% reactable_preview()
+```
+
+---
+# EDA - continuous
+
+.pull-left[
+
+```{r, warning=FALSE, message=FALSE, fig.show='hide'}
+gss_cat %>% 
+  ggplot(aes(x=tvhours)) +
+  geom_histogram() +
+  labs(x = "TV Hours")
+```
+]
+.pull-right[
+```{r, warning=FALSE, message=FALSE, echo=FALSE, out.width="90%"}
+gss_cat %>% 
+  ggplot(aes(x=tvhours)) +
+  geom_histogram() +
+  labs(x = "TV Hours")
+```
+]
+
+---
+# EDA - categorical
+
+.pull-left[
+
+```{r, warning=FALSE, message=FALSE, fig.show='hide'}
+gss_cat %>% 
+  ggplot(aes(x=marital)) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+]
+
+.pull-right[
+```{r, warning=FALSE, message=FALSE, echo=FALSE, out.width="90%"}
+gss_cat %>% 
+  ggplot(aes(x=marital)) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+]
+
+---
+# What are we trying to show?
+
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+gss_cat %>%
+  ggplot(aes(x = fct_infreq(marital))) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+
+---
+# Factors have an ordering
+
+Factors are stored with an order even if there is no inherent ordering to the meaning
+
+```{r}
+levels(gss_cat$marital)
+```
+
+
+---
+# Reorder factor levels
+
+> * `fct_inorder()`: by the order in which they first appear.
+
+> * `fct_infreq()`: by number of observations with each level (largest first)
+
+> * `fct_inseq()`: by numeric value of level.
+
+https://forcats.tidyverse.org/reference/fct_inorder.html
+
+---
+
+## Example
+
+```{r}
+f <- factor(c("b", "b", "a", "c", "c", "c"))
+f
+```
+
+```{r}
+fct_inorder(f)
+```
+
+---
+class: your-turn
+
+# Your Turn
+
+.pull-left[
+Use ggplot and one of these forcats functions to recreate the plot of `gss_cat`:
+
+* `fct_inorder()`
+
+* `fct_infreq()`
+
+* `fct_inseq()`
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width="90%"}
+gss_cat %>%
+  ggplot(aes(x = fct_infreq(marital))) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+]
+
+---
+class: your-turn
+# Solution
+
+.pull-left[
+```{r eval=FALSE}
+gss %>%
+  ggplot(
+    aes(
+      x = fct_infreq(marital)
+    )
+  ) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+]
+
+.pull-right[
+```{r echo=FALSE, out.width="90%"}
+gss_cat %>%
+  ggplot(aes(fct_infreq(marital))) +
+  geom_bar() + 
+  labs(x = "Marital Status")
+```
+]
+
+---
+class: middle chapter-slide tan
+
+.big-white-number[3.]
+
+# Dates
+
+```{r echo=FALSE}
+bike_traffic <- readRDS('./data/session07/bike_traffic.rds')
+```
+
+---
+
+class: middle
+
+.top-fixed[
+# Meet lubridate
+]
+
+.center[<img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/lubridate.png?raw=true" alt="stringr hex sticker" width="300"/>
+
+https://lubridate.tidyverse.org/
+]
+
+---
+class: top
+background-image: url(images/lubridate/date_and_datetime.png)
+background-size: cover
+
+???
+
+Lubridate is a package that makes it easier to work dates and datetimes. These are two standard formats for storing time-related information. A date is what is sounds like - the information for a date, so the year, month, and day. 
+
+A datetime stores all of that as well as hours, minutes, seconds, and time zone.
+
+Lubridate contains a lot of neat features to make it easier to work with dates and datetimes. 
+---
+
+class: top
+background-image: url(images/lubridate/make_dates_1.png)
+background-size: cover
+
+# Creating Dates and Datetimes
+
+???
+When working with time-related information, often the first step is to get your data into a date or datetime format. 
+
+When reading you data into R, it may be expressed in a variety of ways. The lubridate functions are built to make this transformation as intuitive and flexible as possible. 
+
+You may be trying to read in time-related information that uses dashes to separate values. Or maybe spaces, periods, or no spacing at all. 
+
+
+Lubridate functions will handle all of these formats automatically. A function called `ymd` for year/month/day can read all of these different formats and will output the Date object shown on the right. 
+---
+
+class: top
+background-image: url(images/lubridate/make_dates_2.png)
+background-size: cover
+
+# Creating Dates and Datetimes
+
+???
+There are a number of functions that lubridate includes for creating a date or datetime from almost any format. Many of them are listed in this table. There are many permutations on y, m, and d, that are designed to read in time-related information that is stored in different orders. 
+---
+
+class: top
+background-image: url(images/lubridate/diagram_1.png)
+background-size: cover
+# Extract Information
+
+???
+Once we have our data in a date or datetime format, we are able to easily access all of the components used to build the object, such as the year, month, day, etc. 
+
+---
+
+class: top
+background-image: url(images/lubridate/diagram_2.png)
+background-size: cover
+# Extract Information
+
+???
+And, we can even extract additional information such as the quarter, week of the year, day of the year, or day of the week. 
+---
+class: top
+# Other tasks with lubridate
+
+- do math with dates and datetimes
+
+- convert between time zones
+
+- account for leap years
+
+- rounding times (e.g. nearest week or month)
+
+- work with time intervals
+
+???
+Some additional tasks that can be completed using lubridate functions are to:
+
+do math with dates and datetimes, meaning we can add and subtact time-related information
+
+convert between different time zones
+
+account for leap time
+
+round times, for example rounding dates to the nearest week or month
+
+work with intervals of time
+
+---
+# Bike Traffic Dataset
+
+```{r eval=FALSE}
+bike_traffic
+```
+
+```{r, echo = FALSE}
+print(bike_traffic, n = 8)
+```
+
+
+???
+Here is a dataset containing bicycle traffic counts that we just loaded into R. The date column is stored as a factor with hours listed in AM and PM and is not currently in the standardized datetime format. 
+
+In the current form, we cannot take advantage of the many time-related tools that exist for dates and datetimes. 
+---
+
+# Get into a `datetime` format
+
+```{r, include = TRUE, eval = FALSE, warning = FALSE}
+bike_traffic %>%
+  mutate(
+    timestamp = mdy_hms(date, tz = "US/Pacific"), 
+    .before = date
+  ) 
+```
+
+
+```{r, echo = FALSE, eval = TRUE, warning = FALSE}
+bike_traffic <- 
+  bike_traffic %>%
+  mutate(timestamp = mdy_hms(date, tz = "US/Pacific"), .before = date) 
+
+print(bike_traffic, n = 5)
+```
+
+???
+
+So, we will use a lubridate function to turn this column into a datetime.
+
+Because our data was in the order Year-Month-Day-Hour-Minute-Second, we used the YMD_HMS function to turn the column of values into datetimes. 
+---
+
+# Get into a `date` format
+
+```{r, include = TRUE, eval = FALSE}
+labor_day <- ymd("2015-09-07")
+```
+
+
+```{r, echo = FALSE, eval = TRUE}
+labor_day <- ymd("2015-09-07")
+labor_day
+```
+
+???
+Suppose we are interested in the bike traffic around labor day. We can start by creating a date object for our date of interest. 
+
+---
+class:top
+
+# Find the day of the week
+```{r month_1, eval = FALSE}
+wday(labor_day, label = TRUE)
+```
+
+```{r month, eval = TRUE, echo = FALSE}
+wday(labor_day, label = TRUE)
+```
+
+???
+And we can confirm that the day of the week is Monday as we expected.
+---
+
+class: top
+# Manipulate Times
+
+```{r weeks}
+labor_day - weeks(1)
+```
+
+???
+Now we can do math with the date. If we are interested in the bike traffic within a week of labor day, we can easily add or subtract a week from the date.
+
+Here, I've shown an example where we subtract one week from our date object, labor_day, by simply using the subtract sign and the weeks function to express a unit of time equal to one week. 
+
+---
+# Time Intervals
+```{r interval_highighted, eval = FALSE}
+date_interval <- 
+  interval(labor_day - weeks(1), labor_day + weeks(1))
+
+date_interval
+```
+
+
+```{r interval, echo = FALSE, eval = TRUE}
+date_interval <- 
+  interval(labor_day - weeks(1), labor_day + weeks(1))
+
+date_interval
+```
+
+???
+Next, we can create an interval that will span from one week before labor day to one week after using lubridate's interval function.
+
+And now we have a date interval, denoted by the double-dashes in the middle of the two dates. 
+--
+
+```{r filter_interval_highlighted, eval = FALSE}
+bike_traffic %>%
+  filter(timestamp %within% date_interval)
+```
+
+???
+And finally we can filter our dataset to that time interval using an operator called within. 
+---
+# Filtered Result
+
+```{r eval=FALSE}
+bike_traffic %>%
+  filter(timestamp %within% date_interval)
+```
+
+
+```{r filter_interval, eval = TRUE, echo = FALSE}
+bike_traffic %>%
+  filter(timestamp %within% date_interval) %>%
+  print(n = 8)
+```
+???
+And here is the filtered result, which is now subset of the original data ccontaining only the records with had a timestamp within one week of labor day. 
+
+---
+class: your-turn
+
+# Your Turn
+
+A. What day of the week was the moon landing (July 20, 1969)?
+
+```{r, eval = FALSE}
+ymd(____) %>%
+  ____(label = ____)
+
+```
+
+B. How many days ago was the moon landing?
+
+```{r, eval = FALSE}
+date(now()) ____ ymd(____) 
+
+```
+
+---
+class: your-turn
+
+# Solution
+
+A. What day of the week was the moon landing (July 20, 1969)?
+
+```{r, eval = FALSE}
+ymd("1969-07-20") %>%
+  wday(label = TRUE)
+
+```
+
+B. How many days ago was the moon landing?
+
+```{r, eval = FALSE}
+date(now()) - ymd("1969-07-20")
+
+```
