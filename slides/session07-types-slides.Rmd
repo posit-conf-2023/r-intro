@@ -24,35 +24,6 @@ library(tidyverse)
 library(flair)
 ```
 
-```{r reactable-function, include=FALSE}
-reactable_preview <- function(data) {
-
-  page_info <- "{rowStart}-{rowEnd} of {rows} rows"
-
-  if (nrow(data) > 100) {
-    page_info <- glue::glue(
-      "{page_info} (Total: {actual})",
-      actual = format(nrow(data), big.mark = ",")
-    )
-  }
-
-  data %>%
-    slice_head(n = 100) %>%
-    reactable::reactable(
-      defaultColDef = reactable::colDef(align = "left", maxWidth = 400),
-      defaultPageSize = 8,
-      compact = TRUE,
-      wrap = FALSE,
-      striped = TRUE,
-      sortable = FALSE,
-      showPageInfo = TRUE,
-      language = reactable::reactableLang(
-        pageInfo = page_info
-      )
-    )
-}
-```
-
 # `r rmarkdown::metadata$title`
 
 ### `r rmarkdown::metadata$subtitle`
@@ -500,7 +471,7 @@ Each category is called a "level"
 
 
 ---
-# General Social survey
+# General Social Survey data set
 
 ```{r eval=FALSE}
 library(forcats)
@@ -508,7 +479,7 @@ gss_cat
 ```
 
 ```{r echo=FALSE}
-gss_cat %>% reactable_preview()
+gss_cat %>% print(n = 8)
 ```
 
 ---
@@ -758,7 +729,7 @@ round times, for example rounding dates to the nearest week or month
 work with intervals of time
 
 ---
-# Bike Traffic Dataset
+# Bike Traffic data set
 
 ```{r eval=FALSE}
 bike_traffic

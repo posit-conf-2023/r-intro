@@ -18,13 +18,6 @@
     <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
     <script>window.xaringanExtraClipboard('pre > code.r, pre > code.md', {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
-    <script src="libs/core-js/shim.min.js"></script>
-    <script src="libs/react/react.min.js"></script>
-    <script src="libs/react/react-dom.min.js"></script>
-    <script src="libs/reactwidget/react-tools.js"></script>
-    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
-    <link href="libs/reactable/reactable.css" rel="stylesheet" />
-    <script src="libs/reactable-binding/reactable.js"></script>
     <link rel="stylesheet" href="assets/academy-theme.css" type="text/css" />
   </head>
   <body>
@@ -32,8 +25,6 @@
 
 
 class: title-slide
-
-
 
 
 
@@ -109,17 +100,16 @@ breed_traits
 
 ```
 ## # A tibble: 195 × 15
-##   breed          affection shedding drooling openness playfulness protectiveness
-##   &lt;chr&gt;              &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;
-## 1 Retrievers (L…         5        4        2        5           5              3
-## 2 French Bulldo…         5        3        3        5           5              3
-## 3 German Shephe…         5        4        2        3           4              5
-## 4 Retrievers (G…         5        4        2        5           4              3
-## 5 Bulldogs               4        3        3        4           4              3
-## 6 Poodles                5        1        1        5           5              5
+##   breed    affection shedding drooling openness playfulness protectiveness adaptability trainability energy
+##   &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Retriev…         5        4        2        5           5              3            5            5      5
+## 2 French …         5        3        3        5           5              3            5            4      3
+## 3 German …         5        4        2        3           4              5            5            5      5
+## 4 Retriev…         5        4        2        5           4              3            5            5      3
+## 5 Bulldogs         4        3        3        4           4              3            3            4      3
+## 6 Poodles          5        1        1        5           5              5            4            5      4
 ## # ℹ 189 more rows
-## # ℹ 8 more variables: adaptability &lt;dbl&gt;, trainability &lt;dbl&gt;, energy &lt;dbl&gt;,
-## #   barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;,
+## # ℹ 5 more variables: barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;,
 ## #   good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
 ```
 
@@ -168,11 +158,10 @@ breed_traits %&gt;%
 
 ```
 ## # A tibble: 1 × 15
-##   breed          affection shedding drooling openness playfulness protectiveness
-##   &lt;chr&gt;              &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;
-## 1 Yorkshire Ter…         5        1        1        5           4              5
-## # ℹ 8 more variables: adaptability &lt;dbl&gt;, trainability &lt;dbl&gt;, energy &lt;dbl&gt;,
-## #   barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;,
+##   breed    affection shedding drooling openness playfulness protectiveness adaptability trainability energy
+##   &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Yorkshi…         5        1        1        5           4              5            5            4      4
+## # ℹ 5 more variables: barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;,
 ## #   good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
 ```
 
@@ -200,12 +189,11 @@ breed_traits %&gt;%
 
 ```
 ## # A tibble: 2 × 15
-##   breed          affection shedding drooling openness playfulness protectiveness
-##   &lt;chr&gt;              &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;
-## 1 Yorkshire Ter…         5        1        1        5           4              5
-## 2 Boston Terrie…         5        2        1        5           5              3
-## # ℹ 8 more variables: adaptability &lt;dbl&gt;, trainability &lt;dbl&gt;, energy &lt;dbl&gt;,
-## #   barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;,
+##   breed    affection shedding drooling openness playfulness protectiveness adaptability trainability energy
+##   &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Yorkshi…         5        1        1        5           4              5            5            4      4
+## 2 Boston …         5        2        1        5           5              3            3            4      4
+## # ℹ 5 more variables: barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;,
 ## #   good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
 ```
 
@@ -228,7 +216,6 @@ class: middle
 
 
 
-&lt;code class ='r hljs remark-code'&gt;breed_traits %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;filter(breed %in% c(&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#dd1144"&gt;"Yorkshire Terriers"&lt;/span&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#dd1144"&gt;"Boston Terriers"&lt;/span&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#dd1144"&gt;"West Highland White Terriers"&lt;/span&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#dd1144"&gt;"Scottish Terriers"&lt;/span&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#dd1144"&gt;"Fox Terriers (Wire)"&lt;/span&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;...&lt;br&gt;&amp;nbsp;&amp;nbsp;)&lt;br&gt;)&lt;/code&gt;
 
 ???
 
@@ -241,7 +228,6 @@ class: middle
 # Sniffing out terrier breeds
 
 
-&lt;code class ='r hljs remark-code'&gt;breed_traits %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;filter(breed %in% c(&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#dd1144"&gt;"Yorkshire &lt;span style="background-color:#e2d8d2"&gt;Terrier&lt;/span&gt;s"&lt;/span&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#dd1144"&gt;"Boston &lt;span style="background-color:#e2d8d2"&gt;Terrier&lt;/span&gt;s"&lt;/span&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#dd1144"&gt;"West Highland White &lt;span style="background-color:#e2d8d2"&gt;Terrier&lt;/span&gt;s"&lt;/span&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#dd1144"&gt;"Scottish &lt;span style="background-color:#e2d8d2"&gt;Terrier&lt;/span&gt;s"&lt;/span&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#dd1144"&gt;"Fox &lt;span style="background-color:#e2d8d2"&gt;Terrier&lt;/span&gt;s (Wire)"&lt;/span&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;...&lt;br&gt;&amp;nbsp;&amp;nbsp;)&lt;br&gt;)&lt;/code&gt;
 
 ???
 
@@ -265,21 +251,20 @@ breed_traits %&gt;%
 
 ```
 ## # A tibble: 36 × 15
-##    breed         affection shedding drooling openness playfulness protectiveness
-##    &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;
-##  1 Yorkshire Te…         5        1        1        5           4              5
-##  2 Boston Terri…         5        2        1        5           5              3
-##  3 West Highlan…         5        3        1        4           5              5
-##  4 Scottish Ter…         5        2        2        3           4              5
-##  5 Soft Coated …         5        1        2        3           3              3
-##  6 Airedale Ter…         3        1        1        3           3              5
-##  7 Bull Terriers         4        3        1        4           4              3
-##  8 Russell Terr…         5        3        1        5           5              4
-##  9 Cairn Terrie…         4        2        1        3           4              4
-## 10 Staffordshir…         5        2        3        4           4              5
+##    breed   affection shedding drooling openness playfulness protectiveness adaptability trainability energy
+##    &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+##  1 Yorksh…         5        1        1        5           4              5            5            4      4
+##  2 Boston…         5        2        1        5           5              3            3            4      4
+##  3 West H…         5        3        1        4           5              5            4            3      4
+##  4 Scotti…         5        2        2        3           4              5            4            3      3
+##  5 Soft C…         5        1        2        3           3              3            3            3      4
+##  6 Aireda…         3        1        1        3           3              5            3            3      3
+##  7 Bull T…         4        3        1        4           4              3            3            3      4
+##  8 Russel…         5        3        1        5           5              4            4            3      5
+##  9 Cairn …         4        2        1        3           4              4            3            3      3
+## 10 Staffo…         5        2        3        4           4              5            5            5      4
 ## # ℹ 26 more rows
-## # ℹ 8 more variables: adaptability &lt;dbl&gt;, trainability &lt;dbl&gt;, energy &lt;dbl&gt;,
-## #   barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;,
+## # ℹ 5 more variables: barking &lt;dbl&gt;, stimulation_needs &lt;dbl&gt;, good_w_children &lt;dbl&gt;,
 ## #   good_w_other_dogs &lt;dbl&gt;, grooming_freq &lt;dbl&gt;
 ```
 
@@ -416,10 +401,9 @@ str_subset(fruit, " ")
 ```
 
 ```
-##  [1] "bell pepper"       "blood orange"      "canary melon"     
-##  [4] "chili pepper"      "goji berry"        "kiwi fruit"       
-##  [7] "purple mangosteen" "rock melon"        "salal berry"      
-## [10] "star fruit"        "ugli fruit"
+##  [1] "bell pepper"       "blood orange"      "canary melon"      "chili pepper"      "goji berry"       
+##  [6] "kiwi fruit"        "purple mangosteen" "rock melon"        "salal berry"       "star fruit"       
+## [11] "ugli fruit"
 ```
 
 ---
@@ -445,7 +429,7 @@ Each category is called a "level"
 
 
 ---
-# General Social survey
+# General Social Survey data set
 
 
 ```r
@@ -453,8 +437,21 @@ library(forcats)
 gss_cat
 ```
 
-<div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a13a4f6bafeb596576d1" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a13a4f6bafeb596576d1">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"year":[2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000],"marital":["Never married","Divorced","Widowed","Never married","Divorced","Married","Never married","Divorced","Married","Married","Married","Married","Married","Married","Divorced","Married","Widowed","Never married","Married","Married","Married","Married","Never married","Widowed","Widowed","Widowed","Widowed","Widowed","Divorced","Widowed","Widowed","Married","Married","Never married","Married","Never married","Never married","Never married","Never married","Never married","Married","Married","Divorced","Never married","Never married","Never married","Married","Married","Married","Married","Never married","Married","Married","Married","Married","Divorced","Divorced","Divorced","Never married","Never married","Married","Married","Never married","Divorced","Never married","Widowed","Divorced","Married","Never married","Never married","Widowed","Widowed","Widowed","Widowed","Widowed","Never married","Widowed","Never married","Married","Never married","Married","Married","Widowed","Married","Married","Divorced","Never married","Separated","Never married","Widowed","Widowed","Married","Divorced","Never married","Never married","Never married","Married","Married","Widowed","Divorced"],"age":[26,48,67,39,25,25,36,44,44,47,53,52,52,51,52,40,77,44,40,45,48,49,19,54,82,83,89,88,72,82,89,34,55,37,22,33,37,43,29,57,31,45,36,52,26,46,65,52,56,66,20,64,59,46,26,39,51,45,23,21,26,31,27,78,29,43,61,33,34,89,83,78,89,84,69,32,76,41,32,29,40,44,70,40,51,75,22,53,20,80,70,45,46,24,51,32,53,52,83,39],"race":["White","White","White","White","White","White","White","White","White","White","White","White","White","White","White","Black","White","White","White","Black","White","White","White","White","White","White","White","White","White","White","White","White","Black","White","White","Other","White","White","White","White","White","White","Black","White","White","White","White","White","White","White","White","White","White","White","Other","Black","White","White","White","White","White","Other","Black","White","White","Black","White","White","Black","White","Black","Black","Black","Black","Black","Black","Black","Black","Black","Black","Black","White","Black","Black","Black","White","Black","Black","White","White","White","White","White","White","White","White","White","White","White","White"],"rincome":["$8000 to 9999","$8000 to 9999","Not applicable","Not applicable","Not applicable","$20000 - 24999","$25000 or more","$7000 to 7999","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","$25000 or more","Not applicable","$25000 or more","$10000 - 14999","Not applicable","$25000 or more","Refused","Not applicable","$25000 or more","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Refused","Not applicable","$25000 or more","$10000 - 14999","$20000 - 24999","$25000 or more","$20000 - 24999","$25000 or more","Refused","$20000 - 24999","$25000 or more","$15000 - 19999","Not applicable","$25000 or more","$10000 - 14999","$25000 or more","$3000 to 3999","$25000 or more","$25000 or more","$15000 - 19999","$5000 to 5999","$25000 or more","Not applicable","$10000 - 14999","Don't know","$20000 - 24999","$25000 or more","$1000 to 2999","Don't know","$10000 - 14999","$25000 or more","$25000 or more","Not applicable","$10000 - 14999","Not applicable","$25000 or more","Not applicable","$15000 - 19999","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","$10000 - 14999","Not applicable","Not applicable","$25000 or more","$25000 or more","$25000 or more","$3000 to 3999","Not applicable","Refused","$3000 to 3999","Not applicable","$20000 - 24999","$25000 or more","$10000 - 14999","Not applicable","Refused","$25000 or more","$25000 or more","$15000 - 19999","$20000 - 24999","$25000 or more","Refused","Lt $1000","Not applicable","Refused"],"partyid":["Ind,near rep","Not str republican","Independent","Ind,near rep","Not str democrat","Strong democrat","Not str republican","Ind,near dem","Not str democrat","Strong republican","Not str democrat","Ind,near rep","Strong democrat","Strong republican","Ind,near dem","Strong democrat","Strong republican","Independent","Not str democrat","Independent","Ind,near dem","Strong republican","Independent","Ind,near rep","Not str democrat","Strong democrat","Not str democrat","Strong republican","Strong democrat","Independent","Ind,near rep","Not str democrat","Not str democrat","Independent","Ind,near dem","Not str democrat","Ind,near dem","Independent","Ind,near rep","Strong republican","Ind,near dem","Independent","Strong democrat","Ind,near dem","Ind,near rep","Strong democrat","Strong republican","Ind,near rep","Not str republican","Strong republican","Strong republican","Strong republican","Strong democrat","Not str republican","Not str democrat","Independent","Independent","Ind,near rep","Strong democrat","Not str republican","Not str republican","Not str republican","Strong democrat","Ind,near dem","Independent","Independent","Strong republican","Strong democrat","Strong democrat","Independent","Strong democrat","Strong democrat","Independent","Strong democrat","Not str democrat","Ind,near dem","Strong democrat","Strong democrat","Strong democrat","Not str republican","Strong democrat","Not str republican","Strong democrat","Ind,near dem","Strong democrat","Strong democrat","Independent","Strong democrat","Ind,near dem","Not str democrat","Not str republican","Independent","Not str democrat","Ind,near dem","Not str republican","Not str republican","Independent","Ind,near dem","Not str republican","Independent"],"relig":["Protestant","Protestant","Protestant","Orthodox-christian","None","Protestant","Christian","Protestant","Protestant","Protestant","Protestant","None","Protestant","Protestant","None","Protestant","Jewish","None","Catholic","Protestant","Catholic","Protestant","None","Christian","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Catholic","Protestant","None","Protestant","Christian","None","Catholic","Catholic","Protestant","None","Catholic","None","Other","None","Catholic","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","None","None","Protestant","Protestant","Protestant","Protestant","Protestant","Christian","Protestant","Protestant","None","None","Catholic","Protestant","Protestant","Protestant","Protestant","Other","Protestant","Protestant","Protestant","Protestant","Protestant","Protestant","Catholic","Protestant","Protestant","Protestant","Catholic","Protestant","Protestant","Protestant","Protestant","Protestant","Catholic","Catholic","Catholic","Catholic","Inter-nondenominational","Catholic","Catholic","Catholic","Catholic","None","None","None"],"denom":["Southern baptist","Baptist-dk which","No denomination","Not applicable","Not applicable","Southern baptist","Not applicable","Lutheran-mo synod","Other","Southern baptist","Other","Not applicable","Southern baptist","United methodist","Not applicable","Baptist-dk which","Not applicable","Not applicable","Not applicable","United methodist","Not applicable","United methodist","Not applicable","Not applicable","Other","Episcopal","Other lutheran","Afr meth ep zion","Southern baptist","Am bapt ch in usa","Other methodist","Not applicable","Other","Not applicable","Other","Not applicable","Not applicable","Not applicable","Not applicable","Southern baptist","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Southern baptist","Presbyterian c in us","Episcopal","Southern baptist","Methodist-dk which","Other","Other","No denomination","Not applicable","Not applicable","Baptist-dk which","Southern baptist","Other","Presbyterian c in us","United methodist","Not applicable","Am bapt ch in usa","Southern baptist","Not applicable","Not applicable","Not applicable","No denomination","Nat bapt conv usa","Am lutheran","United methodist","Not applicable","Baptist-dk which","Nat bapt conv of am","Nat bapt conv of am","Nat bapt conv usa","Southern baptist","Nat bapt conv of am","Not applicable","Baptist-dk which","Southern baptist","Lutheran-mo synod","Not applicable","Other","Baptist-dk which","Am baptist asso","Southern baptist","Baptist-dk which","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable","Not applicable"],"tvhours":[12,"NA",2,4,1,"NA",3,"NA",0,3,2,"NA",1,"NA",1,7,"NA",3,3,"NA",1,2,2,1,3,"NA",4,"NA",7,"NA",3,"NA",1,"NA","NA","NA",1,4,2,1,2,"NA","NA",1,1,"NA",1,4,5,3,2,"NA","NA",3,2,"NA",2,2,0,"NA",2,"NA",4,4,"NA",3,"NA",2,"NA",2,12,4,8,"NA",4,5,"NA",5,2,4,1,"NA",2,3,"NA",7,3,1,2,8,"NA",1,2,3,"NA",0,4,"NA","NA",0]},"columns":[{"id":"year","name":"year","type":"numeric","maxWidth":400,"align":"left"},{"id":"marital","name":"marital","type":"factor","maxWidth":400,"align":"left"},{"id":"age","name":"age","type":"numeric","maxWidth":400,"align":"left"},{"id":"race","name":"race","type":"factor","maxWidth":400,"align":"left"},{"id":"rincome","name":"rincome","type":"factor","maxWidth":400,"align":"left"},{"id":"partyid","name":"partyid","type":"factor","maxWidth":400,"align":"left"},{"id":"relig","name":"relig","type":"factor","maxWidth":400,"align":"left"},{"id":"denom","name":"denom","type":"factor","maxWidth":400,"align":"left"},{"id":"tvhours","name":"tvhours","type":"numeric","maxWidth":400,"align":"left"}],"sortable":false,"defaultPageSize":8,"showPageInfo":true,"striped":true,"compact":true,"nowrap":true,"language":{"pageInfo":"{rowStart}-{rowEnd} of {rows} rows (Total: 21,483)"},"dataKey":"bcb496690defb9d0b7dbae563cffd6ae"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+
+```
+## # A tibble: 21,483 × 9
+##    year marital         age race  rincome        partyid            relig              denom        tvhours
+##   &lt;int&gt; &lt;fct&gt;         &lt;int&gt; &lt;fct&gt; &lt;fct&gt;          &lt;fct&gt;              &lt;fct&gt;              &lt;fct&gt;          &lt;int&gt;
+## 1  2000 Never married    26 White $8000 to 9999  Ind,near rep       Protestant         Southern ba…      12
+## 2  2000 Divorced         48 White $8000 to 9999  Not str republican Protestant         Baptist-dk …      NA
+## 3  2000 Widowed          67 White Not applicable Independent        Protestant         No denomina…       2
+## 4  2000 Never married    39 White Not applicable Ind,near rep       Orthodox-christian Not applica…       4
+## 5  2000 Divorced         25 White Not applicable Not str democrat   None               Not applica…       1
+## 6  2000 Married          25 White $20000 - 24999 Strong democrat    Protestant         Southern ba…      NA
+## 7  2000 Never married    36 White $25000 or more Not str republican Christian          Not applica…       3
+## 8  2000 Divorced         44 White $7000 to 7999  Ind,near dem       Protestant         Lutheran-mo…      NA
+## # ℹ 21,475 more rows
+```
 
 ---
 # EDA - continuous
@@ -507,8 +504,7 @@ levels(gss_cat$marital)
 ```
 
 ```
-## [1] "No answer"     "Never married" "Separated"     "Divorced"     
-## [5] "Widowed"       "Married"
+## [1] "No answer"     "Never married" "Separated"     "Divorced"      "Widowed"       "Married"
 ```
 
 
@@ -697,7 +693,7 @@ round times, for example rounding dates to the nearest week or month
 work with intervals of time
 
 ---
-# Bike Traffic Dataset
+# Bike Traffic data set
 
 
 ```r
@@ -742,13 +738,13 @@ bike_traffic %&gt;%
 
 ```
 ## # A tibble: 85,810 × 6
-##   timestamp           date               crossing direction bike_count ped_count
-##   &lt;dttm&gt;              &lt;fct&gt;              &lt;fct&gt;    &lt;fct&gt;          &lt;int&gt;     &lt;int&gt;
-## 1 2019-02-28 23:00:00 02/28/2019 11:00:… Burke G… North              0         0
-## 2 2019-02-28 22:00:00 02/28/2019 10:00:… Burke G… North              0         0
-## 3 2019-02-28 21:00:00 02/28/2019 09:00:… Burke G… North              2         0
-## 4 2019-02-28 20:00:00 02/28/2019 08:00:… Burke G… North              2         1
-## 5 2019-02-28 19:00:00 02/28/2019 07:00:… Burke G… North              6         0
+##   timestamp           date                   crossing           direction bike_count ped_count
+##   &lt;dttm&gt;              &lt;fct&gt;                  &lt;fct&gt;              &lt;fct&gt;          &lt;int&gt;     &lt;int&gt;
+## 1 2019-02-28 23:00:00 02/28/2019 11:00:00 PM Burke Gilman Trail North              0         0
+## 2 2019-02-28 22:00:00 02/28/2019 10:00:00 PM Burke Gilman Trail North              0         0
+## 3 2019-02-28 21:00:00 02/28/2019 09:00:00 PM Burke Gilman Trail North              2         0
+## 4 2019-02-28 20:00:00 02/28/2019 08:00:00 PM Burke Gilman Trail North              2         1
+## 5 2019-02-28 19:00:00 02/28/2019 07:00:00 PM Burke Gilman Trail North              6         0
 ## # ℹ 85,805 more rows
 ```
 
@@ -854,16 +850,16 @@ bike_traffic %&gt;%
 
 ```
 ## # A tibble: 674 × 6
-##   timestamp           date               crossing direction bike_count ped_count
-##   &lt;dttm&gt;              &lt;fct&gt;              &lt;fct&gt;    &lt;fct&gt;          &lt;int&gt;     &lt;int&gt;
-## 1 2015-09-13 17:00:00 09/13/2015 05:00:… Burke G… North             33        18
-## 2 2015-09-13 16:00:00 09/13/2015 04:00:… Burke G… North             44        23
-## 3 2015-09-13 15:00:00 09/13/2015 03:00:… Burke G… North             50        20
-## 4 2015-09-13 14:00:00 09/13/2015 02:00:… Burke G… North             30        17
-## 5 2015-09-13 13:00:00 09/13/2015 01:00:… Burke G… North             30        15
-## 6 2015-09-13 12:00:00 09/13/2015 12:00:… Burke G… North             33        18
-## 7 2015-09-13 11:00:00 09/13/2015 11:00:… Burke G… North             90        12
-## 8 2015-09-13 10:00:00 09/13/2015 10:00:… Burke G… North            149        35
+##   timestamp           date                   crossing           direction bike_count ped_count
+##   &lt;dttm&gt;              &lt;fct&gt;                  &lt;fct&gt;              &lt;fct&gt;          &lt;int&gt;     &lt;int&gt;
+## 1 2015-09-13 17:00:00 09/13/2015 05:00:00 PM Burke Gilman Trail North             33        18
+## 2 2015-09-13 16:00:00 09/13/2015 04:00:00 PM Burke Gilman Trail North             44        23
+## 3 2015-09-13 15:00:00 09/13/2015 03:00:00 PM Burke Gilman Trail North             50        20
+## 4 2015-09-13 14:00:00 09/13/2015 02:00:00 PM Burke Gilman Trail North             30        17
+## 5 2015-09-13 13:00:00 09/13/2015 01:00:00 PM Burke Gilman Trail North             30        15
+## 6 2015-09-13 12:00:00 09/13/2015 12:00:00 PM Burke Gilman Trail North             33        18
+## 7 2015-09-13 11:00:00 09/13/2015 11:00:00 AM Burke Gilman Trail North             90        12
+## 8 2015-09-13 10:00:00 09/13/2015 10:00:00 AM Burke Gilman Trail North            149        35
 ## # ℹ 666 more rows
 ```
 ???
