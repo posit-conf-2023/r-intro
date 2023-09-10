@@ -425,7 +425,7 @@ You may have noticed an elegant detail: *all* stringr functions start with the p
 ---
 class: your-turn
 
-# Your Turn
+# Your Turn 1
 
 Use a stringr function to subset the elements of the `fruit` vector that are made up of two or more words.
 
@@ -445,7 +445,7 @@ Hint: What character indicates that a string contains more than one word?
 ---
 class: your-turn
 
-# Solution
+# Your Turn 1 Solution
 
 Use a stringr function to subset the elements of the `fruit` vector that are made up of two or more words.
 
@@ -577,7 +577,7 @@ fct_inorder(f)
 ---
 class: your-turn
 
-# Your Turn
+# Your Turn 2
 
 .pull-left[
 Use ggplot and one of these forcats functions to recreate the plot of `gss_cat`:
@@ -600,7 +600,7 @@ gss_cat %>%
 
 ---
 class: your-turn
-# Solution
+# Your Turn 2 Solution
 
 .pull-left[
 ```{r eval=FALSE}
@@ -870,7 +870,7 @@ And here is the filtered result, which is now subset of the original data cconta
 ---
 class: your-turn
 
-# Your Turn
+# Your Turn 3
 
 A. What day of the week was the moon landing (July 20, 1969)?
 
@@ -890,19 +890,29 @@ date(now()) ____ ymd(____)
 ---
 class: your-turn
 
-# Solution
+# Your Turn 3 Solution
 
 A. What day of the week was the moon landing (July 20, 1969)?
 
-```{r, eval = FALSE}
+```{r }
 ymd("1969-07-20") %>%
   wday(label = TRUE)
 
 ```
 
+---
+class: your-turn
+
+# Your Turn 3 Solution
+
 B. How many days ago was the moon landing?
 
-```{r, eval = FALSE}
+```{r eval=FALSE}
 date(now()) - ymd("1969-07-20")
 
 ```
+
+```{r echo=FALSE}
+ymd("2023-09-18") - ymd("1969-07-20")
+```
+
