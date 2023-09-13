@@ -81,8 +81,9 @@ if (!is.null(rmarkdown::metadata$shortlink)) {
 
 ## Introduction to Data Science with R
 
-We'll get started shortly after 9am.
+WiFi: **Posit Conf 2023**
 
+Password: **conf2023**
 
 <div class="title-footer">
   <img src="images/academy-logo.png">
@@ -110,92 +111,35 @@ class: middle chapter-slide blue
 # Policies, Goals, & Schedules 
 
 ---
+class: inverse
+# Code of conduct & Workshop policies
 
-class: inverse, middle
+- The Code of Conduct and COVID policies can be found at https://posit.co/code-of-conduct/. Please review them carefully. 
 
-# Conference workshop policies
+<br>
 
-<!-- # TODO: update -->
+- You can report Code of Conduct violations in person, by email, or by phone. Please see the policy linked above for contact information.
 
-.left-column[
+<br>
 
-  .center[
-
-  `r emo::ji("door")` `r emo::ji("dash")` 
-
-  <br>
-
-  `r emo::ji("no_entry_sign")` `r emo::ji("camera")` 
-  
-  ]
-]
-
-.right-column[
-
-  Identify the exits closest to you in case of emergency 
-
-  <br>
-
-  Please do not photograph people wearing .light-red[red lanyards] 
-   
-] 
+- Participants who do not wish to be photographed have .light-red[red lanyards]; please note everyone's lanyard colors before taking a photo and respect their choices.
 
 ---
-
-# Code of conduct
-
-<!-- TODO: update -->
-
-- Please review the posit::conf Code of Conduct that applies to all workshops <https://posit.co/code-of-conduct/>
-
---
-
-- CoC issues can be addressed three ways:
-
-  - In person: contact any rstudio::conf staff member or the conference registration desk  
-  
-  - By email: send a message to `conf@rstudio.com`  
-  
-  - By phone: call 844-448-1212  
-
----
-class: inverse, middle
-
-<!-- TODO: Update -->
+class: inverse
 
 # Locations to note
 
-.left-column[
 
-  .center[
+- There are gender-neutral bathrooms located are among the Grand Suite Bathrooms
 
-  `r emo::ji("men_s_room")` `r emo::ji("water_closet")`
+<br>
+
+- There are two meditation/prayer rooms: Grand Suite 2A and Grand Suite 2B. Open Sunday - Tuesday 7:30 a.m. - 7:00 p.m., Wednesday 8:00 a.m. - 6:00 p.m.
+
+<br>
   
-  <br>
-
-  `r emo::ji("person_in_lotus_position")` `r emo::ji("tent")`
-  
-  <br>
-  <br>
-  
-  `r emo::ji("nursing")` `r emo::ji("baby_bottle")`
-  ]
-]
-
-.right-column[
-
-  Gender neutral bathrooms are near National Harbor rooms
-
-  <br>
-
-
-  A meditation / chill-out room is open 8am - 5pm, Mon - Thurs in **National Harbor 9** if you want quiet space to recharge.
-  
-   <br>
+- A lactation room is located in Grand Suite 1. Open Sunday - Tuesday 7:30 a.m. - 7:00 p.m., Wednesday 8:00 a.m. - 6:00 p.m.
    
-  A lactation room is located at **Potomac Dressing Room**. Open 8am - 5pm, Mon - Thurs.
-   
-] 
   
 ---
 class: middle, center, inverse
