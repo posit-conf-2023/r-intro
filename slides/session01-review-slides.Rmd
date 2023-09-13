@@ -331,10 +331,18 @@ class: center, top
 
 # Daily schedule
 
-.center[
-```{r echo=FALSE, out.width="60%"}
-knitr::include_graphics("images/session01/daily-schedule.png")
-```
+.spaced[
+
+| Time          | Activity                                                      |
+|:--------------|:--------------------------------------------------------------|
+| 09:00 - 10:30 | Session 1                                                     |
+| 10:30 - 11:00 | *Break* `r emo::ji("coffee")`                                 |
+| 11:00 - 12:30 | Session 2                                                     |
+| 12:30 - 01:30 | *Lunch* `r emo::ji("bento")`                                  |  
+| 01:30 - 03:00 | Session 3                                                     |
+| 03:00 - 03:30 | *Break* `r emo::ji("tea")`                                    |
+| 03:30 - 05:00 | Session 4                                                     |
+
 ]
 
 ---
