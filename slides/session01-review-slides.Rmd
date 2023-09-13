@@ -87,7 +87,7 @@ Password: **conf2023**
 
 <div class="title-footer">
   <img src="images/academy-logo.png">
-  <div> </div>
+  <div> `r rmarkdown::metadata$date`</div>
 </div>
 
 ---
