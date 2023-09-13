@@ -104,7 +104,7 @@ class: middle, agenda
 
 
 ---
-class: middle chapter-slide blue
+class: middle, chapter-slide blue
 
 .big-white-number[1.]
 
@@ -253,7 +253,7 @@ Practice with some familiar wrangling skills and explore new ones
 
 --
 
-Learn best practices for exploring your data and reporting it reproducibly 
+Learn best practices for exploring your data and reporting it reproducibly
 
 ---
 class: center, middle, red
@@ -298,105 +298,47 @@ background-size: cover
 lined up for you for the next couple days...
 
 ---
-class: middle, center 
-
-<!-- TODO: Update -->
-
-.pull-left[
-
-# Day One:
-
-### Review + Best Practices 
-
-]
-
-???
-Day 1, today -- has a combination of review and learning best practices for exploring, reporting, and working with your data. [CLICK]
-
-Tomorrow we will do a deeper dive into transforming your data with new functions and working on your project milestone.
-
---
-
-.pull-right[
-
-# Day Two:
-
-### Transformation + Milestone  
-
-]
-
-
-
----
 class: middle, center
 
 .pull-left[
 
-# Day One:
-
-### Review + Best Practices
+## Day One:
 
 Review
 
 Exploratory data analysis
 
-R Markdown for reproducible results
+Intro to Quarto
 
-R Projects and your local IDE
+Build a Quarto report (Hotels project)
 ]
 
 .pull-right[
-# Day Two:
 
-### Transformation + Milestone  
+## Day Two:
 
-]
+Best practices
 
-???
+Explore a new data set
 
-We'll have four sessions each day, and these are the specific topic that we'll cover today..
+Data types (strings, factors, dates)
 
-[click]
-
-and tomorrow
-
---
-
-.pull-right[
-
-Summarize data and work with groups
-
-Recoding variables + Milestone recreation
-
-Lightning talks + Milestone extension
-
-Milestone presentation
+Project work
 ]
 
 ---
-class: center
+class: center, top
 
-# Daily Schedule
+# Daily schedule
 
-.spaced[
-
-| Time          | Activity                                                      |
-|:--------------|:--------------------------------------------------------------|
-| 09:00 - 10:30 | Session 1                                                     |
-| 10:30 - 11:00 | *Break* `r emo::ji("coffee")`                                 |
-| 11:00 - 12:30 | Session 2                                                     |
-| 12:30 - 01:30 | *Lunch* `r emo::ji("bento")`                                  |  
-| 01:30 - 03:00 | Session 3                                                     |
-| 03:00 - 03:30 | *Break* `r emo::ji("tea")`                                    |
-| 03:30 - 05:00 | Session 4                                                     |
-
+.center[
+```{r echo=FALSE}
+knitr::include_graphics("images/session01/daily-schedule.png")
+```
 ]
 
-
-
-
 ---
-class: chapter-slide, tan, middle
+class: middle, chapter-slide tan
 
 .big-white-number[2.]
 
@@ -413,21 +355,6 @@ knitr::include_graphics("images/session01/campsite_screenshot.png")
 
 ---
 class: inverse, middle, center
-.pull-left[
-  ### Presenting
-
-]
-
-???
-
-at several points throughout this workshop, and especially tomorrow, you'll be presenting your work to your small group, just like we do during group sessions.
-
-Even though we're in person, the best way to present to your group live will be...
-
----
-class: inverse, middle, center
-
-<!-- TODO: Update -->
 
 .pull-left[
   
@@ -435,22 +362,6 @@ class: inverse, middle, center
 
   ```{r zoom, echo = FALSE, out.width = "25%"}
   knitr::include_graphics("images/session01/zoom.png")
-  ```
-
-]
-
-???
-
-to screenshare on **zoom**, so that we are not physically huddled around computers in order to share code... 
-
----
-class: inverse, middle, center
-
-.pull-left[
-  
-  ### Presenting
-
-  ```{r ref.label = "zoom", echo = FALSE, out.width = "25%"}
   ```
 
   Muted 
@@ -606,15 +517,7 @@ You'll do your work in the R Markdown document you have open so you have a recor
 
 <!-- TODO: update -->
 
-# Review challenge rules
-
-* For each prompt, the __first group with 4 or more people to have the answer correct__ (as verified by your mentor), scores a point.
-
---
-
-* You must have the __correct code__ *and* the __correct output__.
-
---
+# Review challenge
 
 * __Working together__ with your groupmates is encouraged.
 
@@ -624,24 +527,17 @@ You'll do your work in the R Markdown document you have open so you have a recor
 
 --
 
-* Group with the most points at the end wins (a small prize!)
+* Everyone gets a small prize at the end! `r emo::ji("tada")`
 
 ???
 
-For each prompt, the first group with 4 or more people to have the correct answer, scores a point.
-
-You must have the correct code and output.
-
 Working together is okay (and encouraged)
 
-We'll go over the answer once I see that most groups have finished.
+We'll go over the answer once I see that most people have finished.
 
-There are 20 prompts -- we may get through all of them (or not). But there will be a prize for the winning group at the end. 
+There are 20 prompts -- we may get through all of them (or not). But there will be a prize for everyone at the end.
 
 I should also note that there's a bit of a mish mash of difficulty. But The main idea is that you exercise some tidyverse recall and get warmed up.
-
-
-After today, I'll share the slides with the prompts and the solutions so that you'll be able to refer back to them later.
 
 ---
 class: inverse, center, middle
@@ -666,16 +562,7 @@ knitr::include_graphics("images/session01/pink-square.png")
 
 ???
 
-You'll use the sticky system to signal to your mentor that you're ready for your code to be checked.
-
-And your mentor will use a sticky to signal that the group has at least 4 correct answers.
-
----
-class: center, middle
-
-
-# .big-text[Questions?]
-
+You'll use the sticky system to signal that you're done or your need help
 
 ---
 class: center, middle
