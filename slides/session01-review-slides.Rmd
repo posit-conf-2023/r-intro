@@ -332,7 +332,7 @@ class: center, top
 # Daily schedule
 
 .center[
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="60%"}
 knitr::include_graphics("images/session01/daily-schedule.png")
 ```
 ]
@@ -500,7 +500,7 @@ Go ahead and open up the milestone for this Session 1.
 ## `r emo::ji("rocket")` Rapid fire review 
 
 
-```{r label, echo = FALSE}
+```{r label, echo = FALSE, out.width="60%"}
 knitr::include_graphics("images/session01/your-turn-example.png")
 ```
 
