@@ -249,7 +249,7 @@ In short, we hope the next two days allow you to do a deep-dive into the skills 
 
 --
 
-Drill old wrangling skills and explore new ones
+Practice with some familiar wrangling skills and explore new ones
 
 --
 
