@@ -1,29 +1,49 @@
 ---
-title: "Introduction to the tidyverse"
+title: "Introduction to Data Science with R"
+subtitle: "posit::conf(2023)"
+format: 
+  html:
+    toc: true
 ---
 
-Welcome! This is the website for **Introduction to the tidyverse**, a unique 6-week data science apprenticeship with RStudio Academy that begins July 5, 2022 and goes through the week of August 16, 2022.
+Welcome!
 
-This learning experience is primarily virtual, with two in-person days during [rstudio::conf(2022)](https://www.rstudio.com/conference/) in Washington, DC.
+This is not a standard workshop, but a six-week online apprenticeship that culminates in two in-person days at posit::conf(2023). Here, you will learn the foundations of R and the Tidyverse under the guidance of a Posit Academy mentor and in the company of a close group of fellow learners. 
 
-## How to register
+You will be expected to complete a weekly curriculum of interactive tutorials, and to attend a weekly presentation meeting with your mentor and fellow students. Topics will include the basics of R, importing data, visualizing data with ggplot2, wrangling data with dplyr and tidyr, working with strings, factors, and date-times, modelling data with base R, and reporting reproducibly with quarto. Begins August 7th, 2023. No knowledge of R required. 
 
-In addition to registering for the conference workshop [here](https://www.rstudio.com/conference/), **you must**:
+Visit [posit.co/academy](https://posit.co/products/enterprise/academy/) to learn more about this uniquely effective learning format.
 
-(1) enroll in a weekly group session [here](https://forms.gle/e3zh6wsEJ6hhn4rU8) and
-(2) commit to attending all scheduled group sessions.
+**This course is ideal for:**
 
-Workshop registrants without group session enrollment will not be allowed to participate in the workshop at conf.
+* those new to R or the Tidyverse
 
-## Timeline
+* anyone who has dabbled in R, but now wants a rigorous foundation in up-to-date data science best practices
 
-| **Week**   | **Session(s)**               | **Date/time**                |
-|------------|------------------------------|------------------------------|
-| July 4-8   | Virtual kickoff              | July 5, 12pm EDT           |
-| July 11-15 | Virtual group session        | Varies by group              |
-| July 18-22 | Virtual group session        | Varies by group              |
-| July 25-29 | In-person sessions at conf   | July 25-26, 9am-5pm EDT    |
-| Aug 1-5    | Break week: No group session | None                         |
-| Aug 8-12   | Virtual group session        | Varies by group              |
-| Aug 15-19  | Virtual group session        | Varies by group              |
+* SAS and Excel users looking to switch their workflows to R
 
+## Conf Workshop Schedule
+
+### Day 1
+
+| Time          | Activity         |
+| :------------ | :---------------                     |
+| 09:00 - 10:30 | Session 1 - Welcome & Review        |
+| 10:30 - 11:00 | *Coffee break*   |
+| 11:00 - 12:30 | Session 2 - Exploratory Data Analysis       |
+| 12:30 - 13:30 | *Lunch break*    |
+| 13:30 - 15:00 | Session 3 - Intro to Quarto       |
+| 15:00 - 15:30 | *Coffee break*   |
+| 15:30 - 17:00 | Session 4 - Milestone: Build & publish reports |
+
+### Day 2
+
+| Time          | Activity         |
+| :------------ | :--------------- |
+| 09:00 - 10:30 | Session 5 - Best practices        |
+| 10:30 - 11:00 | *Coffee break*   |
+| 11:00 - 12:30 | Session 6 - Project: Explore a new data set        |
+| 12:30 - 13:30 | *Lunch break*    |
+| 13:30 - 15:00 | Session 7 - Data types        |
+| 15:00 - 15:30 | *Coffee break*   |
+| 15:30 - 17:00 | Session 8 - Project presentations & Wrap-up        |

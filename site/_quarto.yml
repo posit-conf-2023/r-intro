@@ -6,23 +6,16 @@ project:
     - "_slides/"
 
 website:
-  title: "Introduction to the tidyverse"
-  repo-url: https://github.com/rstudio-conf-2022/intro-to-tidyverse
-  repo-actions: [edit, source, issue]
+  title: "Introduction to Data Science with R"
+  favicon: "images/favicon.png"
+  repo-url: https://github.com/posit-conf-2023/r-intro
+  repo-actions: [source, issue]
   page-navigation: true
   
   navbar:
-    logo: "images/rstudio-logo.png"
-    favicon: "images/rstudio-logo.png"
+    logo: "images/posit-logo-fullcolor-TM.png"
     background: light
-    left:
-      - text: "About"
-        file: about.qmd
-      - text: "Sessions"
-        file: sessions.qmd
-      - text: "Pre-work"
-        file: prework.qmd
-
+    
 format:
   html:
     theme: 
