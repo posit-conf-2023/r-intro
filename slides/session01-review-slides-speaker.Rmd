@@ -181,7 +181,7 @@ background-size: cover
 
 ???
 
-At Posit Academy, we believe that learning any new skill (whether its musical, computational, athletic -- *any new skill*) is not simply about memorizing new facts...
+At Posit Academy, we believe that learning any new skill (whether its musical, computational, athletic -- *really any new skill*) is not simply about memorizing new facts...
 
 ---
 background-image: url("https://images.unsplash.com/photo-1614935151651-0bea6508db6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1850&q=80")
@@ -262,7 +262,7 @@ class: center, middle, red
 
 ???
 
-And the academy team will be guiding you as you do this...
+And we the Academy team will be guiding you as you do this...
 
 
 ---
@@ -295,7 +295,7 @@ background-size: cover
 # .big-text.white[The Lineup]
 
 ???
-lined up for you for the next couple days...
+Let's take a look at what we have lined up for you for the next couple days...
 
 ---
 class: middle, center
@@ -304,7 +304,7 @@ class: middle, center
 
 ## Day One:
 
-Review
+Review & Warm-up
 
 Exploratory data analysis
 
@@ -323,7 +323,7 @@ Explore a new data set
 
 Data types (strings, factors, dates)
 
-Project work
+Present project work & Wrap-up
 ]
 
 ---
@@ -376,7 +376,7 @@ class: inverse, middle, center
 
 Each session, you'll be seated at the same table with your group. If there is group-presenting involved during the session, then you'll sign on to zoom using the link you usually use for group sessions. 
 
-But turn your audio and camera off. The only thing necessary is screensharing, which your mentor will have you do as normal when it's time. 
+But turn your audio and camera off. The only thing necessary is screensharing, which we'll take turns doing as usual.
 
 [CLICK]
 
@@ -422,7 +422,7 @@ Finally --  throughout the workshop, we'll use sticky notes to signal either bei
 
 * You can use pink stickies at anytime during the session to signal that you're stuck, lost, or would like help.
 
-* You mentor will be on the lookout for stickies throughout each session. 
+* We will be on the lookout for stickies throughout each session. 
 
 --
 
@@ -458,9 +458,7 @@ class: inverse, middle, center
 
 ???
 
-I think this would be a good time to pause and let you ask your mentors any questions about the logistics that I've covered so far. 
-
-So take 30 seconds to do that and make sure you have your sticky notes.
+Any questions about any of this so far?
 
 ---
 class: title-slide
@@ -476,7 +474,7 @@ class: title-slide
 
 ???
 
-We're going to start off with some review of what we've learned for the past couple weeks.
+We're going to start off with some review of what we've learned for the past several weeks.
 
 ---
 class: inverse
@@ -487,11 +485,13 @@ class: inverse
 ```{r session1-workspace, echo = FALSE, out.width = "60%", fig.align = "center"}
 knitr::include_graphics("images/session01/campsite_screenshot.png")
 ```
+
+[conf.posit.academy](https://conf.posit.academy/)
 ]
 
 ???
 
-for this session, we'll be doing our work in this part of the Academy website. 
+for this session, we'll be doing our work in the Academy website (conf.posit.academy)
 
 Go ahead and open up the milestone for this Session 1.
 
@@ -510,7 +510,7 @@ What we'll do:
 
 I'm going to give you a prompt with a short tidyverse task, and you'll work to recreate it. 
 
-You'll do your work in the R Markdown document you have open so you have a record of your code. You can create as many new code chunks as you like in here. 
+You'll do your work in the Quarto document you have open so you have a record of your code. You can create as many new code chunks as you like in here. 
 
 
 ---
@@ -915,7 +915,7 @@ outbreaks %>%
 
 ???
 
-Looks like the most common primary moe for outbreaks in this particular dataset is person-to-person.
+Looks like the most common primary mode for outbreaks in this particular dataset is person-to-person.
 
 ---
 class: your-turn
