@@ -3,75 +3,62 @@ Introduction to Data Science with R and Tidyverse
 
 ### posit::conf 2023
 
-by INSTRUCTOR_NAME
-
------
-
-INSTRUCTIONS FOR INSTRUCTORS: Please insert information about your
-workshop below. Then, add workshop content in the materials folder and
-link to each session’s materials from the schedule below. You are
-welcomed to add more rows to the schedule. We just ask that you take
-breaks at the specified times. Once you are done adding information, you
-can remove these instructions from the README.
-
-Alternatively, you can completely redo the organization of this repo 
-as a Quarto website or some other format you prefer to host your workshop
-materials. The only requirement is that your workshop materials are hosted 
-here.
-
------
+by Posit Academy
 
 :spiral_calendar: September 17 and 18, 2023  
 :alarm_clock:     09:00 - 17:00  
-:hotel:           ROOM TBD  
+:hotel:           Randolph 2  
 :writing_hand:    [pos.it/conf](http://pos.it/conf)
 
 -----
 
 ## Overview
 
-ADD ABSTRACT
+Welcome!
 
-**This workshop is for you if you...*
+This is not a standard workshop, but a six-week online apprenticeship that culminates in two in-person days at posit::conf(2023). Here, you will learn the foundations of R and the Tidyverse under the guidance of a Posit Academy mentor and in the company of a close group of fellow learners. 
 
-ADD THREE POINTS
+You will be expected to complete a weekly curriculum of interactive tutorials, and to attend a weekly presentation meeting with your mentor and fellow students. Topics will include the basics of R, importing data, visualizing data with ggplot2, wrangling data with dplyr and tidyr, working with strings, factors, and date-times, modelling data with base R, and reporting reproducibly with quarto. Begins August 7th, 2023. No knowledge of R required. 
 
-## Prework
+Visit [posit.co/academy](https://posit.co/products/enterprise/academy/) to learn more about this uniquely effective learning format.
 
-ADD INFORMATION YOU WANT LEARNERS TO HAVE / STEPS THEY WANT THEM TO
-COMPLETE PRIOR TO THE WORKSHOP. THIS COULD BE A LINK TO A THREAD ON
-RSTUDIO COMMUNITY, PACKAGE INSTALL INSTRUCTIONS, HOW TO GET AN
-RSTUDIO.CLOUD ACCOUNT, ETC.
+**This course is ideal for:**
+
+* those new to R or the Tidyverse
+
+* anyone who has dabbled in R, but now wants a rigorous foundation in up-to-date data science best practices
+
+* SAS and Excel users looking to switch their workflows to R
 
 ## Schedule
 
 ### Day 1
 
 | Time          | Activity         |
-| :------------ | :--------------- |
-| 09:00 - 10:30 | Session 1        |
+| :------------ | :---------------                     |
+| 09:00 - 10:30 | Session 1 - Welcome & Review        |
 | 10:30 - 11:00 | *Coffee break*   |
-| 11:00 - 12:30 | Session 2        |
+| 11:00 - 12:30 | Session 2 - Exploratory Data Analysis       |
 | 12:30 - 13:30 | *Lunch break*    |
-| 13:30 - 15:00 | Session 3        |
+| 13:30 - 15:00 | Session 3 - Intro to Quarto       |
 | 15:00 - 15:30 | *Coffee break*   |
-| 15:30 - 17:00 | Session 4        |
+| 15:30 - 17:00 | Session 4 - Milestone: Build & publish reports |
 
 ### Day 2
 
 | Time          | Activity         |
 | :------------ | :--------------- |
-| 09:00 - 10:30 | Session 1        |
+| 09:00 - 10:30 | Session 5 - Best practices        |
 | 10:30 - 11:00 | *Coffee break*   |
-| 11:00 - 12:30 | Session 2        |
+| 11:00 - 12:30 | Session 6 - Project: Explore a new data set        |
 | 12:30 - 13:30 | *Lunch break*    |
-| 13:30 - 15:00 | Session 3        |
+| 13:30 - 15:00 | Session 7 - Data types        |
 | 15:00 - 15:30 | *Coffee break*   |
-| 15:30 - 17:00 | Session 4        |
+| 15:30 - 17:00 | Session 8 - Project presentations & Wrap-up        |
 
 ## Instructor
 
-ADD INSTRUCTOR BIO
+The [Posit Academy](https://posit.co/products/enterprise/academy/) team.
 
 -----
 
