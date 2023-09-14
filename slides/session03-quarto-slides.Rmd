@@ -1082,24 +1082,14 @@ class: inverse middle center
 # Questions?
 
 ---
-class: your-turn
+class: inverse, center, middle
 
-# Mini Project
+# Demo: Posit Connect
 
-**Create a Quarto report that summarizes your analysis of the `wine_ratings` dataset.** 
+https://docs.posit.co/connect/user/publishing/#publishing-documents
 
-1. Create a new Quarto file: **File > New File > Quarto**. Give it a title and save it as `wines_report.qmd`.
+---
+# Demo: Posit Connect
 
-2. Use markdown formatting, knitr chunk options and YAML metadata to polish your report.
-
- 
-```{r echo = FALSE}
-countdown::countdown(minutes = 20)
-```
-
-???
-
-* If you have already started a separate Quarto file for exploring the 
-`wine_ratings` dataset, feel free to use that file to build your report.
-
-* We'll leave some time at the end for you to share your report with your group.
+<video width="1190" height="475" controls>
+    <source src="images/session03-quarto/connect_demo.mp4" type="video/mp4"> </video>
