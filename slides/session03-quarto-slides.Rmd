@@ -1093,3 +1093,9 @@ https://docs.posit.co/connect/user/publishing/#publishing-documents
 
 <video width="1190" height="475" controls>
     <source src="images/session03-quarto/connect_demo.mp4" type="video/mp4"> </video>
+
+---
+class: inverse, center, middle
+# Voilà!
+
+https://conf01-metaproxy.production05.posit.academy/rsc/diamonds-report/my_diamonds_report.html
