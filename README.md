@@ -30,7 +30,7 @@ Visit [posit.co/academy](https://posit.co/products/enterprise/academy/) to learn
 
 * SAS and Excel users looking to switch their workflows to R
 
-## Schedule
+## Conf workshop schedule
 
 ### Day 1
 
@@ -56,7 +56,7 @@ Visit [posit.co/academy](https://posit.co/products/enterprise/academy/) to learn
 | 15:00 - 15:30 | *Coffee break*   |
 | 15:30 - 17:00 | Session 8 - Project presentations & Wrap-up        |
 
-## Instructor
+## Instructors
 
 The [Posit Academy](https://posit.co/products/enterprise/academy/) team.
 
