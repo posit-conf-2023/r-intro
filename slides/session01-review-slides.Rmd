@@ -256,16 +256,6 @@ Practice with some familiar wrangling skills and explore new ones
 Learn best practices for exploring your data and reporting it reproducibly
 
 ---
-class: center, middle, red
-
-.big-text.white.center[Hello!]
-
-???
-
-And we the Academy team will be guiding you as you do this...
-
-
----
 class: speaker-slide
 
 # Hello (again)!
@@ -286,6 +276,10 @@ class: speaker-slide
 `r fontawesome::fa("envelope")` kristin.bott@posit.co
 ]
 ]
+
+???
+
+And we will be guiding you as you do this...
 
 ---
 class: middle, center
@@ -323,7 +317,7 @@ Explore a new data set
 
 Data types (strings, factors, dates)
 
-Present project work & Wrap-up
+Share project work & Wrap-up
 ]
 
 ---
@@ -364,36 +358,7 @@ knitr::include_graphics("images/session01/campsite_screenshot.png")
 ---
 class: inverse, middle, center
 
-.pull-left[
-  
-  ### Presenting
-
-  ```{r zoom, echo = FALSE, out.width = "25%"}
-  knitr::include_graphics("images/session01/zoom.png")
-  ```
-
-  Muted 
-  
-  No camera  
-  
-  Your group session link  
-
-]
-
-???
-
-Each session, you'll be seated at the same table with your group. If there is group-presenting involved during the session, then you'll sign on to zoom using the link you usually use for group sessions. 
-
-But turn your audio and camera off. The only thing necessary is screensharing, which we'll take turns doing as usual.
-
-[CLICK]
-
-For other forms of code sharing as well as announcements, we can continue to use slack. 
-
---
-
-.pull-right[
-  ### Code + Announcements
+# Code + Announcements
 
   <br>
     
@@ -408,18 +373,26 @@ For other forms of code sharing as well as announcements, we can continue to use
   `#academy-intro-r-a`
   
   `#academy-intro-r-b`
-  
-]
 
 ---
 class: inverse, center, middle
+# Stickies!
 
 .pull-left[
 
-## Done! 
+## Done
 
 ```{r g, echo = FALSE}
 knitr::include_graphics("images/session01/green-square.png")
+```
+]
+
+.pull-right[
+
+## Help
+
+```{r p, echo = FALSE}
+knitr::include_graphics("images/session01/pink-square.png")
 ```
 ]
 
@@ -431,18 +404,6 @@ Finally --  throughout the workshop, we'll use sticky notes to signal either bei
 * You can use pink stickies at anytime during the session to signal that you're stuck, lost, or would like help.
 
 * We will be on the lookout for stickies throughout each session. 
-
---
-
-.pull-right[
-
-## Help! 
-
-```{r p, echo = FALSE}
-knitr::include_graphics("images/session01/pink-square.png")
-```
-]
-
 
 ---
 class: middle, chapter-slide green
@@ -487,7 +448,7 @@ We're going to start off with some review of what we've learned for the past sev
 ---
 class: inverse
 
-### Go to **Conf Session 1 - Review**
+# Go to **Conf Session 1 - Review**
 
 .center[
 ```{r session1-workspace, echo = FALSE, out.width = "60%", fig.align = "center"}
@@ -552,7 +513,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-## Done! 
+## Done
 
 ```{r, echo = FALSE}
 knitr::include_graphics("images/session01/green-square.png")
@@ -561,7 +522,7 @@ knitr::include_graphics("images/session01/green-square.png")
 
 .pull-right[
 
-## Help! 
+## Help
 
 ```{r, echo = FALSE}
 knitr::include_graphics("images/session01/pink-square.png")
