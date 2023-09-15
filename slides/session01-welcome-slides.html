@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Session 1 Welcome</title>
+    <meta charset="utf-8" />
+    <meta name="date" content="2023-09-17" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard('pre > code.r, pre > code.md', {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/academy-theme.css" type="text/css" />
+    <link rel="stylesheet" href="assets/session01.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class:
+
+
+
+
+
+
+
+
+# .big-text[Welcome] 
+
+## Introduction to Data Science with R
+
+WiFi: **Posit Conf 2023**
+
+Password: **conf2023**
+
+&lt;div class="title-footer"&gt;
+  &lt;img src="images/academy-logo.png"&gt;
+  &lt;div&gt; September 17, 2023&lt;/div&gt;
+&lt;/div&gt;
+
+---
+class: middle, agenda
+
+# Session 1 Agenda
+
+1. Logistics: Policies, Goals, and Schedules
+1. Tech and tooling
+1. Review: Group challenge
+
+???
+
+
+
+---
+class: middle, chapter-slide blue
+
+.big-white-number[1.]
+
+# Policies, Goals, &amp; Schedules 
+
+---
+class: inverse
+# Code of conduct &amp; Workshop policies
+
+- The Code of Conduct and COVID policies can be found at https://posit.co/code-of-conduct/. Please review them carefully. 
+
+&lt;br&gt;
+
+- You can report Code of Conduct violations in person, by email, or by phone. Please see the policy linked above for contact information.
+
+&lt;br&gt;
+
+- Participants who do not wish to be photographed have .light-red[red lanyards]; please note everyone's lanyard colors before taking a photo and respect their choices.
+
+---
+class: inverse
+
+# Locations to note
+
+
+- There are gender-neutral bathrooms located are among the Grand Suite Bathrooms
+
+&lt;br&gt;
+
+- There are two meditation/prayer rooms: Grand Suite 2A and Grand Suite 2B. Open Sunday - Tuesday 7:30 a.m. - 7:00 p.m., Wednesday 8:00 a.m. - 6:00 p.m.
+
+&lt;br&gt;
+  
+- A lactation room is located in Grand Suite 1. Open Sunday - Tuesday 7:30 a.m. - 7:00 p.m., Wednesday 8:00 a.m. - 6:00 p.m.
+   
+  
+---
+class: middle, center, inverse
+
+.pull-left[
+# <svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/></svg>
+Wifi network name  
+
+.light-red[Posit Conf 2023]
+
+]
+
+.pull-right[
+# <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M336 352c97.2 0 176-78.8 176-176S433.2 0 336 0S160 78.8 160 176c0 18.7 2.9 36.8 8.3 53.7L7 391c-4.5 4.5-7 10.6-7 17v80c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24V448h40c13.3 0 24-10.7 24-24V384h40c6.4 0 12.5-2.5 17-7l33.3-33.3c16.9 5.4 35 8.3 53.7 8.3zM376 96a40 40 0 1 1 0 80 40 40 0 1 1 0-80z"/></svg>
+
+Wifi password
+
+.light-red[conf2023]
+
+]
+
+---
+class: inverse, center, middle
+background-image: url("https://images.unsplash.com/photo-1538370965046-79c0d6907d47?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2938&amp;q=80")
+background-size: cover
+
+
+???
+
+So now, with those procedural things out of the way, let me officially welcome you to the conf component of the Introduction to Data Science with R and the [NEXT] Tidyverse! 
+
+--
+
+# The tidyverse
+
+---
+background-image: url("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80")
+background-size: cover
+
+???
+
+At Posit Academy, we believe that learning any new skill (whether its musical, computational, athletic -- *really any new skill*) is not simply about memorizing new facts...
+
+---
+background-image: url("https://images.unsplash.com/photo-1614935151651-0bea6508db6b?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1850&amp;q=80")
+background-size: cover
+
+
+???
+
+but it's about applying them...
+---
+background-image: url("https://images.unsplash.com/photo-1584208124835-8a3d74ae211c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1084&amp;q=80")
+background-size: cover
+
+
+???
+
+-- it's about a commitment to practice
+
+---
+background-image: url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80")
+background-size: cover
+
+
+???
+
+-- a dedication to putting yourself out there and seeking out feedback
+
+---
+
+background-image: url("https://images.unsplash.com/photo-1562411052-105105232432?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1771&amp;q=80")
+background-size: cover
+
+???
+-- and the resolve to doing these things many times over...
+
+
+---
+background-image: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80")
+background-size: cover
+
+???
+
+By being here the next two days, you are checking off all of these boxes in some form. And you happen to be doing this for a skillset that is both highly valuable and versatile. 
+
+You can take your coding and data science skills with you to any job 
+-- and apply them to goals both professional and personal.
+
+---
+class: center, top
+background-image: url(https://images.unsplash.com/photo-1520962880247-cfaf541c8724?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1332&amp;q=80)
+background-position: center
+background-size: cover
+
+# Goals
+
+???
+
+For the next two days, our goals are to support you in this by allowing for more group work, exposure to new projects and datasets, and more engagement with us. Specifically...[CLICK]
+
+1. Practice with some familiar wrangling skills and explore new ones [CLICK]
+
+1. Learn best practices for exploring your data and reporting it reproducibly
+
+In short, we hope the next two days allow you to do a deep-dive into the skills you've been learning the past few weeks, to apply new skills you'll learn, and take advantage of a lot of protected time for practice. 
+
+--
+
+Practice with some familiar wrangling skills and explore new ones
+
+--
+
+Learn best practices for exploring your data and reporting it reproducibly
+
+---
+class: speaker-slide
+
+# Hello (again)!
+&lt;!-- You can copy the image link address from your github profile to use as the src link below --&gt; 
+
+.pull-left[
+&lt;img style="border-radius: 50%;" src="https://github.com/brendanhcullen.png" width="200px"/&gt;
+
+.speaker-links[
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg> brendan.cullen@posit.co
+]
+]
+
+.pull-right[
+&lt;img style="border-radius: 50%;" src="https://github.com/RhoBott.png" width="200px"/&gt;
+
+.speaker-links[
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg> kristin.bott@posit.co
+]
+]
+
+???
+
+And we will be guiding you as you do this...
+
+---
+class: middle, center
+background-image: url("images/session01/scooters-dark.png")
+background-size: cover
+
+# .big-text.white[The Lineup]
+
+???
+Let's take a look at what we have lined up for you for the next couple days...
+
+---
+class: middle, center
+
+.pull-left[
+
+## Day One:
+
+Review &amp; Warm-up
+
+Exploratory data analysis
+
+Intro to Quarto
+
+Build a Quarto report (Hotels project)
+]
+
+.pull-right[
+
+## Day Two:
+
+Best practices
+
+Explore a new data set
+
+Data types (strings, factors, dates)
+
+Share project work &amp; Wrap-up
+]
+
+---
+class: center, top
+
+# Daily schedule
+
+.spaced[
+
+| Time          | Activity                                                      |
+|:--------------|:--------------------------------------------------------------|
+| 09:00 - 10:30 | Session 1                                                     |
+| 10:30 - 11:00 | *Break* ☕                                 |
+| 11:00 - 12:30 | Session 2                                                     |
+| 12:30 - 01:30 | *Lunch* 🍱                                  |  
+| 01:30 - 03:00 | Session 3                                                     |
+| 03:00 - 03:30 | *Break* 🍵                                    |
+| 03:30 - 05:00 | Session 4                                                     |
+
+]
+
+---
+class: middle, chapter-slide tan
+
+.big-white-number[2.]
+
+# Tech and tooling
+
+---
+class: inverse, middle, center
+
+# Workspace
+
+&lt;img src="images/session01/campsite_screenshot.png" width="60%" /&gt;
+
+---
+class: inverse, middle, center
+
+# Code + Announcements
+
+  &lt;br&gt;
+    
+  &lt;img src="images/session01/slack.png" width="40%" /&gt;
+
+  &lt;br&gt;
+  
+  Your group's slack channel  
+  
+  `#academy-intro-r-a`
+  
+  `#academy-intro-r-b`
+
+---
+class: inverse, center, middle
+# Stickies!
+
+.pull-left[
+
+## Done
+
+&lt;img src="images/session01/green-square.png" width="252" /&gt;
+]
+
+.pull-right[
+
+## Help
+
+&lt;img src="images/session01/pink-square.png" width="252" /&gt;
+]
+
+???
+Finally --  throughout the workshop, we'll use sticky notes to signal either being done with an activity or needing help. 
+
+* You should place a green sticky on your laptop if you’re done with an exercise and a pink sticky if you want help. [CLICK]
+
+* You can use pink stickies at anytime during the session to signal that you're stuck, lost, or would like help.
+
+* We will be on the lookout for stickies throughout each session. 
+
+---
+class: middle, chapter-slide green
+
+.big-white-number[3.]
+
+# Review: Group challenge
+
+???
+
+Alright, our Review group challenge is up next
+
+But before I explain that...
+
+---
+class: inverse, middle, center
+
+.big-text.white[
+# Questions?
+]
+
+???
+
+Any questions about any of this so far?
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
