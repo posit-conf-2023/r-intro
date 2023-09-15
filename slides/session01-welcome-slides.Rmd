@@ -382,7 +382,7 @@ class: inverse, center, middle
 
 ## Done
 
-```{r g, echo = FALSE}
+```{r g, echo = FALSE, out.width = "40%"}
 knitr::include_graphics("images/session01/green-square.png")
 ```
 ]
@@ -391,7 +391,7 @@ knitr::include_graphics("images/session01/green-square.png")
 
 ## Help
 
-```{r p, echo = FALSE}
+```{r p, echo = FALSE, out.width = "40%"}
 knitr::include_graphics("images/session01/pink-square.png")
 ```
 ]
