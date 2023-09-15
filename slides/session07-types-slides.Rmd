@@ -917,8 +917,6 @@ ymd("2023-09-18") - ymd("1969-07-20")
 ```
 
 ---
-class: inverse
-
 # Agenda 
 
 **Option 1:** Employee Attrition project
