@@ -197,9 +197,9 @@ readxl::read_excel("data/session01/NationalOutbreakPublicDataTool.xlsx", sheet =
 
 ???
 
-We'll be working with data about foodborne and waterborne disease outbreaks spread by contact with environmental sources or infected people or animals. I'll refer to this dataset as `outbreaks`. It comes from the CDC's National Outbreak Reporting System (NORS).
+We'll be working with data about foodborne and waterborne disease outbreaks spread by contact with environmental sources or infected people or animals. I'll refer to this data set as `outbreaks`. It comes from the CDC's National Outbreak Reporting System (NORS).
 
-First things first, let's take a look a what's in this dataset. 
+First things first, let's take a look a what's in this data set. 
 
 So *here* is your first prompt:
 
@@ -250,7 +250,7 @@ class: your-turn
 
 # Your Turn 2
 
-What is the **earliest year** on record in this dataset? __The latest__? 
+What is the **earliest year** on record in this data set? __The latest__? 
 
 Answer the questions by creating two tables that are sorted.
 
@@ -318,7 +318,7 @@ class: your-turn
 
 # Your Turn 4
 
-What are the different etiologies that have been recorded in this dataset, and how often do they appear in the data? Display your results in a table like the one below.
+What are the different etiologies that have been recorded in this data set, and how often do they appear in the data? Display your results in a table like the one below.
 
 ```{r echo = FALSE}
 outbreaks %>%
@@ -347,7 +347,9 @@ class: your-turn
 
 # Your Turn 5
 
-Let's turn our attention to only observations where the primary mode of infection is Food. Using that criterion, can you reproduce the table below?
+Let's turn our attention to only observations where the primary mode of infection is Food. Using that criterion, can you reproduce the table below? 
+
+**Note:** `ifsac_category` refers to food category (IFSAC = Interagency Food Safety Analytics Collaboration, part of the CDC)
 
 ```{r echo = FALSE}
 outbreaks %>%
@@ -383,6 +385,8 @@ class: your-turn
 
 .pull-left[
 Explore the relationship between `month` and the number of illnesses with a series of **boxplots** like the one to the right. Can you recreate it? 
+
+**Hint:** Try using the `group` aesthetic to tell R that you'd like to create a boxplot for each unique value of `month`.
 ]
 
 .pull-right[
@@ -405,6 +409,9 @@ Check documentation for use of the argument that allows you to create a new boxp
 .wide-left[
 ```{r ref.label = "sol-6", fig.show = "hide"}
 ```
+
+The outlier here makes it hard to see what's going on. Let's modify this.
+
 ]
 
 .narrow-right[
@@ -414,18 +421,27 @@ Check documentation for use of the argument that allows you to create a new boxp
 
 ???
 
-But outlier here makes it hard to see what's going on. Let's modify this.
+But the outlier here makes it hard to see what's going on. Let's modify this.
 
 ---
 class: your-turn
 
 # Your Turn 7
 
-Which observation in `outbreaks` is the outlier associated with such a high number of illnesses? 
+The outlier we just observed represents the outbreak associated with the highest number of illnesses. Which observation is this?
 
-  * Display solely this observation in a table. 
+  1. Display **only** this observation in a table. 
 
-  * Then, recreate the boxplots **without** this observation.
+  2. Then, recreate the boxplots **without** this observation.
+  
+Here is the code we just used to make the boxplots in the last exercise:
+
+```{r eval=FALSE}
+outbreaks %>% 
+  ggplot(aes(x = month, y = illnesses)) + 
+  geom_boxplot(aes(group = month))
+```
+
 
 ---
 class: space-saver
@@ -475,7 +491,15 @@ class: your-turn
 
 # Your Turn 8
 
-Which outbreaks lead to the highest number of illnesses? Display these observations in a table from greatest to fewest illnesses.
+Which outbreaks lead to the highest number of illnesses? 
+
+Display these observations in a table from greatest to fewest illnesses:
+
+```{r echo = FALSE}
+outbreaks %>% arrange(desc(illnesses)) %>% 
+  reactable_preview()
+```
+
 
 ---
 class: space-saver
@@ -497,13 +521,20 @@ class: your-turn
 
 # Your Turn 9
 
-How many different primary modes of illness are in this dataset? How often does each appear in the data?
+How many different primary modes of illness are in this data set? How often does each appear in the data?
 
 Order the rows so that the most common primary mode appears at the top. 
 
 ---
 
 ## Solution 9
+
+```{r eval = FALSE}
+outbreaks %>%
+  count(primary_mode, sort = TRUE)
+```
+
+or...
 
 ```{r eval = FALSE}
 outbreaks %>%
@@ -520,14 +551,17 @@ outbreaks %>%
 
 ???
 
-Looks like the most common primary mode for outbreaks in this particular dataset is person-to-person.
+Looks like the most common primary mode for outbreaks in this particular data set is person-to-person.
 
 ---
 class: your-turn
 
 # Your Turn 10
 
-.pull-left[Can you figure out how to recreate this visualization of the **primary modes** of infection?]
+.pull-left[Can you recreate this visualization of the **primary modes** of infection?
+
+_Hint:_ Look up the help page for `coord_flip()`.
+]
 
 .pull-right[
 ```{r echo = FALSE}
@@ -594,11 +628,21 @@ class: your-turn
 
 # Your Turn 11 
 
-Let's take a closer look at outbreaks associated with **Animal Contact**. 
+Let's take a closer look at outbreaks for which the primary mode of infection is **Animal Contact**. 
 
-* Which *individual* states have had the most Animal Contact outbreaks -- how many has each state had? 
+How many Animal Contact outbreaks has each _individual_ state had? Recreate the table below.
 
-* Create a table to answer these questions.  
+```{r echo = FALSE}
+outbreaks %>% 
+  filter(
+    primary_mode == "Animal Contact",
+    state != "Multistate"
+  ) %>% 
+  count(state, sort = TRUE) %>% 
+  reactable_preview()
+```
+
+_Hint_: You will need to remove observations where `state` is equal to "Multistate".
 
 
 ---
@@ -608,19 +652,21 @@ Let's take a closer look at outbreaks associated with **Animal Contact**.
 One possible solution:
 
 ```{r eval = FALSE}
-outbreaks %>%
-  filter(primary_mode == "Animal Contact") %>% 
-  count(state) %>% 
-  filter(state != "Multistate") %>%  #<<
-  arrange(desc(n))
+outbreaks %>% 
+  filter(
+    primary_mode == "Animal Contact",
+    state != "Multistate"
+  ) %>% 
+  count(state, sort = TRUE)
 ```
 
 ```{r echo = FALSE}
-outbreaks %>%
-  filter(primary_mode == "Animal Contact") %>% 
-  count(state) %>% 
-  filter(state != "Multistate") %>% 
-  arrange(desc(n)) %>% 
+outbreaks %>% 
+  filter(
+    primary_mode == "Animal Contact",
+    state != "Multistate"
+  ) %>% 
+  count(state, sort = TRUE) %>% 
   reactable_preview()
 ```
 
