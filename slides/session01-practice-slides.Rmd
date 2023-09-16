@@ -180,16 +180,6 @@ knitr::include_graphics("images/session01/pink-square.png")
 You'll use the sticky system to signal that you're done or your need help
 
 ---
-class: center, middle
-background-image: url(https://images.unsplash.com/photo-1579780864813-863e246d3bc5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80)
-background-position: center
-background-size: cover
-
-???
-
-We'll be working with data about foodborne and waterborne disease outbreaks
-
----
 class: center, middle, inverse
 background-image: url(https://images.unsplash.com/photo-1579780864813-863e246d3bc5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80)
 background-position: center
@@ -207,7 +197,7 @@ readxl::read_excel("data/session01/NationalOutbreakPublicDataTool.xlsx", sheet =
 
 ???
 
-...spread by contact with environmental sources or infected people or animals. I'll refer to this dataset as `outbreaks`. It comes from the CDC's National Outbreak Reporting System (NORS).
+We'll be working with data about foodborne and waterborne disease outbreaks spread by contact with environmental sources or infected people or animals. I'll refer to this dataset as `outbreaks`. It comes from the CDC's National Outbreak Reporting System (NORS).
 
 First things first, let's take a look a what's in this dataset. 
 
