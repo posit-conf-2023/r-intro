@@ -1039,7 +1039,7 @@ outbreaks %>%
 outbreaks %>% 
   filter(state == "Washington DC") %>% 
   mutate(hospitalization_rate = hospitalizations / illnesses * 100) %>%
-  filter(hospitalization_rate >= 1.60 * mean(hospitalization_rate, na.rm = TRUE)) %>% 
+  filter(hospitalization_rate >= 1.50 * mean(hospitalization_rate, na.rm = TRUE)) %>% 
   arrange(desc(hospitalization_rate), desc(year)) %>% 
   reactable_preview()
 ```
