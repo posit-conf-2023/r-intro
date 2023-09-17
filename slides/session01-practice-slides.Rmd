@@ -649,8 +649,6 @@ _Hint_: You will need to remove observations where `state` is equal to "Multista
 
 ## Solution 11
 
-One possible solution:
-
 ```{r eval = FALSE}
 outbreaks %>% 
   filter(
@@ -728,9 +726,11 @@ class: your-turn
 
 # Your Turn 13
 
-.pull-left[Excluding the outlier we previously identified, visualize the relationship between **year** and number of **illnesses** with a smooth line plot.   
+.pull-left[Visualize the relationship between **year** and number of **illnesses** with a smooth line plot:
 
-Color each line by its primary mode.]
+* Before you plot, exclude the outlier we previously identified (the outbreak with the max number of illnesses). 
+
+* Color each line by its primary mode.]
 
 .pull-right[
 
@@ -766,9 +766,11 @@ class: your-turn
 
 # Your Turn 14
 
-Visualize the number of illnesses in **Washington DC**, grouped by **primary mode** of infection. *Hint: you may need to investigate violin plot*
+Visualize the number of illnesses in **Washington DC**, grouped by **primary mode** of infection using a "violin plot". *Hint:* You may need to investigate `geom_violin()`.
 
-```{r sol-14, echo = FALSE, fig.height = 4.5, fig.width = 11, out.width = "80%"}
+(Don't worry if your plot dimensions look different than the plot below.)
+
+```{r sol-14, echo = FALSE, fig.height = 4.5, fig.width = 11, out.width = "70%"}
 outbreaks %>% 
   filter(state == "Washington DC") %>%
   ggplot(aes(x = primary_mode, y = illnesses)) +
@@ -794,6 +796,19 @@ class: your-turn
 # Your Turn 15
 
 Let's focus only on **Washington DC** and **food borne illnesses**. Show the most recent outbreaks in a table from most recent to least recent.
+
+_Hint_: Which two columns contain date information?
+
+```{r echo=FALSE}
+outbreaks %>% 
+  filter(
+    state == "Washington DC" & 
+    primary_mode == "Food"
+    ) %>%
+  arrange(desc(year), desc(month)) %>% 
+  reactable_preview()
+```
+
 
 ---
 
@@ -829,7 +844,18 @@ class: your-turn
 
 Continue to focus only on **Washington DC** and **food borne illnesses**. 
 
-Use tidyverse functions to display the unique values of `food_vehicle` as a vector.
+Use tidyverse functions to display the unique values of `food_vehicle` as a vector, as shown below:
+
+```{r echo=FALSE}
+outbreaks %>% 
+  filter(
+    state == "Washington DC",
+    primary_mode == "Food"
+  ) %>%
+  distinct(food_vehicle) %>% 
+  pull()
+```
+
 
 ---
 ## Solution 16
@@ -863,7 +889,18 @@ class: your-turn
 
 Find **food borne** outbreaks that resulted in at least 1 **death**. 
 
-Display the results in a table that contains only the columns from `year` to `deaths`.
+Display the results in a table that contains only the columns `year`, `primary_mode`, `state`, and `deaths`.
+
+```{r echo=FALSE}
+outbreaks %>% 
+  filter(
+    primary_mode == "Food", 
+    deaths >= 1
+  ) %>% 
+  select(year, primary_mode, state, deaths) %>% 
+  reactable_preview()
+```
+
 
 ---
 
@@ -875,7 +912,7 @@ outbreaks %>%
     primary_mode == "Food", 
     deaths >= 1
   ) %>% 
-  select(year:deaths)
+  select(year, primary_mode, state, deaths)
 ```
 
 ```{r echo = FALSE}
@@ -884,7 +921,7 @@ outbreaks %>%
     primary_mode == "Food", 
     deaths >= 1
   ) %>% 
-  select(year:deaths) %>% 
+  select(year, primary_mode, state, deaths) %>% 
   reactable_preview()
 ```
 
@@ -897,13 +934,22 @@ Calculate new variable for each outbreak: **`fatality_rate`** (the  number of de
 
 Then visualize the distribution of the fatality rate with a histogram.
 
+```{r echo=FALSE, warning=FALSE, message=FALSE, out.width="35%"}
+outbreaks %>% 
+  mutate(
+    fatality_rate = deaths / illnesses * 100
+  ) %>%
+  ggplot(aes(x = fatality_rate)) + 
+  geom_histogram()
+```
+
+
 ---
 
 ## Solution 18
 .pull-left[
 ```{r sol-18, fig.show = "hide", message = FALSE}
 outbreaks %>% 
-  select(1:3, deaths, illnesses) %>% 
   mutate(
     fatality_rate = deaths / illnesses * 100
   ) %>%
@@ -927,32 +973,37 @@ class: your-turn
 
 * Remove outbreaks that have a fatality rate of zero. 
 
-* What is the distribution of the fatality rate for the remaining outbreaks as shown by a **notched boxplot**?
+* What is the distribution of the fatality rate for the remaining outbreaks as shown by a histogram?
 
-* Make the interior of your notched boxplot solid .blue[blue].
+```{r echo=FALSE, warning=FALSE, message=FALSE, out.width="35%"}
+outbreaks %>% 
+  mutate(
+    fatality_rate = deaths / illnesses * 100
+  ) %>%
+  filter(fatality_rate > 0) %>%
+  ggplot(aes(x = fatality_rate)) + 
+  geom_histogram()
+```
+
 
 ---
 
 ## Solution 19
 
 .pull-left[
-```{r sol-19, fig.show = "hide"}
+```{r sol-19, fig.show = "hide", warning=FALSE, message = FALSE}
 outbreaks %>% 
-  select(1:3, deaths, illnesses) %>% 
   mutate(
     fatality_rate = deaths / illnesses * 100
   ) %>%
   filter(fatality_rate > 0) %>%
   ggplot(aes(x = fatality_rate)) + 
-  geom_boxplot(
-    notch = TRUE,
-    fill = "blue" 
-  )
+  geom_histogram()
 ```
 ]
 
 .pull-right[
-```{r ref.label = "sol-19", echo = FALSE}
+```{r ref.label = "sol-19", echo = FALSE, warning = FALSE, message = FALSE}
 ```
 ]
 
@@ -961,9 +1012,9 @@ class: your-turn
 
 # Your Turn 20 - last one!
 
-Find Washington DC's worst outbreak as defined by its **`hospitalization_rate`** (which you will need to calculate).
+Find Washington DC's worst outbreak as defined by its **`hospitalization_rate`** (the  number of hospitalizations / the number of illnesses, multiplied by 100).
 
-* Subset the data so you display observations that are at least 60% greater than DC's mean hopsitalization rate. 
+* Subset the data so you display observations that are at least 1.5 times greater than DC's mean hopsitalization rate. 
 
 * Your answer should be a tibble with the highest hospitalization rates shown at the top. 
 
