@@ -337,10 +337,6 @@ The `str_detect()` function searches for the presence of a pattern in a string a
 
 In the example code, we keep only the rows where the sequence "Terrier" is found in the `breed` column, and drop the rest.
 
-We can also use `str_detect()` to recode character variables using `mutate()` in combination with the new functions — `if_else()` and `case_when()` — that we learned about today. You could imagine that we might want to create a `breed_family` variable that includes all breeds with "Terrier" in the name, or "Retriever", or "Shepherd", etc.
-
-Let's take a look at a few quicker examples of what stringr can do.
-
 ---
 
 class: middle
@@ -427,9 +423,10 @@ class: your-turn
 
 # Your Turn 1
 
-Use a stringr function to subset the elements of the `fruit` vector that are made up of two or more words.
+Use the `str_subset()` function to subset the elements of the `fruit` vector that are made up of two or more words.
 
 ```{r}
+# preview `fruit`, which is loaded along with stringr
 library(stringr)
 fruit
 ```
@@ -438,7 +435,7 @@ fruit
 
 Solution: `str_subset(fruit, " ")`
 
-Hint: Use the `str_subset()` function.
+Hint: Look up the help page for `str_subset()`
 
 Hint: What character indicates that a string contains more than one word?
 
@@ -659,7 +656,6 @@ Lubridate is a package that makes it easier to work dates and datetimes. These a
 
 A datetime stores all of that as well as hours, minutes, seconds, and time zone.
 
-Lubridate contains a lot of neat features to make it easier to work with dates and datetimes. 
 ---
 
 class: top
@@ -671,7 +667,7 @@ background-size: cover
 ???
 When working with time-related information, often the first step is to get your data into a date or datetime format. 
 
-When reading you data into R, it may be expressed in a variety of ways. The lubridate functions are built to make this transformation as intuitive and flexible as possible. 
+When reading your data into R, it may be expressed in a variety of ways. The lubridate functions are built to make this transformation as intuitive and flexible as possible. 
 
 You may be trying to read in time-related information that uses dashes to separate values. Or maybe spaces, periods, or no spacing at all. 
 
@@ -713,10 +709,6 @@ class: top
 - do math with dates and datetimes
 
 - convert between time zones
-
-- account for leap years
-
-- rounding times (e.g. nearest week or month)
 
 - work with time intervals
 
@@ -774,7 +766,7 @@ print(bike_traffic, n = 5)
 
 So, we will use a lubridate function to turn this column into a datetime.
 
-Because our data was in the order Year-Month-Day-Hour-Minute-Second, we used the YMD_HMS function to turn the column of values into datetimes. 
+Because our data was in the order Month-Day-Year-Hour-Minute-Second, we used the MDY_HMS function to turn the column of values into datetimes. 
 ---
 
 # Get into a `date` format
@@ -790,7 +782,7 @@ labor_day
 ```
 
 ???
-Suppose we are interested in the bike traffic around labor day. We can start by creating a date object for our date of interest. 
+Suppose we are interested in the bike traffic around labor day (in the year 2015). We can start by creating a date object for our date of interest. 
 
 ---
 class:top
@@ -849,7 +841,7 @@ bike_traffic %>%
 ```
 
 ???
-And finally we can filter our dataset to that time interval using an operator called within. 
+And finally we can filter our dataset to that time interval using an operator called within, which is part of the lubridate package. 
 ---
 # Filtered Result
 
@@ -865,25 +857,18 @@ bike_traffic %>%
   print(n = 8)
 ```
 ???
-And here is the filtered result, which is now subset of the original data containing only the records with had a timestamp within one week of labor day. 
+And here is the filtered result, which is now subset of the original data containing only the records with a timestamp within one week of labor day. 
 
 ---
 class: your-turn
 
 # Your Turn 3
 
-A. What day of the week was the moon landing (July 20, 1969)?
+What day of the week was the moon landing (July 20, 1969)?
 
 ```{r, eval = FALSE}
 ymd(____) %>%
-  ____(label = ____)
-
-```
-
-B. How many days ago was the moon landing?
-
-```{r, eval = FALSE}
-date(now()) ____ ymd(____) 
+  ____(label = TRUE)
 
 ```
 
@@ -892,7 +877,7 @@ class: your-turn
 
 # Your Turn 3 Solution
 
-A. What day of the week was the moon landing (July 20, 1969)?
+What day of the week was the moon landing (July 20, 1969)?
 
 ```{r }
 ymd("1969-07-20") %>%
@@ -901,31 +886,10 @@ ymd("1969-07-20") %>%
 ```
 
 ---
-class: your-turn
-
-# Your Turn 3 Solution
-
-B. How many days ago was the moon landing?
-
-```{r eval=FALSE}
-date(now()) - ymd("1969-07-20")
-
-```
-
-```{r echo=FALSE}
-ymd("2023-09-18") - ymd("1969-07-20")
-```
-
----
-# Agenda 
+# Next up: Project work
 
 **Option 1:** Employee Attrition project
 
 **Option 2:** Explore your own data
-
-
-```{r echo=FALSE, out.width="30%"}
-knitr::include_graphics("images/session07/stickies.png")
-```
 
 ⏰ Until coffee break (3:00 PM)
