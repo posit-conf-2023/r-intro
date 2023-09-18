@@ -433,11 +433,13 @@ fruit
 
 ???
 
-Solution: `str_subset(fruit, " ")`
+We're looking for fruits like "bell pepper", "blood orange", etc.
 
 Hint: Look up the help page for `str_subset()`
 
 Hint: What character indicates that a string contains more than one word?
+
+Solution: `str_subset(fruit, " ")`
 
 ---
 class: your-turn
