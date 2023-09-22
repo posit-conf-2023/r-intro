@@ -30,31 +30,33 @@ Visit [posit.co/academy](https://posit.co/products/enterprise/academy/) to learn
 
 * SAS and Excel users looking to switch their workflows to R
 
-## Conf workshop schedule
+## Schedule & Materials
 
 ### Day 1
 
-| Time          | Activity         |
-| :------------ | :---------------                     |
-| 09:00 - 10:30 | Session 1 - Welcome & Review        |
-| 10:30 - 11:00 | *Coffee break*   |
-| 11:00 - 12:30 | Session 2 - Exploratory Data Analysis       |
-| 12:30 - 13:30 | *Lunch break*    |
-| 13:30 - 15:00 | Session 3 - Intro to Quarto       |
-| 15:00 - 15:30 | *Coffee break*   |
-| 15:30 - 17:00 | Session 4 - Milestone: Build & publish reports |
+| Time          | Activity                              | Slides
+| :------------ | :------------------------------------ | :----- |
+| 09:00 - 09:30 | Session 0 - Welcome                   | [Slides](https://intro-tidyverse-2023.netlify.app/_slides/session01-welcome-slides.html){target="_blank" rel="noopener noreferrer"}
+| 09:30 - 10:30 | Session 1 - Review & Practice         | [Slides](https://intro-tidyverse-2023.netlify.app/_slides/session01-practice-slides.html){target="_blank" rel="noopener noreferrer"}|
+| 10:30 - 11:00 | *Coffee break*                        |  |
+| 11:00 - 12:30 | Session 2 - Exploratory Data Analysis | [Slides](https://github.com/posit-conf-2023/r-intro/blob/main/slides/session02-eda.pdf){target="_blank" rel="noopener noreferrer"} |
+| 12:30 - 13:30 | *Lunch break*                         |  |
+| 13:30 - 15:00 | Session 3 - Intro to Quarto           | [Slides](https://intro-tidyverse-2023.netlify.app/_slides/session03-quarto.html){target="_blank" rel="noopener noreferrer"} |
+| 15:00 - 15:30 | *Coffee break*                        |  |
+| 15:30 - 17:00 | Session 4 - Build & publish reports   | [Slides](https://github.com/posit-conf-2023/r-intro/blob/main/slides/session04-reports.pdf){target="_blank" rel="noopener noreferrer"}  |
 
 ### Day 2
 
-| Time          | Activity         |
-| :------------ | :--------------- |
-| 09:00 - 10:30 | Session 5 - Best practices        |
-| 10:30 - 11:00 | *Coffee break*   |
-| 11:00 - 12:30 | Session 6 - Project: Explore a new data set        |
-| 12:30 - 13:30 | *Lunch break*    |
-| 13:30 - 15:00 | Session 7 - Data types        |
-| 15:00 - 15:30 | *Coffee break*   |
-| 15:30 - 17:00 | Session 8 - Project presentations & Wrap-up        |
+| Time          | Activity                             | Slides
+| :------------ | :----------------------------------- | :----- |
+| 09:00 - 10:30 | Session 5 - Best practices           | [Slides](https://github.com/posit-conf-2023/r-intro/blob/main/slides/session05-best-practices.pdf){target="_blank" rel="noopener noreferrer"} |
+| 10:30 - 11:00 | *Coffee break*                       |  |
+| 11:00 - 12:30 | Session 6 - Explore a new data set   | [Slides](https://github.com/posit-conf-2023/r-intro/blob/main/slides/session06-new-data.pdf){target="_blank" rel="noopener noreferrer"} |
+| 12:30 - 13:30 | *Lunch break*                        |  |
+| 13:30 - 15:00 | Session 7 - Data types               | [Slides](https://intro-tidyverse-2023.netlify.app/_slides/session07-types-slides.html){target="_blank" rel="noopener noreferrer"} |
+| 15:00 - 15:30 | *Coffee break*                       |  |
+| 15:30 - 17:00 | Session 8 - Share projects & Wrap-up |  |
+
 
 ## Instructors
 
