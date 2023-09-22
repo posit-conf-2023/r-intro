@@ -6,7 +6,7 @@ format:
     toc: true
 ---
 
-Welcome!
+## Welcome
 
 This is not a standard workshop, but a six-week online apprenticeship that culminates in two in-person days at posit::conf(2023). Here, you will learn the foundations of R and the Tidyverse under the guidance of a Posit Academy mentor and in the company of a close group of fellow learners. 
 
