@@ -18,7 +18,7 @@ Welcome!
 
 This is not a standard workshop, but a six-week online apprenticeship that culminates in two in-person days at posit::conf(2023). Here, you will learn the foundations of R and the Tidyverse under the guidance of a Posit Academy mentor and in the company of a close group of fellow learners. 
 
-You will be expected to complete a weekly curriculum of interactive tutorials, and to attend a weekly presentation meeting with your mentor and fellow students. Topics will include the basics of R, importing data, visualizing data with ggplot2, wrangling data with dplyr and tidyr, working with strings, factors, and date-times, modelling data with base R, and reporting reproducibly with quarto. Begins August 7th, 2023. No knowledge of R required. 
+You will be expected to complete a weekly curriculum of interactive tutorials, and to attend a weekly presentation meeting with your mentor and fellow students. Topics will include the basics of R, importing data, visualizing data with ggplot2, wrangling data with dplyr and tidyr, working with strings, factors, and date-times, and reporting reproducibly with Quarto. Begins August 7th, 2023. No knowledge of R required. 
 
 Visit [posit.co/academy](https://posit.co/products/enterprise/academy/) to learn more about this uniquely effective learning format.
 
